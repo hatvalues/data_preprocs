@@ -702,9 +702,9 @@ diartino_common_args = {
     """,
 }
 
-diartino_pd = create_data_provider(
+diaretino_pd = create_data_provider(
     name="diartino",
-    file_name="diartino.csv.gz",
+    file_name="diaretino.csv.gz",
     sample_size=1.0,
     data_framework="pandas",
     schema=None,
@@ -718,4 +718,177 @@ diaretino_pl = create_data_provider(
     data_framework="polars",
     schema=None,
     **diartino_common_args,
+)
+
+
+german_common_args = {
+    "class_col": "rating",
+    "positive_class": "bad",
+    "spiel": """Source:
+    Professor Dr. Hans Hofmann
+    Institut f"ur Statistik und "Okonometrie
+    Universit"at Hamburg
+    FB Wirtschaftswissenschaften
+    Von-Melle-Park 5
+    2000 Hamburg 13
+
+    Data Set Information:
+    Two datasets are provided. the original dataset, in the form provided by Prof. Hofmann, contains categorical/symbolic attributes and is in the file "german.data".
+    For algorithms that need numerical attributes, Strathclyde University produced the file "german.data-numeric". This file has been edited and several indicator variables added to make it suitable for algorithms which cannot cope with categorical variables. Several attributes that are ordered categorical (such as attribute 17) have been coded as integer. This was the form used by StatLog.
+
+    This dataset requires use of a cost matrix:
+    . 1 2
+    ------
+    1 0 1
+    -----
+    2 5 0
+
+    (1 = Good, 2 = Bad)
+    The rows represent the actual classification and the columns the predicted classification.
+    It is worse to class a customer as good when they are bad (5), than it is to class a customer as bad when they are good (1).
+    """,
+}
+
+german_pd = create_data_provider(
+    name="german",
+    file_name="german.csv.gz",
+    sample_size=1.0,
+    data_framework="pandas",
+    schema=None,
+    **german_common_args,
+)
+
+german_pl = create_data_provider(
+    name="german",
+    file_name="german.csv.gz",
+    sample_size=1.0,
+    data_framework="polars",
+    schema=None,
+    **german_common_args,
+)
+
+
+heart_common_args = {
+    "class_col": "HDisease",
+    "positive_class": "Yes",
+    "spiel": """Creators:
+    1. Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
+    2. University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
+    3. University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
+    4. V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
+
+    Donor:
+    David W. Aha (aha '@' ics.uci.edu) (714) 856-8779
+
+
+    Data Set Information:
+    This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to
+    this date. The "goal" field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4. Experiments with the Cleveland database have concentrated on simply attempting to distinguish presence (values 1,2,3,4) from absence (value 0).
+    The names and social security numbers of the patients were recently removed from the database, replaced with dummy values.
+    One file has been "processed", that one containing the Cleveland database. All four unprocessed files also exist in this directory.
+    To see Test Costs (donated by Peter Turney), please see the folder "Costs"
+
+    Attribute Information:
+    Only 14 attributes used:
+    1. (Age)
+    2. (Sex)
+    3. (ChestPain)
+    4. (RestBP)
+    5. (Chol)
+    6. (Fbs)
+    7. (RestECG)
+    8. (MaxHR)
+    9. (ExAng)
+    10. (Oldpeak)
+    11. (Slope)
+    12. (Ca)
+    13. (Thal)
+    14. (HDisease) (the predicted attribute)
+    """,
+}
+
+heart_pd = create_data_provider(
+    name="heart",
+    file_name="heart.csv.gz",
+    sample_size=1.0,
+    data_framework="pandas",
+    schema=None,
+    **heart_common_args,
+)
+
+heart_pl = create_data_provider(
+    name="heart",
+    file_name="heart.csv.gz",
+    sample_size=1.0,
+    data_framework="polars",
+    schema=None,
+    **heart_common_args,
+)
+
+
+lending_common_args = {
+    "class_col": "loan_status",
+    "positive_class": "Fully Paid",
+    "spiel": """Data Set Information:
+    Originates from: https://www.lendingclub.com/info/download-data.action
+
+    See also:
+    https://www.kaggle.com/wordsforthewise/lending-club
+
+    Prepared by Nate George:  https://github.com/nateGeorge/preprocess_lending_club_data
+    """,
+}
+
+lending_samp_pd = create_data_provider(
+    name="lending_samp",
+    file_name="lending_samp.csv.gz",
+    sample_size=0.1,
+    data_framework="pandas",
+    schema=None,
+    **lending_common_args,
+)
+
+lending_samp_pl = create_data_provider(
+    name="lending_samp",
+    file_name="lending_samp.csv.gz",
+    sample_size=0.1,
+    data_framework="polars",
+    schema=None,
+    **lending_common_args,
+)
+
+lending_small_samp_pd = create_data_provider(
+    name="lending_small_samp",
+    file_name="lending_small_samp.csv.gz",
+    sample_size=0.01,
+    data_framework="pandas",
+    schema=None,
+    **lending_common_args,
+)
+
+lending_small_samp_pl = create_data_provider(
+    name="lending_small_samp",
+    file_name="lending_small_samp.csv.gz",
+    sample_size=0.01,
+    data_framework="polars",
+    schema=None,
+    **lending_common_args,
+)
+
+lending_tiny_samp_pd = create_data_provider(
+    name="lending_tiny_samp",
+    file_name="lending_tiny_samp.csv.gz",
+    sample_size=0.0025,
+    data_framework="pandas",
+    schema=None,
+    **lending_common_args,
+)
+
+lending_tiny_samp_pl = create_data_provider(
+    name="lending_tiny_samp",
+    file_name="lending_tiny_samp.csv.gz",
+    sample_size=0.0025,
+    data_framework="polars",
+    schema=None,
+    **lending_common_args,
 )

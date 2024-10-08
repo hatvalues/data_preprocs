@@ -1,0 +1,43 @@
+class_col: rating
+column_names:
+- chk
+- dur
+- crhis
+- pps
+- amt
+- svng
+- emp
+- rate
+- pers
+- debt
+- res
+- prop
+- age
+- plans
+- hous
+- creds
+- job
+- deps
+- tel
+- foreign
+columns: 20
+file_name: german.csv.gz
+name: german
+positive_class: bad
+rows: 1000
+sample_size: 1.0
+spiel: "Source:\n    Professor Dr. Hans Hofmann\n    Institut f\"ur Statistik und\
+  \ \"Okonometrie\n    Universit\"at Hamburg\n    FB Wirtschaftswissenschaften\n \
+  \   Von-Melle-Park 5\n    2000 Hamburg 13\n\n    Data Set Information:\n    Two\
+  \ datasets are provided. the original dataset, in the form provided by Prof. Hofmann,\
+  \ contains categorical/symbolic attributes and is in the file \"german.data\".\n\
+  \    For algorithms that need numerical attributes, Strathclyde University produced\
+  \ the file \"german.data-numeric\". This file has been edited and several indicator\
+  \ variables added to make it suitable for algorithms which cannot cope with categorical\
+  \ variables. Several attributes that are ordered categorical (such as attribute\
+  \ 17) have been coded as integer. This was the form used by StatLog.\n\n    This\
+  \ dataset requires use of a cost matrix:\n    . 1 2\n    ------\n    1 0 1\n   \
+  \ -----\n    2 5 0\n\n    (1 = Good, 2 = Bad)\n    The rows represent the actual\
+  \ classification and the columns the predicted classification.\n    It is worse\
+  \ to class a customer as good when they are bad (5), than it is to class a customer\
+  \ as bad when they are good (1).\n    "

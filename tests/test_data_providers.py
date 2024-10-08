@@ -54,3 +54,13 @@ def test_credit():
 
 def test_diaretino():
     assert_dict_matches_fixture(get_test_dict(dp.diaretino_pd), "diaretino")
+
+
+def test_heart():
+    assert_dict_matches_fixture(get_test_dict(dp.heart_pd), "heart")
+
+def test_german():
+    assert_dict_matches_fixture(get_test_dict(dp.german_pd), "german")
+
+def test_lending_samp():
+    assert_dict_matches_fixture(get_test_dict(dp.lending_samp_pd), "lending_samp")

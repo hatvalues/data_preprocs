@@ -1,0 +1,34 @@
+class_col: A16
+column_names:
+- A1
+- A2
+- A3
+- A4
+- A5
+- A6
+- A7
+- A8
+- A9
+- A10
+- A11
+- A12
+- A13
+- A14
+- A15
+columns: 15
+file_name: credit.csv.gz
+name: credit
+positive_class: +
+rows: 690
+sample_size: 1.0
+spiel: "\n    Data Set Information:\n\n    This file concerns credit card applications.\
+  \ All attribute names and values have been changed to meaningless symbols to protect\
+  \ confidentiality of the data.\n\n    This dataset is interesting because there\
+  \ is a good mix of attributes -- continuous, nominal with small numbers of values,\
+  \ and nominal with larger numbers of values. There are also a few missing values.\n\
+  \n    Attribute Information:\n\n    A1:\tb, a.\n    A2:\tcontinuous.\n    A3:\t\
+  continuous.\n    A4:\tu, y, l, t.\n    A5:\tg, p, gg.\n    A6:\tc, d, cc, i, j,\
+  \ k, m, r, q, w, x, e, aa, ff.\n    A7:\tv, h, bb, j, n, z, dd, ff, o.\n    A8:\t\
+  continuous.\n    A9:\tt, f.\n    A10:\tt, f.\n    A11:\tcontinuous.\n    A12:\t\
+  t, f.\n    A13:\tg, p, s.\n    A14:\tcontinuous.\n    A15:\tcontinuous.\n    A16:\
+  \ +,- (class attribute)\n    "

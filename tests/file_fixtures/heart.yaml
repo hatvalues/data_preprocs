@@ -1,0 +1,41 @@
+class_col: HDisease
+column_names:
+- Age
+- Sex
+- ChestPain
+- RestBP
+- Chol
+- Fbs
+- RestECG
+- MaxHR
+- ExAng
+- Oldpeak
+- Slope
+- Ca
+- Thal
+columns: 13
+file_name: heart.csv.gz
+name: heart
+positive_class: 'Yes'
+rows: 303
+sample_size: 1.0
+spiel: "Creators:\n    1. Hungarian Institute of Cardiology. Budapest: Andras Janosi,\
+  \ M.D.\n    2. University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.\n\
+  \    3. University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.\n    4.\
+  \ V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano,\
+  \ M.D., Ph.D.\n\n    Donor:\n    David W. Aha (aha '@' ics.uci.edu) (714) 856-8779\n\
+  \n\n    Data Set Information:\n    This database contains 76 attributes, but all\
+  \ published experiments refer to using a subset of 14 of them. In particular, the\
+  \ Cleveland database is the only one that has been used by ML researchers to\n \
+  \   this date. The \"goal\" field refers to the presence of heart disease in the\
+  \ patient. It is integer valued from 0 (no presence) to 4. Experiments with the\
+  \ Cleveland database have concentrated on simply attempting to distinguish presence\
+  \ (values 1,2,3,4) from absence (value 0).\n    The names and social security numbers\
+  \ of the patients were recently removed from the database, replaced with dummy values.\n\
+  \    One file has been \"processed\", that one containing the Cleveland database.\
+  \ All four unprocessed files also exist in this directory.\n    To see Test Costs\
+  \ (donated by Peter Turney), please see the folder \"Costs\"\n\n    Attribute Information:\n\
+  \    Only 14 attributes used:\n    1. (Age)\n    2. (Sex)\n    3. (ChestPain)\n\
+  \    4. (RestBP)\n    5. (Chol)\n    6. (Fbs)\n    7. (RestECG)\n    8. (MaxHR)\n\
+  \    9. (ExAng)\n    10. (Oldpeak)\n    11. (Slope)\n    12. (Ca)\n    13. (Thal)\n\
+  \    14. (HDisease) (the predicted attribute)\n    "
