@@ -64,3 +64,10 @@ def test_german():
 
 def test_lending_samp():
     assert_dict_matches_fixture(get_test_dict(dp.lending_samp_pd), "lending_samp")
+
+def test_mhtech14_pd():
+    assert_dict_matches_fixture(get_test_dict(dp.mhtech14_pd), "mhtech14")
+
+def test_mhtech14_pl():
+    assert isinstance(dp.mhtech14_pl.features, pl.DataFrame)
+    assert "comments" not in dp.mhtech14_pl.features.columns

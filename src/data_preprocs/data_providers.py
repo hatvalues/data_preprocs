@@ -139,7 +139,7 @@ bankmark_common_args = {
     """,
 }
 
-pandas_schema = {
+bankmark_pandas_schema = {
     "age": "int16",
     "campaign": "int16",
     "cons.conf.idx": "float16",
@@ -164,7 +164,7 @@ pandas_schema = {
 }
 
 
-polars_schema = {
+bankmark_polars_schema = {
     "age": pl.Int16,
     "job": pl.Utf8,
     "marital": pl.Utf8,
@@ -193,7 +193,7 @@ bankmark_pd = create_data_provider(
     name="bankmark",
     file_name="bankmark.csv.gz",
     sample_size=1.0,
-    schema=pandas_schema,
+    schema=bankmark_pandas_schema,
     **bankmark_common_args,
 )
 
@@ -202,7 +202,7 @@ bankmark_samp_pd = create_data_provider(
     name="bankmark_samp",
     file_name="bankmark_samp.csv.gz",
     sample_size=0.05,
-    schema=pandas_schema,
+    schema=bankmark_pandas_schema,
     **bankmark_common_args,
 )
 
@@ -210,7 +210,7 @@ bankmark_pl = create_data_provider(
     name="bankmark",
     file_name="bankmark.csv.gz",
     sample_size=1.0,
-    schema=polars_schema,
+    schema=bankmark_polars_schema,
     **bankmark_common_args,
 )
 
@@ -219,7 +219,7 @@ bankmark_samp_pl = create_data_provider(
     name="bankmark_samp",
     file_name="bankmark_samp.csv.gz",
     sample_size=0.05,
-    schema=polars_schema,
+    schema=bankmark_polars_schema,
     **bankmark_common_args,
 )
 
@@ -630,44 +630,7 @@ credit_pl = create_data_provider(
 )
 
 
-#         class_col = 'dr',
-#         project_dir = project_dir,
-#         save_dir = 'diaretino',
-#         random_state=random_state,
-#         positive_class='yes',
-#         spiel = '''
-#         Source:
-#         1. Dr. Balint Antal, Department of Computer Graphics and Image Processing
-#         Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
-#         antal.balint '@' inf.unideb.hu
-#         2. Dr. Andras Hajdu, Department of Computer Graphics and Image Processing
-#         Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
-#         hajdu.andras '@' inf.unideb.hu
-
-#         Data Set Information:
-#         This dataset contains features extracted from the Messidor image set to predict whether an image contains signs of diabetic retinopathy or not. All features represent either a detected lesion, a descriptive feature of a anatomical part or an image-level descriptor. The underlying method image analysis and feature extraction as well as our classification technique is described in Balint Antal, Andras Hajdu: An ensemble-based system for automatic screening of diabetic retinopathy, Knowledge-Based Systems 60 (April 2014), 20-27. The image set (Messidor) is available at [Web Link].
-
-#         Attribute Information:
-#         0) The binary result of quality assessment. 0 = bad quality 1 = sufficient quality.
-#         1) The binary result of pre-screening, where 1 indicates severe retinal abnormality and 0 its lack.
-#         2-7) The results of MA detection. Each feature value stand for the
-#         number of MAs found at the confidence levels alpha = 0.5, . . . , 1, respectively.
-#         8-15) contain the same information as 2-7) for exudates. However,
-#         as exudates are represented by a set of points rather than the number of
-#         pixels constructing the lesions, these features are normalized by dividing the
-#         number of lesions with the diameter of the ROI to compensate different image
-#         sizes.
-#         Note - 2-7 and 8-15 are not equal in number. Not sure what to call the last two ex.
-#         16) The euclidean distance of the center of
-#         the macula and the center of the optic disc to provide important information
-#         regarding the patientâ€™s condition. This feature
-#         is also normalized with the diameter of the ROI.
-#         17) The diameter of the optic disc.
-#         18) The binary result of the AM/FM-based classification.
-#         19) Class label. 1 = contains signs of DR (Accumulative label for the Messidor classes 1, 2, 3), 0 = no signs of DR.
-#         '''
-
-diartino_common_args = {
+diaretino_common_args = {
     "class_col": "dr",
     "positive_class": "yes",
     "spiel": """Source:
@@ -708,7 +671,7 @@ diaretino_pd = create_data_provider(
     sample_size=1.0,
     data_framework="pandas",
     schema=None,
-    **diartino_common_args,
+    **diaretino_common_args,
 )
 
 diaretino_pl = create_data_provider(
@@ -717,7 +680,7 @@ diaretino_pl = create_data_provider(
     sample_size=1.0,
     data_framework="polars",
     schema=None,
-    **diartino_common_args,
+    **diaretino_common_args,
 )
 
 
@@ -892,3 +855,158 @@ lending_tiny_samp_pl = create_data_provider(
     schema=None,
     **lending_common_args,
 )
+
+
+# # mental health survey 2014
+# mhtech14 = dict(
+#     dataset_name = 'mhtech14',
+#     drop = 'comments',
+#     class_col = 'treatment',
+
+#     positive_class='Yes',
+#     spiel = '''
+#     From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey
+
+#     This dataset contains the following data:
+
+#     Timestamp
+#     Age
+#     Gender
+#     Country
+#     state: If you live in the United States, which state or territory do you live in?
+#     self_employed: Are you self-employed?
+#     family_history: Do you have a family history of mental illness?
+#     treatment: Have you sought treatment for a mental health condition?
+#     work_interfere: If you have a mental health condition, do you feel that it interferes with your work?
+#     no_employees: How many employees does your company or organization have?
+#     remote_work: Do you work remotely (outside of an office) at least 50% of the time?
+#     tech_company: Is your employer primarily a tech company/organization?
+#     benefits: Does your employer provide mental health benefits?
+#     care_options: Do you know the options for mental health care your employer provides?
+#     wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?
+#     seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?
+#     anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?
+#     leave: How easy is it for you to take medical leave for a mental health condition?
+#     mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?
+#     phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?
+#     coworkers: Would you be willing to discuss a mental health issue with your coworkers?
+#     supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?
+#     mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?
+#     phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?
+#     mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?
+#     obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
+#     comments: Any additional notes or comments
+#     '''
+
+# this as a pandas schema (dctionary of types) and then as a polars schema
+#     Age
+#     Gender
+#     Country
+#     state: If you live in the United States, which state or territory do you live in?
+#     self_employed: Are you self-employed?
+#     family_history: Do you have a family history of mental illness?
+#     treatment: Have you sought treatment for a mental health condition?
+#     work_interfere: If you have a mental health condition, do you feel that it interferes with your work?
+#     no_employees: How many employees does your company or organization have?
+#     remote_work: Do you work remotely (outside of an office) at least 50% of the time?
+#     tech_company: Is your employer primarily a tech company/organization?
+#     benefits: Does your employer provide mental health benefits?
+#     care_options: Do you know the options for mental health care your employer provides?
+#     wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?
+#     seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?
+#     anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?
+#     leave: How easy is it for you to take medical leave for a mental health condition?
+#     mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?
+#     phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?
+#     coworkers: Would you be willing to discuss a mental health issue with your coworkers?
+#     supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?
+#     mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?
+#     phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?
+#     mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?
+#     obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
+#     comments: Any additional notes or comments
+#     var_types = ['continuous',
+#                 'nominal',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'continuous',
+#                 'nominal',
+#                 'nominal'],
+
+
+mhtech14_common_args = {
+    "class_col": "treatment",
+    "positive_class": "Yes",
+    "spiel": """
+    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey
+
+    This dataset contains the following data:
+
+    Timestamp
+    Age
+    Gender
+    Country
+    state: If you live in the United States, which state or territory do you live in?
+    self_employed: Are you self-employed?
+    family_history: Do you have a family history of mental illness?
+    treatment: Have you sought treatment for a mental health condition?
+    work_interfere: If you have a mental health condition, do you feel that it interferes with your work?
+    no_employees: How many employees does your company or organization have?
+    remote_work: Do you work remotely (outside of an office) at least 50% of the time?
+    tech_company: Is your employer primarily a tech company/organization?
+    benefits: Does your employer provide mental health benefits?
+    care_options: Do you know the options for mental health care your employer provides?
+    wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?
+    seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?
+    anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?
+    leave: How easy is it for you to take medical leave for a mental health condition?
+    mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?
+    phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?
+    coworkers: Would you be willing to discuss a mental health issue with your coworkers?
+    supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?
+    mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?
+    phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?
+    mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?
+    obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
+    comments: Any additional notes or comments
+    """,
+}
+
+mhtech14_pd = create_data_provider(
+    name="mhtech14",
+    file_name="mhtech14.csv.gz",
+    sample_size=1.0,
+    data_framework="pandas",
+    schema=None,
+    **mhtech14_common_args,
+)
+
+mhtech14_pd.features.drop(columns=["comments"], axis=1, inplace=True)  # type: ignore
+
+mhtech14_pl = create_data_provider(
+    name="mhtech14",
+    file_name="mhtech14.csv.gz",
+    sample_size=1.0,
+    data_framework="polars",
+    schema=None,
+    **mhtech14_common_args,
+)
+
+mhtech14_pl.features = mhtech14_pl.features.drop(["comments"])
