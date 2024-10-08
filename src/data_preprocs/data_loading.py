@@ -17,49 +17,6 @@ PolarSchema = Optional[Mapping[str, Union[pl.DataTypeClass, pl.DataType]]]
 PandasSchema = Optional[Mapping[str, str]]
 
 
-def is_polar_schema(arg: dict) -> bool:
-    if not isinstance(arg, dict):
-        return False
-    return all(isinstance(k, str) and isinstance(v, (pl.DataTypeClass, pl.DataType)) for k, v in arg.items())
-
-
-def is_pandas_schema(arg: dict) -> bool:
-    if not isinstance(arg, dict):
-        return False
-    return all(isinstance(k, str) and isinstance(v, str) for k, v in arg.items())
-
-
-def validate_schema(arg) -> Optional[str]:
-    if not arg:
-        return None
-    elif is_polar_schema(arg):
-        return "polars"
-    elif is_pandas_schema(arg):
-        return "pandas"
-    return None
-
-
-def validate_framework(data_framework: Optional[str] = None, schema: Optional[Union[PandasSchema, PolarSchema]] = None) -> str:
-    validation = validate_schema(schema) or data_framework
-    if validation not in DataFramework._value2member_map_:
-        raise ValueError("Unsupported data framework")
-    if not validation:
-        raise ValueError("Either data_framework or schema must be provided")
-    return validation
-
-
-def load_data_file_to_pandas(filename: str, schema: Optional[PandasSchema] = None) -> pd.DataFrame:
-    source = files(data_sources).joinpath(filename)
-    with as_file(source) as data_file:
-        return pd.read_csv(data_file, dtype=schema)
-
-
-def load_data_file_to_polars(filename: str, schema: Optional[PolarSchema] = None) -> pl.DataFrame:
-    source = files(data_sources).joinpath(filename)
-    with as_file(source) as data_file:
-        return pl.read_csv(data_file, schema=schema)
-
-
 @dataclass
 class DataContainer:
     features: Union[pd.DataFrame, pl.DataFrame]
@@ -82,12 +39,41 @@ class DataLoader:
         self.schema = schema
 
     def load(self) -> None:
-        if validate_framework(self.data_framework, self.schema) == "pandas":
-            data = load_data_file_to_pandas(self.file_name, self.schema)  # type: ignore
+        if self._validate_framework() == "pandas":
+            data = self._load_data_file_to_pandas()  # type: ignore
             self.container = DataContainer(target=pd.Series(data[self.class_col]), features=data.drop(columns=self.class_col, axis=1))
         else:
-            data = load_data_file_to_polars(self.file_name, self.schema)
+            data = self._load_data_file_to_polars()
             self.container = DataContainer(target=data[self.class_col], features=data.drop(self.class_col))
+
+    def _validate_schema(self) -> Optional[str]:
+        if not self.schema:
+            return None
+        elif not isinstance(self.schema, dict):
+            raise ValueError("Schema must be a dictionary")
+        elif all(isinstance(k, str) and isinstance(v, (pl.DataTypeClass, pl.DataType)) for k, v in self.schema.items()):
+            return "polars"
+        elif all(isinstance(k, str) and isinstance(v, str) for k, v in self.schema.items()):
+            return "pandas"
+        return None
+
+    def _validate_framework(self) -> str:
+        validation = self._validate_schema() or self.data_framework
+        if validation not in DataFramework._value2member_map_:
+            raise ValueError("Unsupported data framework")
+        if not validation:
+            raise ValueError("Either data_framework or schema must be provided")
+        return validation
+
+    def _load_data_file_to_pandas(self) -> pd.DataFrame:
+        source = files(data_sources).joinpath(self.file_name)
+        with as_file(source) as data_file:
+            return pd.read_csv(data_file, dtype=self.schema)
+
+    def _load_data_file_to_polars(self) -> pl.DataFrame:
+        source = files(data_sources).joinpath(self.file_name)
+        with as_file(source) as data_file:
+            return pl.read_csv(data_file, schema=self.schema)  # type: ignore # type checking was done in _validate_schema
 
 
 @dataclass
@@ -102,7 +88,6 @@ class DataProvider:
     sample_size: float
     features: Union[pd.DataFrame, pl.DataFrame]
     target: Union[pd.Series, pl.Series]
-
 
 
 def create_data_provider(

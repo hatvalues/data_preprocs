@@ -429,7 +429,7 @@ cervicalh_pd = create_data_provider(
     **cervical_common_args,
 )
 
-cervicalh_pd.features.drop(columns=["Schiller", "Citology", "Biopsy"], axis=1, inplace=True) # type: ignore
+cervicalh_pd.features.drop(columns=["Schiller", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicalh_pd.spiel = "This dataset uses 'Hinselmann' as the class column, removing the other three options\n" + cervicalh_pd.spiel
 
 cervicalh_pl = create_data_provider(
@@ -457,7 +457,7 @@ cervicals_pd = create_data_provider(
     **cervical_common_args,
 )
 
-cervicals_pd.features.drop(columns=["Hinselmann", "Citology", "Biopsy"], axis=1, inplace=True) # type: ignore
+cervicals_pd.features.drop(columns=["Hinselmann", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicals_pd.spiel = "This dataset uses 'Schiller' as the class column, removing the other three options\n" + cervicals_pd.spiel
 
 cervicals_pl = create_data_provider(
@@ -485,7 +485,7 @@ cervicalc_pd = create_data_provider(
     **cervical_common_args,
 )
 
-cervicalc_pd.features.drop(columns=["Hinselmann", "Schiller", "Biopsy"], axis=1, inplace=True) # type: ignore
+cervicalc_pd.features.drop(columns=["Hinselmann", "Schiller", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicalc_pd.spiel = "This dataset uses 'Citology' as the class column, removing the other three options\n" + cervicalc_pd.spiel
 
 cervicalc_pl = create_data_provider(
@@ -513,7 +513,7 @@ cervicalb_pd = create_data_provider(
     **cervical_common_args,
 )
 
-cervicalb_pd.features.drop(columns=["Hinselmann", "Schiller", "Citology"], axis=1, inplace=True) # type: ignore
+cervicalb_pd.features.drop(columns=["Hinselmann", "Schiller", "Citology"], axis=1, inplace=True)  # type: ignore
 cervicalb_pd.spiel = "This dataset uses 'Biopsy' as the class column, removing the other three options\n" + cervicalb_pd.spiel
 
 cervicalb_pl = create_data_provider(
@@ -529,7 +529,6 @@ cervicalb_pl = create_data_provider(
 
 cervicalb_pl.features = cervicalb_pl.features.drop(["Hinselmann", "Schiller", "Citology"])
 cervicalb_pl.spiel = "This dataset uses 'Biopsy' as the class column, removing the other three options\n" + cervicalb_pl.spiel
-
 
 
 cervicalr_common_args = {
@@ -565,11 +564,11 @@ cervicalr_common_args = {
 cervicalr_pd = create_data_provider(
     data_framework="pandas",
     schema=None,
-    **cervicalr_common_args, # type: ignore
+    **cervicalr_common_args,  # type: ignore
 )
 
 cervicalr_pl = create_data_provider(
     data_framework="polars",
     schema=None,
-    **cervicalr_common_args, # type: ignore
+    **cervicalr_common_args,  # type: ignore
 )

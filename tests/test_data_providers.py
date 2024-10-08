@@ -38,6 +38,7 @@ def test_cardio():
 def test_cervicalh_pd():
     assert_dict_matches_fixture(get_test_dict(dp.cervicalh_pd), "cervicalh")
 
+
 def test_cervicalh_pl():
     assert isinstance(dp.cervicalh_pl.features, pl.DataFrame)
     assert all(drop_cols not in dp.cervicalh_pl.features for drop_cols in ["Schiller", "Citology", "Biopsy"])
