@@ -26,6 +26,12 @@ adult_common_args = {
     """,
 }
 
+adult_sample_sizes = {
+    "full": 1.0,
+    "samp": 0.25,
+    "small_samp": 0.025,
+}
+
 adult_pd = create_data_provider(
     name="adult",
     file_name="adult.csv.gz",
@@ -571,4 +577,145 @@ cervicalr_pl = create_data_provider(
     data_framework="polars",
     schema=None,
     **cervicalr_common_args,  # type: ignore
+)
+
+
+credit_common_args = {
+    "class_col": "A16",
+    "positive_class": "+",
+    "spiel": """
+    Data Set Information:
+
+    This file concerns credit card applications. All attribute names and values have been changed to meaningless symbols to protect confidentiality of the data.
+
+    This dataset is interesting because there is a good mix of attributes -- continuous, nominal with small numbers of values, and nominal with larger numbers of values. There are also a few missing values.
+
+    Attribute Information:
+
+    A1:	b, a.
+    A2:	continuous.
+    A3:	continuous.
+    A4:	u, y, l, t.
+    A5:	g, p, gg.
+    A6:	c, d, cc, i, j, k, m, r, q, w, x, e, aa, ff.
+    A7:	v, h, bb, j, n, z, dd, ff, o.
+    A8:	continuous.
+    A9:	t, f.
+    A10:	t, f.
+    A11:	continuous.
+    A12:	t, f.
+    A13:	g, p, s.
+    A14:	continuous.
+    A15:	continuous.
+    A16: +,- (class attribute)
+    """,
+}
+
+credit_pd = create_data_provider(
+    name="credit",
+    file_name="credit.csv.gz",
+    sample_size=1.0,
+    data_framework="pandas",
+    schema=None,
+    **credit_common_args,
+)
+
+credit_pl = create_data_provider(
+    name="credit",
+    file_name="credit.csv.gz",
+    sample_size=1.0,
+    data_framework="polars",
+    schema=None,
+    **credit_common_args,
+)
+
+
+#         class_col = 'dr',
+#         project_dir = project_dir,
+#         save_dir = 'diaretino',
+#         random_state=random_state,
+#         positive_class='yes',
+#         spiel = '''
+#         Source:
+#         1. Dr. Balint Antal, Department of Computer Graphics and Image Processing
+#         Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
+#         antal.balint '@' inf.unideb.hu
+#         2. Dr. Andras Hajdu, Department of Computer Graphics and Image Processing
+#         Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
+#         hajdu.andras '@' inf.unideb.hu
+
+#         Data Set Information:
+#         This dataset contains features extracted from the Messidor image set to predict whether an image contains signs of diabetic retinopathy or not. All features represent either a detected lesion, a descriptive feature of a anatomical part or an image-level descriptor. The underlying method image analysis and feature extraction as well as our classification technique is described in Balint Antal, Andras Hajdu: An ensemble-based system for automatic screening of diabetic retinopathy, Knowledge-Based Systems 60 (April 2014), 20-27. The image set (Messidor) is available at [Web Link].
+
+#         Attribute Information:
+#         0) The binary result of quality assessment. 0 = bad quality 1 = sufficient quality.
+#         1) The binary result of pre-screening, where 1 indicates severe retinal abnormality and 0 its lack.
+#         2-7) The results of MA detection. Each feature value stand for the
+#         number of MAs found at the confidence levels alpha = 0.5, . . . , 1, respectively.
+#         8-15) contain the same information as 2-7) for exudates. However,
+#         as exudates are represented by a set of points rather than the number of
+#         pixels constructing the lesions, these features are normalized by dividing the
+#         number of lesions with the diameter of the ROI to compensate different image
+#         sizes.
+#         Note - 2-7 and 8-15 are not equal in number. Not sure what to call the last two ex.
+#         16) The euclidean distance of the center of
+#         the macula and the center of the optic disc to provide important information
+#         regarding the patientâ€™s condition. This feature
+#         is also normalized with the diameter of the ROI.
+#         17) The diameter of the optic disc.
+#         18) The binary result of the AM/FM-based classification.
+#         19) Class label. 1 = contains signs of DR (Accumulative label for the Messidor classes 1, 2, 3), 0 = no signs of DR.
+#         '''
+
+diartino_common_args = {
+    "class_col": "dr",
+    "positive_class": "yes",
+    "spiel": """Source:
+    1. Dr. Balint Antal, Department of Computer Graphics and Image Processing
+    Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
+    antal.balint '@' inf.unideb.hu
+    2. Dr. Andras Hajdu, Department of Computer Graphics and Image Processing
+    Faculty of Informatics, University of Debrecen, 4010, Debrecen, POB 12, Hungary
+    hajdu.andras '@' inf.unideb.hu
+
+    Data Set Information:
+    This dataset contains features extracted from the Messidor image set to predict whether an image contains signs of diabetic retinopathy or not. All features represent either a detected lesion, a descriptive feature of a anatomical part or an image-level descriptor. The underlying method image analysis and feature extraction as well as our classification technique is described in Balint Antal, Andras Hajdu: An ensemble-based system for automatic screening of diabetic retinopathy, Knowledge-Based Systems 60 (April 2014), 20-27. The image set (Messidor) is available at [Web Link].
+
+    Attribute Information:
+    0) The binary result of quality assessment. 0 = bad quality 1 = sufficient quality.
+    1) The binary result of pre-screening, where 1 indicates severe retinal abnormality and 0 its lack.
+    2-7) The results of MA detection. Each feature value stand for the
+    number of MAs found at the confidence levels alpha = 0.5, . . . , 1, respectively.
+    8-15) contain the same information as 2-7) for exudates. However,
+    as exudates are represented by a set of points rather than the number of
+    pixels constructing the lesions, these features are normalized by dividing the
+    number of lesions with the diameter of the ROI to compensate different image
+    sizes.
+    Note - 2-7 and 8-15 are not equal in number. Not sure what to call the last two ex.
+    16) The euclidean distance of the center of
+    the macula and the center of the optic disc to provide important information
+    regarding the patientâ€™s condition. This feature
+    is also normalized with the diameter of the ROI.
+    17) The diameter of the optic disc.
+    18) The binary result of the AM/FM-based classification.
+    19) Class label. 1 = contains signs of DR (Accumulative label for the Messidor classes 1, 2, 3), 0 = no signs of DR.
+    """,
+}
+
+diartino_pd = create_data_provider(
+    name="diartino",
+    file_name="diartino.csv.gz",
+    sample_size=1.0,
+    data_framework="pandas",
+    schema=None,
+    **diartino_common_args,
+)
+
+diaretino_pl = create_data_provider(
+    name="diaretino",
+    file_name="diaretino.csv.gz",
+    sample_size=1.0,
+    data_framework="polars",
+    schema=None,
+    **diartino_common_args,
 )

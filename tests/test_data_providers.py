@@ -46,3 +46,11 @@ def test_cervicalh_pl():
 
 def test_cervicalr_pd():
     assert_dict_matches_fixture(get_test_dict(dp.cervicalr_pd), "cervicalr")
+
+
+def test_credit():
+    assert_dict_matches_fixture(get_test_dict(dp.credit_pd), "credit")
+
+
+def test_diaretino():
+    assert_dict_matches_fixture(get_test_dict(dp.diaretino_pd), "diaretino")
