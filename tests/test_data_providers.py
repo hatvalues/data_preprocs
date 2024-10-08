@@ -59,14 +59,18 @@ def test_diaretino():
 def test_heart():
     assert_dict_matches_fixture(get_test_dict(dp.heart_pd), "heart")
 
+
 def test_german():
     assert_dict_matches_fixture(get_test_dict(dp.german_pd), "german")
+
 
 def test_lending_samp():
     assert_dict_matches_fixture(get_test_dict(dp.lending_samp_pd), "lending_samp")
 
+
 def test_mhtech14_pd():
     assert_dict_matches_fixture(get_test_dict(dp.mhtech14_pd), "mhtech14")
+
 
 def test_mhtech14_pl():
     assert isinstance(dp.mhtech14_pl.features, pl.DataFrame)
