@@ -1,0 +1,48 @@
+class_col: NSP
+column_names:
+- LB
+- AC
+- FM
+- UC
+- DL
+- DS
+- DP
+- ASTV
+- MSTV
+- ALTV
+- MLTV
+- Width
+- Min
+- Max
+- Nmax
+- Nzeros
+- Mode
+- Mean
+- Median
+- Variance
+- Tendency
+columns: 21
+file_name: cardio.csv.gz
+name: cardio
+positive_class: N
+rows: 2126
+sample_size: 1.0
+spiel: "\n    Data Set Information:\n    2126 fetal cardiotocograms (CTGs) were automatically\
+  \ processed and the respective diagnostic features measured. The CTGs were also\
+  \ classified by three expert obstetricians and a consensus classification label\
+  \ assigned to each of them. Classification was both with respect to a morphologic\
+  \ pattern (A, B, C. ...) and to a fetal state (N, S, P). Therefore the dataset can\
+  \ be used either for 10-class or 3-class experiments.\n\n    Attribute Information:\n\
+  \    LB - FHR baseline (beats per minute)\n    AC - # of accelerations per second\n\
+  \    FM - # of fetal movements per second\n    UC - # of uterine contractions per\
+  \ second\n    DL - # of light decelerations per second\n    DS - # of severe decelerations\
+  \ per second\n    DP - # of prolongued decelerations per second\n    ASTV - percentage\
+  \ of time with abnormal short term variability\n    MSTV - mean value of short term\
+  \ variability\n    ALTV - percentage of time with abnormal long term variability\n\
+  \    MLTV - mean value of long term variability\n    Width - width of FHR histogram\n\
+  \    Min - minimum of FHR histogram\n    Max - Maximum of FHR histogram\n    Nmax\
+  \ - # of histogram peaks\n    Nzeros - # of histogram zeros\n    Mode - histogram\
+  \ mode\n    Mean - histogram mean\n    Median - histogram median\n    Variance -\
+  \ histogram variance\n    Tendency - histogram tendency\n    CLASS - FHR pattern\
+  \ class code (1 to 10) # alternative class\n    NSP - fetal state class code (N=normal;\
+  \ S=suspect; P=pathologic)\n    "

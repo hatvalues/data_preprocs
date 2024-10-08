@@ -1,8 +1,25 @@
 class_col: income
-file_name: adult_small_samp.csv.gz
-name: adult_small_samp
+column_names:
+- age
+- workclass
+- lfnlwgt
+- education
+- educationnum
+- maritalstatus
+- occupation
+- relationship
+- race
+- sex
+- lcapitalgain
+- lcapitalloss
+- hoursperweek
+- nativecountry
+columns: 14
+file_name: adult_samp.csv.gz
+name: adult_samp
 positive_class: '>50K'
-sample_size: 0.025
+rows: 24421
+sample_size: 0.25
 spiel: "\n    Data Description:\n    This data was extracted from the adult bureau\
   \ database found at\n    http://www.adult.gov/ftp/pub/DES/www/welcome.html\n   \
   \ Donor: Ronny Kohavi and Barry Becker,\n        Data Mining and Visualization\n\

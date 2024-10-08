@@ -1,0 +1,42 @@
+class_col: Biopsy
+column_names:
+- 'Unnamed: 0'
+- Age
+- Number.of.sexual.partners
+- First.sexual.intercourse
+- Num.of.pregnancies
+- Smokes
+- Smokes..years.
+- Hormonal.Contraceptives
+- Hormonal.Contraceptives..years.
+- IUD
+- IUD..years.
+- STDs
+- STDs..number.
+- STDs..Number.of.diagnosis
+- STDs..Time.since.first.diagnosis
+- STDs..Time.since.last.diagnosis
+columns: 16
+file_name: cervicalr.csv.gz
+name: cervicalr
+positive_class: Cancer
+rows: 858
+sample_size: 1.0
+spiel: "The cervical cancer dataset contains indicators and risk factors for predicting\
+  \ whether a woman will get cervical cancer. The features include demographic data\
+  \ (such as age), lifestyle, and medical history. The data can be downloaded from\
+  \ the UCI Machine Learning repository and is described by Fernandes, Cardoso, and\
+  \ Fernandes (2017)15.\n    The subset of data features used in the book’s examples\
+  \ are:\n        Age in years\n        Number of sexual partners\n        First sexual\
+  \ intercourse (age in years)\n        Number of pregnancies\n        Smoking yes\
+  \ or no\n        Smoking (in years)\n        Hormonal contraceptives yes or no\n\
+  \        Hormonal contraceptives (in years)\n        Intrauterine device yes or\
+  \ no (IUD)\n        Number of years with an intrauterine device (IUD)\n        Has\
+  \ patient ever had a sexually transmitted disease (STD) yes or no\n        Number\
+  \ of STD diagnoses\n        Time since first STD diagnosis\n        Time since last\
+  \ STD diagnosis\n        The biopsy results “Healthy” or “Cancer”. Target outcome.\n\
+  \    The biopsy serves as the gold standard for diagnosing cervical cancer.\n  \
+  \  Missing values for each column were imputed by the mode (most frequent value).\n\
+  \n    Fernandes, Kelwin, Jaime S Cardoso, and Jessica Fernandes. “Transfer learning\
+  \ with partial observability applied to cervical cancer screening.” In Iberian Conference\
+  \ on Pattern Recognition and Image Analysis, 243–50. Springer. (2017).\n    "

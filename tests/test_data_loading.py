@@ -1,4 +1,4 @@
-import data_preprocs.data_loading as dl
+import src.data_preprocs.data_loading as dl
 import polars as pl
 import pandas as pd
 import pytest
@@ -51,15 +51,19 @@ polars_schema = {
     "y": pl.Utf8,
 }
 
+
 def test_is_polar_schema():
     assert dl.is_polar_schema(polars_schema)
+
 
 def test_is_pandas_schema():
     assert dl.is_pandas_schema(pandas_schema)
 
+
 def test_validate_schema():
     assert dl.validate_schema(polars_schema) == "polars"
     assert dl.validate_schema(pandas_schema) == "pandas"
+
 
 def test_validate_framework():
     assert dl.validate_framework(data_framework="polars", schema=polars_schema) == "polars"
@@ -67,7 +71,7 @@ def test_validate_framework():
     assert dl.validate_framework(data_framework=None, schema=pandas_schema) == "pandas"
     assert dl.validate_framework(data_framework=None, schema=polars_schema) == "polars"
     assert dl.validate_framework(data_framework="pandas", schema=None) == "pandas"
-    assert  dl.validate_framework(data_framework="polars", schema=None) == "polars"
+    assert dl.validate_framework(data_framework="polars", schema=None) == "polars"
 
 
 def test_validate_framework_negative_cases():
@@ -85,17 +89,21 @@ def test_load_data_file_to_pandas_no_schema():
     df = dl.load_data_file_to_pandas("bankmark_samp.csv.gz")
     assert isinstance(df, pd.DataFrame)
 
+
 def test_load_data_file_to_pandas_with_schema():
     df = dl.load_data_file_to_pandas("bankmark_samp.csv.gz", schema=pandas_schema)
     assert isinstance(df, pd.DataFrame)
+
 
 def test_load_data_file_to_polars_no_schema():
     df = dl.load_data_file_to_polars("bankmark_samp.csv.gz")
     assert isinstance(df, pl.DataFrame)
 
+
 def test_load_data_file_to_polars_with_schema():
     df = dl.load_data_file_to_polars("bankmark_samp.csv.gz", schema=polars_schema)
     assert isinstance(df, pl.DataFrame)
+
 
 def test_load_data_schema_given_polars():
     data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
@@ -104,13 +112,15 @@ def test_load_data_schema_given_polars():
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
 
+
 def test_load_data_schema_given_pandas():
     data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
     data_loader.load()
     assert isinstance(data_loader.container, dl.DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
-    
+
+
 def test_load_data_framework_given_polars():
     data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="polars")
     data_loader.load()
@@ -118,12 +128,14 @@ def test_load_data_framework_given_polars():
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
 
+
 def test_load_data_framework_given_pandas():
     data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="pandas")
     data_loader.load()
     assert isinstance(data_loader.container, dl.DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
+
 
 def test_load_data_no_schema_or_framework():
     with pytest.raises(ValueError):
@@ -137,6 +149,7 @@ def test_load_data_no_schema_or_framework():
     with pytest.raises(ValueError):
         data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None)
         data_loader.load()
+
 
 # schema overrides framework
 def test_load_data_both_schema_and_framework():
@@ -164,10 +177,10 @@ def test_create_data_provider_pandas():
         data_framework="pandas",
     )
     assert isinstance(bankmark, dl.DataProvider)
-    assert isinstance(bankmark.data, dl.DataContainer)
-    assert isinstance(bankmark.data.features, pd.DataFrame)
-    assert isinstance(bankmark.data.target, pd.Series)
-    assert bankmark.data.features.shape[0] == bankmark.data.target.shape[0]
+    assert isinstance(bankmark.features, pd.DataFrame)
+    assert isinstance(bankmark.target, pd.Series)
+    assert bankmark.features.shape[0] == bankmark.target.shape[0]
+
 
 def test_create_data_provider_polars():
     bankmark = dl.create_data_provider(
@@ -180,8 +193,6 @@ def test_create_data_provider_polars():
         data_framework="polars",
     )
     assert isinstance(bankmark, dl.DataProvider)
-    assert isinstance(bankmark.data, dl.DataContainer)
-    assert isinstance(bankmark.data.features, pl.DataFrame)
-    assert isinstance(bankmark.data.target, pl.Series)
-    assert bankmark.data.features.shape[0] == bankmark.data.target.shape[0]
-    
+    assert isinstance(bankmark.features, pl.DataFrame)
+    assert isinstance(bankmark.target, pl.Series)
+    assert bankmark.features.shape[0] == bankmark.target.shape[0]

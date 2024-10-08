@@ -1,0 +1,64 @@
+class_col: Hinselmann
+column_names:
+- Age
+- Number of sexual partners
+- First sexual intercourse
+- Num of pregnancies
+- Smokes
+- Smokes (years)
+- Smokes (packs/year)
+- Hormonal Contraceptives
+- Hormonal Contraceptives (years)
+- IUD
+- IUD (years)
+- STDs
+- STDs (number)
+- STDs:condylomatosis
+- STDs:cervical condylomatosis
+- STDs:vaginal condylomatosis
+- STDs:vulvo-perineal condylomatosis
+- STDs:syphilis
+- STDs:pelvic inflammatory disease
+- STDs:genital herpes
+- STDs:molluscum contagiosum
+- STDs:AIDS
+- STDs:HIV
+- STDs:Hepatitis B
+- STDs:HPV
+- 'STDs: Number of diagnosis'
+- Dx:Cancer
+- Dx:CIN
+- Dx:HPV
+- Dx
+columns: 30
+file_name: cervical.csv.gz
+name: cervicalh
+positive_class: T
+rows: 858
+sample_size: 1.0
+spiel: "This dataset uses 'Hinselmann' as the class column, removing the other three\
+  \ options\nData Set Information:\n    The dataset was collected at 'Hospital Universitario\
+  \ de Caracas' in Caracas, Venezuela. The dataset comprises demographic information,\
+  \ habits, and historic medical records of 858 patients. Several patients decided\
+  \ not to answer some of the questions because of privacy concerns (missing values).\n\
+  \n    Attribute Information:\n    (int) Age\n    (int) Number of sexual partners\n\
+  \    (int) First sexual intercourse (age)\n    (int) Num of pregnancies\n    (bool)\
+  \ Smokes\n    (bool) Smokes (years)\n    (bool) Smokes (packs/year)\n    (bool)\
+  \ Hormonal Contraceptives\n    (int) Hormonal Contraceptives (years)\n    (bool)\
+  \ IUD\n    (int) IUD (years)\n    (bool) STDs\n    (int) STDs (number)\n    (bool)\
+  \ STDs:condylomatosis\n    (bool) STDs:cervical condylomatosis\n    (bool) STDs:vaginal\
+  \ condylomatosis\n    (bool) STDs:vulvo-perineal condylomatosis\n    (bool) STDs:syphilis\n\
+  \    (bool) STDs:pelvic inflammatory disease\n    (bool) STDs:genital herpes\n \
+  \   (bool) STDs:molluscum contagiosum\n    (bool) STDs:AIDS\n    (bool) STDs:HIV\n\
+  \    (bool) STDs:Hepatitis B\n    (bool) STDs:HPV\n    (int) STDs: Number of diagnosis\n\
+  \    (int) STDs: Time since first diagnosis\n    (int) STDs: Time since last diagnosis\n\
+  \    (bool) Dx:Cancer\n    (bool) Dx:CIN\n    (bool) Dx:HPV\n    (bool) Dx\n   \
+  \ (bool) Hinselmann: target variable\n    (bool) Schiller: target variable\n   \
+  \ (bool) Cytology: target variable\n    (bool) Biopsy: target variable\n\n\n   \
+  \ Relevant Papers:\n    Kelwin Fernandes, Jaime S. Cardoso, and Jessica Fernandes.\
+  \ 'Transfer Learning with Partial Observability Applied to Cervical Cancer Screening.'\
+  \ Iberian Conference on Pattern Recognition and Image Analysis. Springer International\
+  \ Publishing, 2017.\n\n    Citation Request:\n    Kelwin Fernandes, Jaime S. Cardoso,\
+  \ and Jessica Fernandes. 'Transfer Learning with Partial Observability Applied to\
+  \ Cervical Cancer Screening.' Iberian Conference on Pattern Recognition and Image\
+  \ Analysis. Springer International Publishing, 2017.\n    "

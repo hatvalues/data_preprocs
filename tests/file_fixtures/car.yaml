@@ -1,0 +1,22 @@
+class_col: acceptability
+column_names:
+- buying
+- maint
+- doors
+- persons
+- lug_boot
+- safety
+columns: 6
+file_name: car.csv.gz
+name: car
+positive_class: acc
+rows: 1728
+sample_size: 1.0
+spiel: "\n    M. Bohanec and V. Rajkovic: Knowledge acquisition and explanation for\n\
+  \    multi-attribute decision making. In 8th Intl Workshop on Expert\n    Systems\
+  \ and their Applications, Avignon, France. pages 59-78, 1988.\n\n    Within machine-learning,\
+  \ this dataset was used for the evaluation\n    of HINT (Hierarchy INduction Tool),\
+  \ which was proved to be able to\n    completely reconstruct the original hierarchical\
+  \ model. This,\n    together with a comparison with C4.5, is presented in\n\n  \
+  \  B. Zupan, M. Bohanec, I. Bratko, J. Demsar: Machine learning by\n    function\
+  \ decomposition. ICML-97, Nashville, TN. 1997 (to appear)\n    "
