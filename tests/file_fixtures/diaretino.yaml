@@ -21,7 +21,7 @@ column_names:
 - amfm
 columns: 19
 file_name: diaretino.csv.gz
-name: diartino
+name: diaretino
 positive_class: 'yes'
 rows: 1151
 sample_size: 1.0

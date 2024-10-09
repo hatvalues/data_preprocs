@@ -36,7 +36,7 @@ name: cervicalh
 positive_class: T
 rows: 858
 sample_size: 1.0
-spiel: "This dataset uses 'Hinselmann' as the class column, removing the other three\
+spiel: "This dataset uses `Hinselmann` as the class column, removing the other three\
   \ options\nData Set Information:\n    The dataset was collected at 'Hospital Universitario\
   \ de Caracas' in Caracas, Venezuela. The dataset comprises demographic information,\
   \ habits, and historic medical records of 858 patients. Several patients decided\

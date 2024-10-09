@@ -1,5 +1,6 @@
-from .data_loading import create_data_provider
+from .data_loading import DataProvider, DataProviderFactory
 import polars as pl
+import pandas as pd
 
 
 adult_common_args = {
@@ -24,69 +25,30 @@ adult_common_args = {
     reasonably clean records was extracted using the following conditions:
     ((AAGE>16) && (AGI>100) && (AFNLWGT>1)&& (HRSWK>0)),
     """,
+    "schema": None
 }
 
-adult_sample_sizes = {
-    "full": 1.0,
-    "samp": 0.25,
-    "small_samp": 0.025,
-}
+full_set = {"name": "adult", "file_name": "adult.csv.gz", "sample_size": 1.0}
+samp_set = {"name": "adult_samp", "file_name": "adult_samp.csv.gz", "sample_size": 0.25}
+small_samp_set = {"name": "adult_small_samp", "file_name": "adult_small_samp.csv.gz", "sample_size": 0.025}
 
-adult_pd = create_data_provider(
-    name="adult",
-    file_name="adult.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **adult_common_args,
-)
+factory = DataProviderFactory(kwargs = adult_common_args | full_set | {"data_framework": "pandas"})
+adult_pd = factory.create_data_provider()
 
-adult_samp_pd = create_data_provider(
-    name="adult_samp",
-    file_name="adult_samp.csv.gz",
-    sample_size=0.25,
-    data_framework="pandas",
-    schema=None,
-    **adult_common_args,
-)
+factory = DataProviderFactory(kwargs = adult_common_args | full_set | {"data_framework": "polars"})
+adult_pd = factory.create_data_provider()
 
-adult_small_samp_pd = create_data_provider(
-    name="adult_small_samp",
-    file_name="adult_small_samp.csv.gz",
-    sample_size=0.025,
-    data_framework="pandas",
-    schema=None,
-    **adult_common_args,
-)
+factory = DataProviderFactory(kwargs = adult_common_args | samp_set | {"data_framework": "pandas"})
+adult_samp_pd = factory.create_data_provider()
 
+factory = DataProviderFactory(kwargs = adult_common_args | samp_set | {"data_framework": "polars"})
+adult_samp_pl = factory.create_data_provider()
 
-adult_pl = create_data_provider(
-    name="adult",
-    file_name="adult.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **adult_common_args,
-)
+factory = DataProviderFactory(kwargs = adult_common_args | small_samp_set | {"data_framework": "pandas"})
+adult_small_samp_pd = factory.create_data_provider()
 
-
-adult_samp_pl = create_data_provider(
-    name="adult_samp",
-    file_name="adult_samp.csv.gz",
-    sample_size=0.25,
-    data_framework="polars",
-    schema=None,
-    **adult_common_args,
-)
-
-adult_small_samp_pl = create_data_provider(
-    name="adult_small_samp",
-    file_name="adult_small_samp.csv.gz",
-    sample_size=0.025,
-    data_framework="polars",
-    schema=None,
-    **adult_common_args,
-)
+factory = DataProviderFactory(kwargs = adult_common_args | small_samp_set | {"data_framework": "polars"})
+adult_small_samp_pl = factory.create_data_provider()
 
 
 bankmark_common_args = {
@@ -188,43 +150,24 @@ bankmark_polars_schema = {
     "y": pl.Utf8,
 }
 
+factory = DataProviderFactory(kwargs = bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": "pandas"})
+bankmark_pd = factory.create_data_provider()
 
-bankmark_pd = create_data_provider(
-    name="bankmark",
-    file_name="bankmark.csv.gz",
-    sample_size=1.0,
-    schema=bankmark_pandas_schema,
-    **bankmark_common_args,
-)
+factory = DataProviderFactory(kwargs = bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": "polars"})
+bankmark_pl = factory.create_data_provider()
 
+factory = DataProviderFactory(kwargs = bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": "pandas"})
+bankmark_samp_pd = factory.create_data_provider()
 
-bankmark_samp_pd = create_data_provider(
-    name="bankmark_samp",
-    file_name="bankmark_samp.csv.gz",
-    sample_size=0.05,
-    schema=bankmark_pandas_schema,
-    **bankmark_common_args,
-)
-
-bankmark_pl = create_data_provider(
-    name="bankmark",
-    file_name="bankmark.csv.gz",
-    sample_size=1.0,
-    schema=bankmark_polars_schema,
-    **bankmark_common_args,
-)
-
-
-bankmark_samp_pl = create_data_provider(
-    name="bankmark_samp",
-    file_name="bankmark_samp.csv.gz",
-    sample_size=0.05,
-    schema=bankmark_polars_schema,
-    **bankmark_common_args,
-)
+factory = DataProviderFactory(kwargs = bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": "polars"})
+bankmark_samp_pl = factory.create_data_provider()
 
 
 breast_common_args = {
+    "name": "breast",
+    "file_name": "breast.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "mb",
     "positive_class": "M",
     "spiel": """Creators:
@@ -261,26 +204,18 @@ breast_common_args = {
     """,
 }
 
-breast_pd = create_data_provider(
-    name="breast",
-    file_name="breast.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **breast_common_args,
-)
+factory = DataProviderFactory(kwargs = breast_common_args | {"data_framework": "pandas"})
+breast_pd = factory.create_data_provider()
 
-breast_pl = create_data_provider(
-    name="breast",
-    file_name="breast.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **breast_common_args,
-)
+factory = DataProviderFactory(kwargs = breast_common_args | {"data_framework": "polars"})
+breast_pl = factory.create_data_provider()
 
 
 car_common_args = {
+    "name": "car",
+    "file_name": "car.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "acceptability",
     "positive_class": "acc",
     "spiel": """
@@ -298,28 +233,18 @@ car_common_args = {
     """,
 }
 
+factory = DataProviderFactory(kwargs = car_common_args | {"data_framework": "pandas"})
+car_pd = factory.create_data_provider()
 
-car_pd = create_data_provider(
-    name="car",
-    file_name="car.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **car_common_args,
-)
-
-
-car_pl = create_data_provider(
-    name="car",
-    file_name="car.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **car_common_args,
-)
+factory = DataProviderFactory(kwargs = car_common_args | {"data_framework": "polars"})
+car_pl = factory.create_data_provider()
 
 
 cardio_common_args = {
+    "name": "cardio",
+    "file_name": "cardio.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "NSP",
     "positive_class": "N",
     "spiel": """
@@ -353,27 +278,20 @@ cardio_common_args = {
     """,
 }
 
-cardio_pd = create_data_provider(
-    name="cardio",
-    file_name="cardio.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **cardio_common_args,
-)
+factory = DataProviderFactory(kwargs = cardio_common_args | {"data_framework": "pandas"})
+cardio_pd = factory.create_data_provider()
+
+factory = DataProviderFactory(kwargs = cardio_common_args | {"data_framework": "polars"})
+cardio_pl = factory.create_data_provider()
 
 
-cardio_pl = create_data_provider(
-    name="cardio",
-    file_name="cardio.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **cardio_common_args,
-)
 
 
 cervical_common_args = {
+    "file_name": "cervical.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
+    "positive_class": "T",
     "spiel": """Data Set Information:
     The dataset was collected at 'Hospital Universitario de Caracas' in Caracas, Venezuela. The dataset comprises demographic information, habits, and historic medical records of 858 patients. Several patients decided not to answer some of the questions because of privacy concerns (missing values).
 
@@ -424,117 +342,61 @@ cervical_common_args = {
     """,
 }
 
-cervicalh_pd = create_data_provider(
-    name="cervicalh",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    class_col="Hinselmann",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+h_common_args = {
+    "name": "cervicalh",
+    "class_col": "Hinselmann",
+}
+factory = DataProviderFactory(kwargs = cervical_common_args | h_common_args | {"data_framework": "pandas"})
+cervicalh_pd = factory.create_data_provider()
 cervicalh_pd.features.drop(columns=["Schiller", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
-cervicalh_pd.spiel = "This dataset uses 'Hinselmann' as the class column, removing the other three options\n" + cervicalh_pd.spiel
+cervicalh_pd.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pd.spiel
 
-cervicalh_pl = create_data_provider(
-    name="cervicalh",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    class_col="Hinselmann",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+factory = DataProviderFactory(kwargs = cervical_common_args | h_common_args | {"data_framework": "polars"})
+cervicalh_pl = factory.create_data_provider()
 cervicalh_pl.features = cervicalh_pl.features.drop(["Schiller", "Citology", "Biopsy"])
-cervicalh_pl.spiel = "This dataset uses 'Hinselmann' as the class column, removing the other three options\n" + cervicalh_pl.spiel
+cervicalh_pl.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pl.spiel
 
-cervicals_pd = create_data_provider(
-    name="cervicals",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    class_col="Schiller",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+s_common_args = {
+    "name": "cervicals",
+    "class_col": "Schiller",
+}
+factory = DataProviderFactory(kwargs = cervical_common_args | s_common_args | {"data_framework": "pandas"})
+cervicals_pd = factory.create_data_provider()
 cervicals_pd.features.drop(columns=["Hinselmann", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
-cervicals_pd.spiel = "This dataset uses 'Schiller' as the class column, removing the other three options\n" + cervicals_pd.spiel
+cervicals_pd.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pd.spiel
 
-cervicals_pl = create_data_provider(
-    name="cervicals",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    class_col="Schiller",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+factory = DataProviderFactory(kwargs = cervical_common_args | s_common_args | {"data_framework": "polars"})
+cervicals_pl = factory.create_data_provider()
 cervicals_pl.features = cervicals_pl.features.drop(["Hinselmann", "Citology", "Biopsy"])
-cervicals_pl.spiel = "This dataset uses 'Schiller' as the class column, removing the other three options\n" + cervicals_pl.spiel
+cervicals_pl.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pl.spiel
 
-cervicalc_pd = create_data_provider(
-    name="cervicalc",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    class_col="Citology",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+c_common_args = {
+    "name": "cervicalc",
+    "class_col": "Citology",
+}
+factory = DataProviderFactory(kwargs = cervical_common_args | c_common_args | {"data_framework": "pandas"})
+cervicalc_pd = factory.create_data_provider()
 cervicalc_pd.features.drop(columns=["Hinselmann", "Schiller", "Biopsy"], axis=1, inplace=True)  # type: ignore
-cervicalc_pd.spiel = "This dataset uses 'Citology' as the class column, removing the other three options\n" + cervicalc_pd.spiel
+cervicalc_pd.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pd.spiel
 
-cervicalc_pl = create_data_provider(
-    name="cervicalc",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    class_col="Citology",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+factory = DataProviderFactory(kwargs = cervical_common_args | c_common_args | {"data_framework": "polars"})
+cervicalc_pl = factory.create_data_provider()
 cervicalc_pl.features = cervicalc_pl.features.drop(["Hinselmann", "Schiller", "Biopsy"])
-cervicalc_pl.spiel = "This dataset uses 'Citology' as the class column, removing the other three options\n" + cervicalc_pl.spiel
+cervicalc_pl.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pl.spiel
 
-cervicalb_pd = create_data_provider(
-    name="cervicalb",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    class_col="Biopsy",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+b_common_args = {
+    "name": "cervicalb",
+    "class_col": "Biopsy",
+}
+factory = DataProviderFactory(kwargs = cervical_common_args | b_common_args | {"data_framework": "pandas"})
+cervicalb_pd = factory.create_data_provider()
 cervicalb_pd.features.drop(columns=["Hinselmann", "Schiller", "Citology"], axis=1, inplace=True)  # type: ignore
-cervicalb_pd.spiel = "This dataset uses 'Biopsy' as the class column, removing the other three options\n" + cervicalb_pd.spiel
+cervicalb_pd.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pd.spiel
 
-cervicalb_pl = create_data_provider(
-    name="cervicalb",
-    file_name="cervical.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    class_col="Biopsy",
-    positive_class="T",
-    **cervical_common_args,
-)
-
+factory = DataProviderFactory(kwargs = cervical_common_args | b_common_args | {"data_framework": "polars"})
+cervicalb_pl = factory.create_data_provider()
 cervicalb_pl.features = cervicalb_pl.features.drop(["Hinselmann", "Schiller", "Citology"])
-cervicalb_pl.spiel = "This dataset uses 'Biopsy' as the class column, removing the other three options\n" + cervicalb_pl.spiel
+cervicalb_pl.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pl.spiel
 
 
 cervicalr_common_args = {
@@ -565,22 +427,21 @@ cervicalr_common_args = {
     Fernandes, Kelwin, Jaime S Cardoso, and Jessica Fernandes. “Transfer learning with partial observability applied to cervical cancer screening.” In Iberian Conference on Pattern Recognition and Image Analysis, 243–50. Springer. (2017).
     """,
     "sample_size": 1.0,
+    "schema": None,
 }
 
-cervicalr_pd = create_data_provider(
-    data_framework="pandas",
-    schema=None,
-    **cervicalr_common_args,  # type: ignore
-)
+factory = DataProviderFactory(kwargs = cervicalr_common_args | {"data_framework": "pandas"})
+cervicalr_pd = factory.create_data_provider()
 
-cervicalr_pl = create_data_provider(
-    data_framework="polars",
-    schema=None,
-    **cervicalr_common_args,  # type: ignore
-)
+factory = DataProviderFactory(kwargs = cervicalr_common_args | {"data_framework": "polars"})
+cervicalr_pl = factory.create_data_provider()
 
 
 credit_common_args = {
+    "name": "credit",
+    "file_name": "credit.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "A16",
     "positive_class": "+",
     "spiel": """
@@ -611,26 +472,18 @@ credit_common_args = {
     """,
 }
 
-credit_pd = create_data_provider(
-    name="credit",
-    file_name="credit.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **credit_common_args,
-)
+factory = DataProviderFactory(kwargs = credit_common_args | {"data_framework": "pandas"})
+credit_pd = factory.create_data_provider()
 
-credit_pl = create_data_provider(
-    name="credit",
-    file_name="credit.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **credit_common_args,
-)
+factory = DataProviderFactory(kwargs = credit_common_args | {"data_framework": "polars"})
+credit_pl = factory.create_data_provider()
 
 
 diaretino_common_args = {
+    "name": "diaretino",
+    "file_name": "diaretino.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "dr",
     "positive_class": "yes",
     "spiel": """Source:
@@ -665,26 +518,18 @@ diaretino_common_args = {
     """,
 }
 
-diaretino_pd = create_data_provider(
-    name="diartino",
-    file_name="diaretino.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **diaretino_common_args,
-)
+factory = DataProviderFactory(kwargs = diaretino_common_args | {"data_framework": "pandas"})
+diaretino_pd = factory.create_data_provider()
 
-diaretino_pl = create_data_provider(
-    name="diaretino",
-    file_name="diaretino.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **diaretino_common_args,
-)
+factory = DataProviderFactory(kwargs = diaretino_common_args | {"data_framework": "polars"})
+diaretino_pl = factory.create_data_provider()
 
 
 german_common_args = {
+    "name": "german",
+    "file_name": "german.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "rating",
     "positive_class": "bad",
     "spiel": """Source:
@@ -712,26 +557,18 @@ german_common_args = {
     """,
 }
 
-german_pd = create_data_provider(
-    name="german",
-    file_name="german.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **german_common_args,
-)
+factory = DataProviderFactory(kwargs = german_common_args | {"data_framework": "pandas"})
+german_pd = factory.create_data_provider()
 
-german_pl = create_data_provider(
-    name="german",
-    file_name="german.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **german_common_args,
-)
+factory = DataProviderFactory(kwargs = german_common_args | {"data_framework": "polars"})
+german_pl = factory.create_data_provider()
 
 
 heart_common_args = {
+    "name": "heart",
+    "file_name": "heart.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
     "class_col": "HDisease",
     "positive_class": "Yes",
     "spiel": """Creators:
@@ -770,23 +607,12 @@ heart_common_args = {
     """,
 }
 
-heart_pd = create_data_provider(
-    name="heart",
-    file_name="heart.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **heart_common_args,
-)
+factory = DataProviderFactory(kwargs = heart_common_args | {"data_framework": "pandas"})
+heart_pd = factory.create_data_provider()
 
-heart_pl = create_data_provider(
-    name="heart",
-    file_name="heart.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **heart_common_args,
-)
+factory = DataProviderFactory(kwargs = heart_common_args | {"data_framework": "polars"})
+heart_pl = factory.create_data_provider()
+
 
 
 lending_common_args = {
@@ -800,160 +626,55 @@ lending_common_args = {
 
     Prepared by Nate George:  https://github.com/nateGeorge/preprocess_lending_club_data
     """,
+    "schema": None,
 }
 
-lending_samp_pd = create_data_provider(
-    name="lending_samp",
-    file_name="lending_samp.csv.gz",
-    sample_size=0.1,
-    data_framework="pandas",
-    schema=None,
-    **lending_common_args,
-)
+samp_common_args = {
+    "name": "lending_samp",
+    "file_name": "lending_samp.csv.gz",
+    "sample_size": 0.1,
+}
 
-lending_samp_pl = create_data_provider(
-    name="lending_samp",
-    file_name="lending_samp.csv.gz",
-    sample_size=0.1,
-    data_framework="polars",
-    schema=None,
-    **lending_common_args,
-)
+factory = DataProviderFactory(kwargs = lending_common_args | samp_common_args | {"data_framework": "pandas"})
+lending_samp_pd = factory.create_data_provider()
 
-lending_small_samp_pd = create_data_provider(
-    name="lending_small_samp",
-    file_name="lending_small_samp.csv.gz",
-    sample_size=0.01,
-    data_framework="pandas",
-    schema=None,
-    **lending_common_args,
-)
-
-lending_small_samp_pl = create_data_provider(
-    name="lending_small_samp",
-    file_name="lending_small_samp.csv.gz",
-    sample_size=0.01,
-    data_framework="polars",
-    schema=None,
-    **lending_common_args,
-)
-
-lending_tiny_samp_pd = create_data_provider(
-    name="lending_tiny_samp",
-    file_name="lending_tiny_samp.csv.gz",
-    sample_size=0.0025,
-    data_framework="pandas",
-    schema=None,
-    **lending_common_args,
-)
-
-lending_tiny_samp_pl = create_data_provider(
-    name="lending_tiny_samp",
-    file_name="lending_tiny_samp.csv.gz",
-    sample_size=0.0025,
-    data_framework="polars",
-    schema=None,
-    **lending_common_args,
-)
+factory = DataProviderFactory(kwargs = lending_common_args | samp_common_args | {"data_framework": "polars"})
+lending_samp_pl = factory.create_data_provider()
 
 
-# # mental health survey 2014
-# mhtech14 = dict(
-#     dataset_name = 'mhtech14',
-#     drop = 'comments',
-#     class_col = 'treatment',
+small_samp_common_args = {
+    "name": "lending_small_samp",
+    "file_name": "lending_small_samp.csv.gz",
+    "sample_size": 0.01,
+}
 
-#     positive_class='Yes',
-#     spiel = '''
-#     From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey
+factory = DataProviderFactory(kwargs = lending_common_args | small_samp_common_args | {"data_framework": "pandas"})
+lending_small_samp_pd = factory.create_data_provider()
 
-#     This dataset contains the following data:
+factory = DataProviderFactory(kwargs = lending_common_args | small_samp_common_args | {"data_framework": "polars"})
+lending_small_samp_pl = factory.create_data_provider()
 
-#     Timestamp
-#     Age
-#     Gender
-#     Country
-#     state: If you live in the United States, which state or territory do you live in?
-#     self_employed: Are you self-employed?
-#     family_history: Do you have a family history of mental illness?
-#     treatment: Have you sought treatment for a mental health condition?
-#     work_interfere: If you have a mental health condition, do you feel that it interferes with your work?
-#     no_employees: How many employees does your company or organization have?
-#     remote_work: Do you work remotely (outside of an office) at least 50% of the time?
-#     tech_company: Is your employer primarily a tech company/organization?
-#     benefits: Does your employer provide mental health benefits?
-#     care_options: Do you know the options for mental health care your employer provides?
-#     wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?
-#     seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?
-#     anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?
-#     leave: How easy is it for you to take medical leave for a mental health condition?
-#     mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?
-#     phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?
-#     coworkers: Would you be willing to discuss a mental health issue with your coworkers?
-#     supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?
-#     mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?
-#     phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?
-#     mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?
-#     obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
-#     comments: Any additional notes or comments
-#     '''
 
-# this as a pandas schema (dctionary of types) and then as a polars schema
-#     Age
-#     Gender
-#     Country
-#     state: If you live in the United States, which state or territory do you live in?
-#     self_employed: Are you self-employed?
-#     family_history: Do you have a family history of mental illness?
-#     treatment: Have you sought treatment for a mental health condition?
-#     work_interfere: If you have a mental health condition, do you feel that it interferes with your work?
-#     no_employees: How many employees does your company or organization have?
-#     remote_work: Do you work remotely (outside of an office) at least 50% of the time?
-#     tech_company: Is your employer primarily a tech company/organization?
-#     benefits: Does your employer provide mental health benefits?
-#     care_options: Do you know the options for mental health care your employer provides?
-#     wellness_program: Has your employer ever discussed mental health as part of an employee wellness program?
-#     seek_help: Does your employer provide resources to learn more about mental health issues and how to seek help?
-#     anonymity: Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?
-#     leave: How easy is it for you to take medical leave for a mental health condition?
-#     mental_health_consequence: Do you think that discussing a mental health issue with your employer would have negative consequences?
-#     phys_health_consequence: Do you think that discussing a physical health issue with your employer would have negative consequences?
-#     coworkers: Would you be willing to discuss a mental health issue with your coworkers?
-#     supervisor: Would you be willing to discuss a mental health issue with your direct supervisor(s)?
-#     mental_health_interview: Would you bring up a mental health issue with a potential employer in an interview?
-#     phys_health_interview: Would you bring up a physical health issue with a potential employer in an interview?
-#     mental_vs_physical: Do you feel that your employer takes mental health as seriously as physical health?
-#     obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
-#     comments: Any additional notes or comments
-#     var_types = ['continuous',
-#                 'nominal',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'continuous',
-#                 'nominal',
-#                 'nominal'],
+tiny_samp_common_args = {
+    "name": "lending_tiny_samp",
+    "file_name": "lending_tiny_samp.csv.gz",
+    "sample_size": 0.0025,
+}
+
+factory = DataProviderFactory(kwargs = lending_common_args | tiny_samp_common_args | {"data_framework": "pandas"})
+lending_tiny_samp_pd = factory.create_data_provider()
+
+factory = DataProviderFactory(kwargs = lending_common_args | tiny_samp_common_args | {"data_framework": "polars"})
+lending_tiny_samp_pl = factory.create_data_provider()
+
 
 
 mhtech14_common_args = {
+    "name": "mhtech14",
+    "file_name": "mhtech14.csv.gz",
     "class_col": "treatment",
     "positive_class": "Yes",
+    "sample_size": 1.0,
     "spiel": """
     From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey
 
@@ -987,26 +708,94 @@ mhtech14_common_args = {
     obs_consequence: Have you heard of or observed negative consequences for coworkers with mental health conditions in your workplace?
     comments: Any additional notes or comments
     """,
+    "schema": None,
 }
 
-mhtech14_pd = create_data_provider(
-    name="mhtech14",
-    file_name="mhtech14.csv.gz",
-    sample_size=1.0,
-    data_framework="pandas",
-    schema=None,
-    **mhtech14_common_args,
-)
-
+factory = DataProviderFactory(kwargs = mhtech14_common_args | {"data_framework": "pandas"})
+mhtech14_pd = factory.create_data_provider()
 mhtech14_pd.features.drop(columns=["comments"], axis=1, inplace=True)  # type: ignore
 
-mhtech14_pl = create_data_provider(
-    name="mhtech14",
-    file_name="mhtech14.csv.gz",
-    sample_size=1.0,
-    data_framework="polars",
-    schema=None,
-    **mhtech14_common_args,
-)
-
+factory = DataProviderFactory(kwargs = mhtech14_common_args | {"data_framework": "polars"})
+mhtech14_pl = factory.create_data_provider()
 mhtech14_pl.features = mhtech14_pl.features.drop(["comments"])
+
+
+mhtech16_common_args = {
+    "file_name": "mhtech16.csv.gz",
+    "name": "mh1tech16",
+    "positive_class": "yes",
+    "spiel": """
+    From Kaggle. The three columns used for treatment are as follows and have been duplicated with shorter keys to make pre-processing easier:
+    mh1 = 'Have you ever sought treatment for a mental health issue from a mental health professional?'
+    mh2 = 'Have you been diagnosed with a mental health condition by a medical professional?'
+    mh3 = 'Do you currently have a mental health disorder?'
+
+    There is also corruption in the file, with the column 'Why or why not?' being duplicated as 'Why or why not?.1', which is somewhat buggy to remove.
+
+    These issues have been addressed in the pre-processing of the data.
+    """,
+    "sample_size": 1.0,
+    "schema": None,
+}
+
+
+def preproc_extra(data_container: DataProvider) -> DataProvider:
+    treatment_columns = ["mh1", "mh2", "mh3"]
+    treatment_columns.remove(data_container.class_col)
+
+    drop_columns = [
+        "Have you ever sought treatment for a mental health issue from a mental health professional?",
+        "Have you been diagnosed with a mental health condition by a medical professional?",
+        "Do you currently have a mental health disorder?",
+        "If you have revealed a mental health issue to a client or business contact - do you believe this has impacted you negatively?",
+        "Was your anonymity protected if you chose to take advantage of mental health or substance abuse treatment resources with previous employers?",
+        "If you have been diagnosed or treated for a mental health disorder - do you ever reveal this to coworkers or employees?",
+        "If you have revealed a mental health issue to a coworker or employee - do you believe this has impacted you negatively?",
+        "Do you believe your productivity is ever affected by a mental health issue?",
+        "If yes - what percentage of your work time (time performing primary or secondary job functions) is affected by a mental health issue?",
+        "If you have a mental health issue - do you feel that it interferes with your work when being treated effectively?",
+        "If you have a mental health issue - do you feel that it interferes with your work when NOT being treated effectively?",
+        "How willing would you be to share with friends and family that you have a mental illness?",
+        "If yes - what condition(s) have you been diagnosed with?",
+        "If maybe - what condition(s) do you believe you have?",
+        "If so - what condition(s) were you diagnosed with?",
+    ]
+    corrupted_col = "Why or why not?"
+    if isinstance(data_container.features, pd.DataFrame):
+        data_container.features.drop(columns=drop_columns + treatment_columns, axis=1, inplace=True)
+        for c in data_container.features.columns:
+            if corrupted_col in c:
+                data_container.features.drop(columns=c, axis=1, inplace=True)
+    elif isinstance(data_container.features, pl.DataFrame):
+        data_container.features = data_container.features.drop(drop_columns + treatment_columns)
+        for c in data_container.features.columns:
+            if corrupted_col in c:
+                data_container.features = data_container.features.drop(c)
+    data_container.spiel = f"This dataset uses '{data_container.class_col}' as the class column, removing the other two options\n" + data_container.spiel
+    return data_container
+
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh1", "data_framework": "pandas"})
+mh1tech16_pd = factory.create_data_provider()
+mh1tech16_pd = preproc_extra(mh1tech16_pd)
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh1", "data_framework": "polars"})
+mh1tech16_pl = factory.create_data_provider()
+mh1tech16_pl = preproc_extra(mh1tech16_pl)
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh2", "data_framework": "pandas"})
+mh2tech16_pd = factory.create_data_provider()
+mh2tech16_pd = preproc_extra(mh2tech16_pd)
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh2", "data_framework": "polars"})
+mh2tech16_pl = factory.create_data_provider()
+mh2tech16_pl = preproc_extra(mh2tech16_pl)
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh3", "data_framework": "pandas"})
+mh3tech16_pd = factory.create_data_provider()
+mh3tech16_pd = preproc_extra(mh3tech16_pd)
+
+factory = DataProviderFactory(kwargs=mhtech16_common_args | {"class_col": "mh3", "data_framework": "polars"})
+mh3tech16_pl = factory.create_data_provider()
+mh3tech16_pl = preproc_extra(mh3tech16_pl)
+
