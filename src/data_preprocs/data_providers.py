@@ -769,6 +769,7 @@ def preproc_extra(data_container: DataProvider) -> DataProvider:
     data_container.spiel = f"This dataset uses '{data_container.class_col}' as the class column, removing the other two options\n" + data_container.spiel
     return data_container
 
+
 mh1_common_args = {
     "name": "mh1tech16",
     "class_col": "mh1",
@@ -849,3 +850,40 @@ mush_pd = factory.create_data_provider()
 
 factory = DataProviderFactory(kwargs=mush_common_args | {"data_framework": "polars"})
 mush_pl = factory.create_data_provider()
+
+
+noshow_common_args = {
+    "name": "noshow",
+    "file_name": "noshow.csv.gz",
+    "sample_size": 1.0,
+    "schema": None,
+    "class_col": "no_show",
+    "positive_class": "Yes",
+    "spiel": """Source:
+    No further information
+    """,
+}
+
+noshow_full_args = {"name": "noshow", "sample_size": 1.0, "file_name": "noshow.csv.gz"}
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": "pandas"})
+noshow_pd = factory.create_data_provider()
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": "polars"})
+noshow_pl = factory.create_data_provider()
+
+noshow_samp_args = {"name": "noshow_samp", "sample_size": 0.2, "file_name": "noshow_samp.csv.gz"}
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": "pandas"})
+noshow_samp_pd = factory.create_data_provider()
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": "polars"})
+noshow_samp_pl = factory.create_data_provider()
+
+noshow_small_samp_args = {"name": "noshow_small_samp", "sample_size": 0.02, "file_name": "noshow_small_samp.csv.gz"}
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": "pandas"})
+noshow_small_samp_pd = factory.create_data_provider()
+
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": "polars"})
+noshow_small_samp_pl = factory.create_data_provider()

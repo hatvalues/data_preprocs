@@ -1,0 +1,26 @@
+class_col: no_show
+column_names:
+- Gender
+- Age
+- Neighbourhood
+- Scholarship
+- Hipertension
+- Diabetes
+- Alcoholism
+- Handcap
+- SMS_received
+- SchedDay
+- SchedMonth
+- ApptDay
+- ApptMonth
+- LagDays
+columns: 14
+file_name: noshow.csv.gz
+name: noshow
+positive_class: 'Yes'
+rows: 110527
+sample_size: 1.0
+spiel: "Source:\n    No further information\n    "
+target_classes:
+- 'No'
+- 'Yes'
