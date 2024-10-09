@@ -80,3 +80,12 @@ def test_mhtech14_pl():
 
 def test_mh1tech16_pd():
     assert_dict_matches_fixture(get_test_dict(dp.mh1tech16_pd), "mh1tech16")
+
+def test_mh2tech16_pd():
+    assert_dict_matches_fixture(get_test_dict(dp.mh2tech16_pd), "mh2tech16")
+
+def test_mh3tech16_pd():
+    assert_dict_matches_fixture(get_test_dict(dp.mh3tech16_pd), "mh3tech16")
+
+def test_mush():
+    assert_dict_matches_fixture(get_test_dict(dp.mush_pd), "mush")

@@ -1,0 +1,65 @@
+class_col: edible
+column_names:
+- cshape
+- csurface
+- ccolor
+- bruises
+- odor
+- gattach
+- gspace
+- gsize
+- gcolor
+- sshape
+- sroot
+- ssurfaring
+- ssurfbring
+- scoloraring
+- scolorbring
+- vtype
+- vcolor
+- rnum
+- rtype
+- sporecolor
+- pop
+- hab
+columns: 22
+file_name: mush.csv.gz
+name: mush
+positive_class: e
+rows: 8124
+sample_size: 1.0
+spiel: "Source:\n    This dataset was taken from the UCI Machine Learning Repository.\
+  \ The data was donated by Jeff Schlimmer.\n\n    Data Set Information:\n    This\
+  \ data set includes descriptions of hypothetical samples corresponding to 23 species\
+  \ of gilled mushrooms in the Agaricus and Lepiota Family (pp. 500-525). Each species\
+  \ is identified as definitely edible, definitely poisonous, or of unknown edibility\
+  \ and not recommended. This latter class was combined with the poisonous one. The\
+  \ Guide clearly states that there is no simple rule for determining the edibility\
+  \ of a mushroom; no rule like ``leaflets three, let it be'' for Poisonous Oak and\
+  \ Ivy.\n\n    Attribute Information:\n    1. cshape (cap-shape): bell=b, conical=c,\
+  \ convex=x, flat=f, knobbed=k, sunken=s\n    2. csurface (cap-surface): fibrous=f,\
+  \ grooves=g, scaly=y, smooth=s\n    3. ccolor (cap-color): brown=n, buff=b, cinnamon=c,\
+  \ gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y\n    4. bruises: bruises=t,\
+  \ no=f\n    5. odor: almond=a, anise=l, creosote=c, fishy=y, foul=f, musty=m, none=n,\
+  \ pungent=p, spicy=s\n    6. gattach (gill-attachment): attached=a, descending=d,\
+  \ free=f, notched=n\n    7. gspace (gill-spacing): close=c, crowded=w, distant=d\n\
+  \    8. gsize (gill-size): broad=b, narrow=n\n    9. gcolor (gill-color): black=k,\
+  \ brown=n, buff=b, chocolate=h, gray=g, green=r, orange=o, pink=p, purple=u, red=e,\
+  \ white=w, yellow=y\n    10. shape (stalk-shape): enlarging=e, tapering=t\n    11.\
+  \ sroot (stalk-root): bulbous=b, club=c, cup=u, equal=e, rhizomorphs=z, rooted=r,\
+  \ missing=?\n    12. ssurfaring (stalk-surface-above-ring): fibrous=f, scaly=y,\
+  \ silky=k, smooth=s\n    13. ssurfbring (stalk-surface-below-ring): fibrous=f, scaly=y,\
+  \ silky=k, smooth=s\n    14. scoloraring (stalk-color-above-ring): brown=n, buff=b,\
+  \ cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y\n    15. scolorbring\
+  \ (stalk-color-below-ring): brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p,\
+  \ red=e, white=w, yellow=y\n    16. vtype (veil-type): partial=p, universal=u\n\
+  \    17. vcolor (veil-color): brown=n, orange=o, white=w, yellow=y\n    18. rnum\
+  \ (ring-number): none=n, one=o,\n    19. type (ring-type): cobwebby=c, evanescent=e,\
+  \ flaring=f, large=l, none=n, pendant=p, sheathing=s, zone=z\n    20. sporecolor\
+  \ (spore-print-color): black=k, brown=n, buff=b, chocolate=h, green=r, orange=o,\
+  \ purple=u, white=w, yellow=y\n    21. pop (population): abundant=a, clustered=c,\
+  \ numerous=n, scattered=s, several=v, solitary=y\n    22. hab (habitat): grasses=g,\
+  \ leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d\n    "
+target_classes:
+- p
+- e

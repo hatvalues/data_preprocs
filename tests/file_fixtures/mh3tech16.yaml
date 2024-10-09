@@ -1,0 +1,90 @@
+class_col: mh3
+column_names:
+- Are you self-employed?
+- How many employees does your company or organization have?
+- Is your employer primarily a tech company/organization?
+- Is your primary role within your company related to tech/IT?
+- Does your employer provide mental health benefits as part of healthcare coverage?
+- Do you know the options for mental health care available under your employer-provided
+  coverage?
+- Has your employer ever formally discussed mental health (for example - as part of
+  a wellness campaign or other official communication)?
+- Does your employer offer resources to learn more about mental health concerns and
+  options for seeking help?
+- Is your anonymity protected if you choose to take advantage of mental health or
+  substance abuse treatment resources provided by your employer?
+- 'If a mental health issue prompted you to request a medical leave from work - asking
+  for that leave would be:'
+- Do you think that discussing a mental health disorder with your employer would have
+  negative consequences?
+- Do you think that discussing a physical health issue with your employer would have
+  negative consequences?
+- Would you feel comfortable discussing a mental health disorder with your coworkers?
+- Would you feel comfortable discussing a mental health disorder with your direct
+  supervisor(s)?
+- Do you feel that your employer takes mental health as seriously as physical health?
+- Have you heard of or observed negative consequences for co-workers who have been
+  open about mental health issues in your workplace?
+- Do you have medical coverage (private insurance or state-provided) which includes
+  treatment of  mental health issues?
+- Do you know local or online resources to seek help for a mental health disorder?
+- If you have been diagnosed or treated for a mental health disorder - do you ever
+  reveal this to clients or business contacts?
+- Do you have previous employers?
+- Have your previous employers provided mental health benefits?
+- Were you aware of the options for mental health care provided by your previous employers?
+- Did your previous employers ever formally discuss mental health (as part of a wellness
+  campaign or other official communication)?
+- Did your previous employers provide resources to learn more about mental health
+  issues and how to seek help?
+- Do you think that discussing a mental health disorder with previous employers would
+  have negative consequences?
+- Do you think that discussing a physical health issue with previous employers would
+  have negative consequences?
+- Would you have been willing to discuss a mental health issue with your previous
+  co-workers?
+- Would you have been willing to discuss a mental health issue with your direct supervisor(s)?
+- Did you feel that your previous employers took mental health as seriously as physical
+  health?
+- Did you hear of or observe negative consequences for co-workers with mental health
+  issues in your previous workplaces?
+- Would you be willing to bring up a physical health issue with a potential employer
+  in an interview?
+- Would you bring up a mental health issue with a potential employer in an interview?
+- Do you feel that being identified as a person with a mental health issue would hurt
+  your career?
+- Do you think that team members/co-workers would view you more negatively if they
+  knew you suffered from a mental health issue?
+- Have you observed or experienced an unsupportive or badly handled response to a
+  mental health issue in your current or previous workplace?
+- Have your observations of how another individual who discussed a mental health disorder
+  made you less likely to reveal a mental health issue yourself in your current workplace?
+- Do you have a family history of mental illness?
+- Have you had a mental health disorder in the past?
+- What is your age?
+- What is your gender?
+- What US state or territory do you live in?
+- What US state or territory do you work in?
+- Which of the following best describes your work position?
+- Do you work remotely?
+- What region do you live in?
+- What region do you work in?
+columns: 46
+file_name: mhtech16.csv.gz
+name: mh3tech16
+positive_class: 'yes'
+rows: 1433
+sample_size: 1.0
+spiel: "This dataset uses 'mh3' as the class column, removing the other two options\n\
+  \n    From Kaggle. The three columns used for treatment are as follows and have\
+  \ been duplicated with shorter keys to make pre-processing easier:\n    mh1 = 'Have\
+  \ you ever sought treatment for a mental health issue from a mental health professional?'\n\
+  \    mh2 = 'Have you been diagnosed with a mental health condition by a medical\
+  \ professional?'\n    mh3 = 'Do you currently have a mental health disorder?'\n\n\
+  \    There is also corruption in the file, with the column 'Why or why not?' being\
+  \ duplicated as 'Why or why not?.1', which is somewhat buggy to remove.\n\n    These\
+  \ issues have been addressed in the pre-processing of the data.\n    "
+target_classes:
+- 'no'
+- 'yes'
+- possibly
