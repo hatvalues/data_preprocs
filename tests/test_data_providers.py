@@ -77,5 +77,6 @@ def test_mhtech14_pl():
     assert isinstance(dp.mhtech14_pl.features, pl.DataFrame)
     assert "comments" not in dp.mhtech14_pl.features.columns
 
+
 def test_mh1tech16_pd():
     assert_dict_matches_fixture(get_test_dict(dp.mh1tech16_pd), "mh1tech16")

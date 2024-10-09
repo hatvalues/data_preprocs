@@ -172,15 +172,17 @@ def test_both_schema_and_framework():
 
 
 def test_create_data_provider_pandas():
-    factory = dl.DataProviderFactory(kwargs = dict(
-        name="bankmark",
-        file_name="bankmark_samp.csv.gz",
-        sample_size=1.0,
-        class_col="y",
-        positive_class="Yes",
-        spiel="",
-        data_framework="pandas",
-    ))
+    factory = dl.DataProviderFactory(
+        kwargs=dict(
+            name="bankmark",
+            file_name="bankmark_samp.csv.gz",
+            sample_size=1.0,
+            class_col="y",
+            positive_class="Yes",
+            spiel="",
+            data_framework="pandas",
+        )
+    )
     bankmark = factory.create_data_provider()
     assert isinstance(bankmark, dl.DataProvider)
     assert isinstance(bankmark.features, pd.DataFrame)
@@ -189,58 +191,67 @@ def test_create_data_provider_pandas():
 
 
 def test_create_data_provider_polars():
-    factory = dl.DataProviderFactory(kwargs = dict(
-        name="bankmark",
-        file_name="bankmark_samp.csv.gz",
-        sample_size=1.0,
-        class_col="y",
-        positive_class="Yes",
-        spiel="",
-        data_framework="polars",
-    ))
+    factory = dl.DataProviderFactory(
+        kwargs=dict(
+            name="bankmark",
+            file_name="bankmark_samp.csv.gz",
+            sample_size=1.0,
+            class_col="y",
+            positive_class="Yes",
+            spiel="",
+            data_framework="polars",
+        )
+    )
     bankmark = factory.create_data_provider()
     assert isinstance(bankmark, dl.DataProvider)
     assert isinstance(bankmark.features, pl.DataFrame)
     assert isinstance(bankmark.target, pl.Series)
     assert bankmark.features.shape[0] == bankmark.target.shape[0]
 
+
 def factory_init_validations():
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict())
+        _ = dl.DataProviderFactory(kwargs=dict())
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict(data_framework=None, schema=None))
+        _ = dl.DataProviderFactory(kwargs=dict(data_framework=None, schema=None))
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict(data_framework="unsupported"))
+        _ = dl.DataProviderFactory(kwargs=dict(data_framework="unsupported"))
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict(
-        file_name="bankmark_samp.csv.gz",
-        sample_size=1.0,
-        class_col="y",
-        positive_class="Yes",
-        spiel="",
-        data_framework="pandas",
-    ))
+        _ = dl.DataProviderFactory(
+            kwargs=dict(
+                file_name="bankmark_samp.csv.gz",
+                sample_size=1.0,
+                class_col="y",
+                positive_class="Yes",
+                spiel="",
+                data_framework="pandas",
+            )
+        )
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict(
-        name="bankmark",
-        sample_size=1.0,
-        class_col="y",
-        positive_class="Yes",
-        spiel="",
-        data_framework="pandas",
-    ))
-        
+        _ = dl.DataProviderFactory(
+            kwargs=dict(
+                name="bankmark",
+                sample_size=1.0,
+                class_col="y",
+                positive_class="Yes",
+                spiel="",
+                data_framework="pandas",
+            )
+        )
+
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs = dict(
-        name="bankmark",
-        file_name="bankmark_samp.csv.gz",
-        sample_size=1.1,
-        class_col="y",
-        positive_class="Yes",
-        spiel="",
-        data_framework="pandas",
-    ))
+        _ = dl.DataProviderFactory(
+            kwargs=dict(
+                name="bankmark",
+                file_name="bankmark_samp.csv.gz",
+                sample_size=1.1,
+                class_col="y",
+                positive_class="Yes",
+                spiel="",
+                data_framework="pandas",
+            )
+        )

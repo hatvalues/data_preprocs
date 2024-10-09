@@ -59,3 +59,6 @@ spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-su
   \    obs_consequence: Have you heard of or observed negative consequences for coworkers\
   \ with mental health conditions in your workplace?\n    comments: Any additional\
   \ notes or comments\n    "
+target_classes:
+- 'Yes'
+- 'No'

@@ -84,3 +84,6 @@ spiel: "This dataset uses 'mh1' as the class column, removing the other two opti
   \    There is also corruption in the file, with the column 'Why or why not?' being\
   \ duplicated as 'Why or why not?.1', which is somewhat buggy to remove.\n\n    These\
   \ issues have been addressed in the pre-processing of the data.\n    "
+target_classes:
+- 'no'
+- 'yes'
