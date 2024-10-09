@@ -59,3 +59,6 @@ spiel: "Creators:\n    1. Dr. William H. Wolberg, General Surgery Dept.\n    Uni
   \    ftp ftp.cs.wisc.edu\n    cd math-prog/cpo-dataset/machine-learn/WDBC/\n\n \
   \   Attribute Information:\n\n    1) ID number\n    2) Diagnosis (M = malignant,\
   \ B = benign)\n    3-32)\n    "
+target_classes:
+- M
+- B

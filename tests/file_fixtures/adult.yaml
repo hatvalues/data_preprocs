@@ -33,3 +33,6 @@ spiel: "\n    Data Description:\n    This data was extracted from the adult bure
   \ Barry Becker from the 1994 adult database.  A set of\n    reasonably clean records\
   \ was extracted using the following conditions:\n    ((AAGE>16) && (AGI>100) &&\
   \ (AFNLWGT>1)&& (HRSWK>0)),\n    "
+target_classes:
+- <=50K
+- '>50K'

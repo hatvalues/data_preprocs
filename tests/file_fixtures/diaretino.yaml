@@ -54,3 +54,6 @@ spiel: "Source:\n    1. Dr. Balint Antal, Department of Computer Graphics and Im
   \ optic disc.\n    18) The binary result of the AM/FM-based classification.\n  \
   \  19) Class label. 1 = contains signs of DR (Accumulative label for the Messidor\
   \ classes 1, 2, 3), 0 = no signs of DR.\n    "
+target_classes:
+- 'no'
+- 'yes'

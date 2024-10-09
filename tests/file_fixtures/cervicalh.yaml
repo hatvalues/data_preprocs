@@ -62,3 +62,6 @@ spiel: "This dataset uses `Hinselmann` as the class column, removing the other t
   \ and Jessica Fernandes. 'Transfer Learning with Partial Observability Applied to\
   \ Cervical Cancer Screening.' Iberian Conference on Pattern Recognition and Image\
   \ Analysis. Springer International Publishing, 2017.\n    "
+target_classes:
+- F
+- T

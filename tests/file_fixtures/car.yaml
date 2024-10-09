@@ -20,3 +20,6 @@ spiel: "\n    M. Bohanec and V. Rajkovic: Knowledge acquisition and explanation 
   \ model. This,\n    together with a comparison with C4.5, is presented in\n\n  \
   \  B. Zupan, M. Bohanec, I. Bratko, J. Demsar: Machine learning by\n    function\
   \ decomposition. ICML-97, Nashville, TN. 1997 (to appear)\n    "
+target_classes:
+- unacc
+- acc

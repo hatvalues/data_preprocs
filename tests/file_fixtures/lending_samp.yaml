@@ -84,3 +84,6 @@ spiel: "Data Set Information:\n    Originates from: https://www.lendingclub.com/
   \n    See also:\n    https://www.kaggle.com/wordsforthewise/lending-club\n\n   \
   \ Prepared by Nate George:  https://github.com/nateGeorge/preprocess_lending_club_data\n\
   \    "
+target_classes:
+- Fully Paid
+- Charged Off

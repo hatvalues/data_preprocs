@@ -41,3 +41,6 @@ spiel: "Source:\n    Professor Dr. Hans Hofmann\n    Institut f\"ur Statistik un
   \ classification and the columns the predicted classification.\n    It is worse\
   \ to class a customer as good when they are bad (5), than it is to class a customer\
   \ as bad when they are good (1).\n    "
+target_classes:
+- good
+- bad

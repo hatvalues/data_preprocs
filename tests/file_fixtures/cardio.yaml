@@ -46,3 +46,7 @@ spiel: "\n    Data Set Information:\n    2126 fetal cardiotocograms (CTGs) were 
   \ histogram variance\n    Tendency - histogram tendency\n    CLASS - FHR pattern\
   \ class code (1 to 10) # alternative class\n    NSP - fetal state class code (N=normal;\
   \ S=suspect; P=pathologic)\n    "
+target_classes:
+- S
+- N
+- P

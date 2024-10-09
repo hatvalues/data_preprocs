@@ -32,3 +32,6 @@ spiel: "\n    Data Set Information:\n\n    This file concerns credit card applic
   continuous.\n    A9:\tt, f.\n    A10:\tt, f.\n    A11:\tcontinuous.\n    A12:\t\
   t, f.\n    A13:\tg, p, s.\n    A14:\tcontinuous.\n    A15:\tcontinuous.\n    A16:\
   \ +,- (class attribute)\n    "
+target_classes:
+- plus
+- minus

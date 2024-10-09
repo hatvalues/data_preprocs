@@ -8,7 +8,8 @@ from dataclasses import asdict
 def get_test_dict(data_provider: DataProvider) -> dict[str, any]:
     shape = data_provider.features.shape
     column_names = data_provider.features.columns.to_list()
-    return {k: v for k, v in asdict(data_provider).items() if k not in ("features", "target")} | {"rows": shape[0], "columns": shape[1], "column_names": column_names}
+    target_classes = data_provider.target.unique().tolist()
+    return {k: v for k, v in asdict(data_provider).items() if k not in ("features", "target")} | {"rows": shape[0], "columns": shape[1], "column_names": column_names, "target_classes": target_classes}
 
 
 def test_adult_samp():

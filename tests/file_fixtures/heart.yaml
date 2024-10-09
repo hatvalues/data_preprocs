@@ -39,3 +39,6 @@ spiel: "Creators:\n    1. Hungarian Institute of Cardiology. Budapest: Andras Ja
   \    4. (RestBP)\n    5. (Chol)\n    6. (Fbs)\n    7. (RestECG)\n    8. (MaxHR)\n\
   \    9. (ExAng)\n    10. (Oldpeak)\n    11. (Slope)\n    12. (Ca)\n    13. (Thal)\n\
   \    14. (HDisease) (the predicted attribute)\n    "
+target_classes:
+- 'No'
+- 'Yes'

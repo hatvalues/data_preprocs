@@ -70,3 +70,6 @@ spiel: "\n    Data Set Information:\n    The data is related with direct marketi
   \ nr.employed: number of employees - quarterly indicator (numeric)\n\n    Output\
   \ variable (desired target):\n    21 - y - has the client subscribed a term deposit?\
   \ (binary: 'yes','no')\n    "
+target_classes:
+- 'no'
+- 'yes'
