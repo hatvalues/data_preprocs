@@ -171,3 +171,21 @@ def test_ypsalc():
 def test_ypsalc_pl():
     assert isinstance(dp.ypsalc_pl.features, pl.DataFrame)
     assert dp.ypsalc_pl.target.unique().to_list() == unordered([None, "never", "social", "a lot"])
+
+
+def test_usoc2():
+    assert_dict_matches_fixture(get_test_dict(dp.usoc2_pd), "usoc2")
+
+
+def test_usoc2_pl():
+    assert isinstance(dp.usoc2_pl.features, pl.DataFrame)
+    assert dp.usoc2_pl.target.unique().to_list() == unordered(["neutral", "happy", "unhappy"])
+
+
+def test_usoc2_samp():
+    assert_dict_matches_fixture(get_test_dict(dp.usoc2_samp_pd), "usoc2_samp")
+
+
+def test_usoc2_samp_pl():
+    assert isinstance(dp.usoc2_samp_pl.features, pl.DataFrame)
+    assert dp.usoc2_samp_pl.target.unique().to_list() == unordered(["neutral", "happy", "unhappy"])
