@@ -106,21 +106,27 @@ def test_noshowsamp():
 def test_noshow_small_samp():
     assert_dict_matches_fixture(get_test_dict(dp.noshow_small_samp_pd), "noshow_small_samp")
 
+
 def test_nursery():
     assert_dict_matches_fixture(get_test_dict(dp.nursery_pd), "nursery")
 
+
 def test_nursery_samp():
     assert_dict_matches_fixture(get_test_dict(dp.nursery_samp_pd), "nursery_samp")
+
 
 def test_nursury_samp_pl():
     assert isinstance(dp.nursery_samp_pl.features, pl.DataFrame)
     assert dp.nursery_samp_pl.features["children"].unique().to_list() == unordered(["1", "2", "3", "more"])
 
+
 def test_rcdv():
     assert_dict_matches_fixture(get_test_dict(dp.rcdv_pd), "rcdv")
 
+
 def test_rcdv_samp():
     assert_dict_matches_fixture(get_test_dict(dp.rcdv_samp_pd), "rcdv_samp")
+
 
 def test_readmit():
     assert_dict_matches_fixture(get_test_dict(dp.readmit_pd), "readmit")
@@ -128,6 +134,7 @@ def test_readmit():
 
 def test_thyroid():
     assert_dict_matches_fixture(get_test_dict(dp.thyroid_pd), "thyroid")
+
 
 def test_thyroid_samp():
     assert_dict_matches_fixture(get_test_dict(dp.thyroid_samp_pd), "thyroid_samp")
@@ -148,9 +155,11 @@ def test_ypssmk():
     for key in test_dict:
         assert quick_parse(test_dict[key]) == quick_parse(fixture[key])
 
+
 def test_ypssmk_pl():
     assert isinstance(dp.ypssmk_pl.features, pl.DataFrame)
-    assert dp.ypssmk_pl.target.unique().to_list() == unordered(['tried', None, 'current', 'never', 'former'])
+    assert dp.ypssmk_pl.target.unique().to_list() == unordered(["tried", None, "current", "never", "former"])
+
 
 def test_ypsalc():
     test_dict = get_test_dict(dp.ypsalc_pd)
@@ -158,6 +167,7 @@ def test_ypsalc():
     for key in test_dict:
         assert quick_parse(test_dict[key]) == quick_parse(fixture[key])
 
+
 def test_ypsalc_pl():
     assert isinstance(dp.ypsalc_pl.features, pl.DataFrame)
-    assert dp.ypsalc_pl.target.unique().to_list() == unordered([None, 'never', 'social', 'a lot'])
+    assert dp.ypsalc_pl.target.unique().to_list() == unordered([None, "never", "social", "a lot"])

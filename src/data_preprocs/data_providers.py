@@ -904,7 +904,6 @@ nursery_polars_schema = {
 
 nursery_common_args = {
     "name": "nursery",
-
     "schema": None,
     "class_col": "decision",
     "positive_class": None,
@@ -1141,40 +1140,6 @@ thyroid_samp_pd = factory.create_data_provider()
 factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_samp_args | {"data_framework": "polars"})
 thyroid_samp_pl = factory.create_data_provider()
 
-# # young people survey - smoking habit
-# ypssmk = {
-#     'dataset_name': 'ypssmk',
-#     'class_col': 'Smoking',
-#     'file_name': 'yps',
-#     'var_types': ['continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'nominal', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'nominal', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'nominal',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'nominal', 'continuous', 'nominal', 'nominal', 'nominal', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'continuous', 'continuous', 'nominal', 'continuous', 'continuous', 'continuous', 'continuous',
-#      'continuous', 'nominal', 'continuous', 'continuous', 'continuous', 'continuous', 'continuous', 'nominal',
-#      'nominal', 'nominal', 'nominal', 'nominal', 'nominal', 'nominal'],
-#     'spiel': '''
-#     '''
-# }
-
-# # young people survey - alcohol habit
-# ypsalc = deepcopy(ypssmk)
-# ypsalc.update({
-#     'dataset_name': 'ypsalc',
-#     'class_col':'Alcohol'
-# })
 
 yps_common_args = {
     "file_name": "yps.csv.gz",
