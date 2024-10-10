@@ -1,0 +1,31 @@
+class_col: decision
+column_names:
+- parents
+- has_nurs
+- form
+- children
+- housing
+- finance
+- social
+- health
+columns: 8
+file_name: nursery_samp.csv.gz
+name: nursery_samp
+positive_class: null
+rows: 2592
+sample_size: 0.2
+spiel: "Data Description:\n    The target is a multinomial response variable.\n  \
+  \  Nursery Database was derived from a hierarchical decision model\n    originally\
+  \ developed to rank applications for nursery schools. It\n    was used during several\
+  \ years in 1980's when there was excessive\n    enrollment to these schools in Ljubljana,\
+  \ Slovenia, and the\n    rejected applications frequently needed an objective\n\
+  \    explanation. The final decision depended on three subproblems:\n    occupation\
+  \ of parents and child's nursery, family structure and\n    financial standing,\
+  \ and social and health picture of the family.\n    The model was developed within\
+  \ expert system shell for decision\n    making DEX (M. Bohanec, V. Rajkovic: Expert\
+  \ system for decision\n    making. Sistemica 1(1), pp. 145-157, 1990.).\n    "
+target_classes:
+- spec_prior
+- not_recom
+- priority
+- very_recom

@@ -101,7 +101,9 @@ class DataProviderFactory(BaseModel):
         if kwargs.get("data_framework") is None and kwargs.get("schema") is None:
             raise ValueError("Either data_framework or schema must be provided")
         for k, v in kwargs.items():
-            if k in ("file_name", "name", "class_col", "positive_class", "spiel") and not isinstance(v, str):
+            if k == "positive_class" and not (isinstance(v, str) or not v):
+                raise ValueError("Positive class must be string or None")
+            if k in ("file_name", "name", "class_col", "spiel") and not isinstance(v, str):
                 raise ValueError(f"Value for {k} must be a string")
             elif k == "sample_size" and not isinstance(v, float) and not 0.0 <= v <= 1.0:
                 raise ValueError("Sample size must be a float between 0 and 1")
