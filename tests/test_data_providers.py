@@ -3,6 +3,7 @@ import src.data_preprocs.data_providers as dp
 from src.data_preprocs.data_loading import DataProvider
 from tests.fixture_helper import assert_dict_matches_fixture
 from dataclasses import asdict
+from pytest_unordered import unordered
 
 
 def get_test_dict(data_provider: DataProvider) -> dict[str, any]:
@@ -104,3 +105,29 @@ def test_noshowsamp():
 
 def test_noshow_small_samp():
     assert_dict_matches_fixture(get_test_dict(dp.noshow_small_samp_pd), "noshow_small_samp")
+
+def test_nursery():
+    assert_dict_matches_fixture(get_test_dict(dp.nursery_pd), "nursery")
+
+def test_nursery_samp():
+    assert_dict_matches_fixture(get_test_dict(dp.nursery_samp_pd), "nursery_samp")
+
+def test_nursury_samp_pl():
+    assert isinstance(dp.nursery_samp_pl.features, pl.DataFrame)
+    assert dp.nursery_samp_pl.features["children"].unique().to_list() == unordered(["1", "2", "3", "more"])
+
+def test_rcdv():
+    assert_dict_matches_fixture(get_test_dict(dp.rcdv_pd), "rcdv")
+
+def test_rcdv_samp():
+    assert_dict_matches_fixture(get_test_dict(dp.rcdv_samp_pd), "rcdv_samp")
+
+def test_readmit():
+    assert_dict_matches_fixture(get_test_dict(dp.readmit_pd), "readmit")
+
+
+def test_thyroid():
+    assert_dict_matches_fixture(get_test_dict(dp.thyroid_pd), "thyroid")
+
+def test_thyroid_samp():
+    assert_dict_matches_fixture(get_test_dict(dp.thyroid_samp_pd), "thyroid_samp")
