@@ -1,7 +1,7 @@
 import polars as pl
 import src.data_preprocs.data_providers as dp
 from src.data_preprocs.data_loading import DataProvider
-from tests.fixture_helper import assert_dict_matches_fixture
+from tests.fixture_helper import assert_dict_matches_fixture, load_yaml_fixture_file
 from dataclasses import asdict
 from pytest_unordered import unordered
 
@@ -131,3 +131,33 @@ def test_thyroid():
 
 def test_thyroid_samp():
     assert_dict_matches_fixture(get_test_dict(dp.thyroid_samp_pd), "thyroid_samp")
+
+
+# handling nan in a list
+def quick_parse(value):
+    if value is None:
+        return None
+    if isinstance(value, (tuple, list)):
+        return [str(val) for val in value]
+    return value
+
+
+def test_ypssmk():
+    test_dict = get_test_dict(dp.ypssmk_pd)
+    fixture = load_yaml_fixture_file("ypssmk")
+    for key in test_dict:
+        assert quick_parse(test_dict[key]) == quick_parse(fixture[key])
+
+def test_ypssmk_pl():
+    assert isinstance(dp.ypssmk_pl.features, pl.DataFrame)
+    assert dp.ypssmk_pl.target.unique().to_list() == unordered(['tried', None, 'current', 'never', 'former'])
+
+def test_ypsalc():
+    test_dict = get_test_dict(dp.ypsalc_pd)
+    fixture = load_yaml_fixture_file("ypsalc")
+    for key in test_dict:
+        assert quick_parse(test_dict[key]) == quick_parse(fixture[key])
+
+def test_ypsalc_pl():
+    assert isinstance(dp.ypsalc_pl.features, pl.DataFrame)
+    assert dp.ypsalc_pl.target.unique().to_list() == unordered([None, 'never', 'social', 'a lot'])

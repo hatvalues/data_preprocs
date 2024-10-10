@@ -1,0 +1,334 @@
+class_col: Smoking
+column_names:
+- Music
+- Slow songs or fast songs
+- Dance
+- Folk
+- Country
+- Classical music
+- Musical
+- Pop
+- Rock
+- Metal or Hardrock
+- Punk
+- Hiphop - Rap
+- Reggae - Ska
+- Swing - Jazz
+- Rock n roll
+- Alternative
+- Latino
+- Techno - Trance
+- Opera
+- Movies
+- Horror
+- Thriller
+- Comedy
+- Romantic
+- Sci-fi
+- War
+- Fantasy/Fairy tales
+- Animated
+- Documentary
+- Western
+- Action
+- History
+- Psychology
+- Politics
+- Mathematics
+- Physics
+- Internet
+- PC
+- Economy Management
+- Biology
+- Chemistry
+- Reading
+- Geography
+- Foreign languages
+- Medicine
+- Law
+- Cars
+- Art exhibitions
+- Religion
+- Countryside - outdoors
+- Dancing
+- Musical instruments
+- Writing
+- Passive sport
+- Active sport
+- Gardening
+- Celebrities
+- Shopping
+- Science and technology
+- Theatre
+- Fun with friends
+- Adrenaline sports
+- Pets
+- Flying
+- Storm
+- Darkness
+- Heights
+- Spiders
+- Snakes
+- Rats
+- Ageing
+- Dangerous dogs
+- Fear of public speaking
+- Alcohol
+- Healthy eating
+- Daily events
+- Prioritising workload
+- Writing notes
+- Workaholism
+- Thinking ahead
+- Final judgement
+- Reliability
+- Keeping promises
+- Loss of interest
+- Friends versus money
+- Funniness
+- Fake
+- Criminal damage
+- Decision making
+- Elections
+- Self-criticism
+- Judgment calls
+- Hypochondria
+- Empathy
+- Eating to survive
+- Giving
+- Compassion to animals
+- Borrowed stuff
+- Loneliness
+- Cheating in
+- Health
+- Changing the past
+- God
+- Dreams
+- Charity
+- Number of friends
+- Punctuality
+- Lying
+- Waiting
+- New environment
+- Mood swings
+- Appearence and gestures
+- Socializing
+- Achievements
+- Responding to a serious letter
+- Children
+- Assertiveness
+- Getting angry
+- Knowing the right people
+- Public speaking
+- Unpopularity
+- Life struggles
+- Happiness in life
+- Energy levels
+- Small - big dogs
+- Personality
+- Finding lost valuables
+- Getting up
+- Interests or hobbies
+- Parents' advice
+- Questionnaires or polls
+- Internet usage
+- Finances
+- Shopping centres
+- Branded clothing
+- Entertainment spending
+- Spending on looks
+- Spending on gadgets
+- Spending on healthy eating
+- Age
+- Height
+- Weight
+- Number of siblings
+- Gender
+- Left - right
+- Education
+- Only child
+- Village - town
+- House - flats
+columns: 149
+file_name: yps.csv.gz
+name: ypssmk
+positive_class: null
+rows: 1010
+sample_size: 1.0
+spiel: "https://www.kaggle.com/miroslavsabo/young-people-survey\n    In 2013, students\
+  \ of the Statistics class at FSEV UK were asked to invite their friends to participate\
+  \ in this survey.\n\n    The data file (responses.csv) consists of 1010 rows and\
+  \ 150 columns (139 integer and 11 categorical).\n    For convenience, the original\
+  \ variable names were shortened in the data file. See the columns.csv file if you\
+  \ want to match the data with the original names.\n    The data contain missing\
+  \ values.\n    The survey was presented to participants in both electronic and written\
+  \ form.\n    The original questionnaire was in Slovak language and was later translated\
+  \ into English.\n    All participants were of Slovakian nationality, aged between\
+  \ 15-30.\n    The variables can be split into the following groups:\n\n    Music\
+  \ preferences (19 items)\n    Movie preferences (12 items)\n    Hobbies & interests\
+  \ (32 items)\n    Phobias (10 items)\n    Health habits (3 items)\n    Personality\
+  \ traits, views on life, & opinions (57 items)\n    Spending habits (7 items)\n\
+  \    Demographics (10 items)\n\n    Questionnaire\n    MUSIC PREFERENCES\n    I\
+  \ enjoy listening to music.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I prefer.: Slow paced music 1-2-3-4-5 Fast paced music (integer)\n    Dance,\
+  \ Disco, Funk: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Folk\
+  \ music: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Country: Don't\
+  \ enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Classical: Don't enjoy at\
+  \ all 1-2-3-4-5 Enjoy very much (integer)\n    Musicals: Don't enjoy at all 1-2-3-4-5\
+  \ Enjoy very much (integer)\n    Pop: Don't enjoy at all 1-2-3-4-5 Enjoy very much\
+  \ (integer)\n    Rock: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n\
+  \    Metal, Hard rock: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n\
+  \    Punk: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Hip hop,\
+  \ Rap: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Reggae, Ska:\
+  \ Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Swing, Jazz: Don't\
+  \ enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Rock n Roll: Don't enjoy\
+  \ at all 1-2-3-4-5 Enjoy very much (integer)\n    Alternative music: Don't enjoy\
+  \ at all 1-2-3-4-5 Enjoy very much (integer)\n    Latin: Don't enjoy at all 1-2-3-4-5\
+  \ Enjoy very much (integer)\n    Techno, Trance: Don't enjoy at all 1-2-3-4-5 Enjoy\
+  \ very much (integer)\n    Opera: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n\
+  \    MOVIE PREFERENCES\n    I really enjoy watching movies.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    Horror movies: Don't enjoy at all 1-2-3-4-5 Enjoy\
+  \ very much (integer)\n    Thriller movies: Don't enjoy at all 1-2-3-4-5 Enjoy very\
+  \ much (integer)\n    Comedies: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n\
+  \    Romantic movies: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n \
+  \   Sci-fi movies: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    War\
+  \ movies: Don't enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Tales: Don't\
+  \ enjoy at all 1-2-3-4-5 Enjoy very much (integer)\n    Cartoons: Don't enjoy at\
+  \ all 1-2-3-4-5 Enjoy very much (integer)\n    Documentaries: Don't enjoy at all\
+  \ 1-2-3-4-5 Enjoy very much (integer)\n    Western movies: Don't enjoy at all 1-2-3-4-5\
+  \ Enjoy very much (integer)\n    Action movies: Don't enjoy at all 1-2-3-4-5 Enjoy\
+  \ very much (integer)\n    HOBBIES & INTERESTS\n    History: Not interested 1-2-3-4-5\
+  \ Very interested (integer)\n    Psychology: Not interested 1-2-3-4-5 Very interested\
+  \ (integer)\n    Politics: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Mathematics: Not interested 1-2-3-4-5 Very interested (integer)\n    Physics:\
+  \ Not interested 1-2-3-4-5 Very interested (integer)\n    Internet: Not interested\
+  \ 1-2-3-4-5 Very interested (integer)\n    PC Software, Hardware: Not interested\
+  \ 1-2-3-4-5 Very interested (integer)\n    Economy, Management: Not interested 1-2-3-4-5\
+  \ Very interested (integer)\n    Biology: Not interested 1-2-3-4-5 Very interested\
+  \ (integer)\n    Chemistry: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Poetry reading: Not interested 1-2-3-4-5 Very interested (integer)\n    Geography:\
+  \ Not interested 1-2-3-4-5 Very interested (integer)\n    Foreign languages: Not\
+  \ interested 1-2-3-4-5 Very interested (integer)\n    Medicine: Not interested 1-2-3-4-5\
+  \ Very interested (integer)\n    Law: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Cars: Not interested 1-2-3-4-5 Very interested (integer)\n    Art: Not interested\
+  \ 1-2-3-4-5 Very interested (integer)\n    Religion: Not interested 1-2-3-4-5 Very\
+  \ interested (integer)\n    Outdoor activities: Not interested 1-2-3-4-5 Very interested\
+  \ (integer)\n    Dancing: Not interested 1-2-3-4-5 Very interested (integer)\n \
+  \   Playing musical instruments: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Poetry writing: Not interested 1-2-3-4-5 Very interested (integer)\n    Sport\
+  \ and leisure activities: Not interested 1-2-3-4-5 Very interested (integer)\n \
+  \   Sport at competitive level: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Gardening: Not interested 1-2-3-4-5 Very interested (integer)\n    Celebrity\
+  \ lifestyle: Not interested 1-2-3-4-5 Very interested (integer)\n    Shopping: Not\
+  \ interested 1-2-3-4-5 Very interested (integer)\n    Science and technology: Not\
+  \ interested 1-2-3-4-5 Very interested (integer)\n    Theatre: Not interested 1-2-3-4-5\
+  \ Very interested (integer)\n    Socializing: Not interested 1-2-3-4-5 Very interested\
+  \ (integer)\n    Adrenaline sports: Not interested 1-2-3-4-5 Very interested (integer)\n\
+  \    Pets: Not interested 1-2-3-4-5 Very interested (integer)\n    PHOBIAS\n   \
+  \ Flying: Not afraid at all 1-2-3-4-5 Very afraid of (integer)\n    Thunder, lightning:\
+  \ Not afraid at all 1-2-3-4-5 Very afraid of (integer)\n    Darkness: Not afraid\
+  \ at all 1-2-3-4-5 Very afraid of (integer)\n    Heights: Not afraid at all 1-2-3-4-5\
+  \ Very afraid of (integer)\n    Spiders: Not afraid at all 1-2-3-4-5 Very afraid\
+  \ of (integer)\n    Snakes: Not afraid at all 1-2-3-4-5 Very afraid of (integer)\n\
+  \    Rats, mice: Not afraid at all 1-2-3-4-5 Very afraid of (integer)\n    Ageing:\
+  \ Not afraid at all 1-2-3-4-5 Very afraid of (integer)\n    Dangerous dogs: Not\
+  \ afraid at all 1-2-3-4-5 Very afraid of (integer)\n    Public speaking: Not afraid\
+  \ at all 1-2-3-4-5 Very afraid of (integer)\n    HEALTH HABITS\n    Smoking habits:\
+  \ Never smoked - Tried smoking - Former smoker - Current smoker (categorical)\n\
+  \    Drinking: Never - Social drinker - Drink a lot (categorical)\n    I live a\
+  \ very healthy lifestyle.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    PERSONALITY TRAITS, VIEWS ON LIFE & OPINIONS\n    I take notice of what goes\
+  \ on around me.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I try\
+  \ to do tasks as soon as possible and not leave them until last minute.: Strongly\
+  \ disagree 1-2-3-4-5 Strongly agree (integer)\n    I always make a list so I don't\
+  \ forget anything.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I\
+  \ often study or work even in my spare time.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I look at things from all different angles before I go ahead.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I believe that bad people\
+  \ will suffer one day and good people will be rewarded.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I am reliable at work and always complete all tasks\
+  \ given to me.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I always\
+  \ keep my promises.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I\
+  \ can fall for someone very quickly and then completely lose interest.: Strongly\
+  \ disagree 1-2-3-4-5 Strongly agree (integer)\n    I would rather have lots of friends\
+  \ than lots of money.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n  \
+  \  I always try to be the funniest one.: Strongly disagree 1-2-3-4-5 Strongly agree\
+  \ (integer)\n    I can be two faced sometimes.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I damaged things in the past when angry.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I take my time to make decisions.: Strongly\
+  \ disagree 1-2-3-4-5 Strongly agree (integer)\n    I always try to vote in elections.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I often think about\
+  \ and regret the decisions I make.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I can tell if people listen to me or not when I talk to them.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I am a hypochondriac.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I am emphatetic person.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I eat because I have to. I don't enjoy\
+  \ food and eat as fast as I can.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I try to give as much as I can to other people at Christmas.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I don't like seeing animals suffering.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I look after things\
+  \ I have borrowed from others.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I feel lonely in life.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I used to cheat at school.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I worry about my health.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I wish I could change the past because of the things I have done.: Strongly\
+  \ disagree 1-2-3-4-5 Strongly agree (integer)\n    I believe in God.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I always have good dreams.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I always give to charity.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I have lots of friends.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    Timekeeping.: I am often early. - I am\
+  \ always on time. - I am often running late. (categorical)\n    Do you lie to others?:\
+  \ Never. - Only to avoid hurting someone. - Sometimes. - Everytime it suits me.\
+  \ (categorical)\n    I am very patient.: Strongly disagree 1-2-3-4-5 Strongly agree\
+  \ (integer)\n    I can quickly adapt to a new environment.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    My moods change quickly.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I am well mannered and I look after my appearance.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I enjoy meeting new\
+  \ people.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I always let\
+  \ other people know about my achievements.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I think carefully before answering any important letters.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I enjoy childrens' company.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I am not afraid to give\
+  \ my opinion if I feel strongly about something.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I can get angry very easily.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I always make sure I connect with the right people.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I have to be well prepared\
+  \ before public speaking.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I will find a fault in myself if people don't like me.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I cry when I feel down or things don't go the right\
+  \ way.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I am 100% happy\
+  \ with my life.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I am\
+  \ always full of life and energy.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I prefer big dangerous dogs to smaller, calmer dogs.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I believe all my personality traits are positive.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    If I find something\
+  \ the doesn't belong to me I will hand it in.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I find it very difficult to get up in the morning.: Strongly\
+  \ disagree 1-2-3-4-5 Strongly agree (integer)\n    I have many different hobbies\
+  \ and interests.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I always\
+  \ listen to my parents' advice.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I enjoy taking part in surveys.: Strongly disagree 1-2-3-4-5 Strongly agree\
+  \ (integer)\n    How much time do you spend online?: No time at all - Less than\
+  \ an hour a day - Few hours a day - Most of the day (categorical)\n    SPENDING\
+  \ HABITS\n    I save all the money I can.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I enjoy going to large shopping centres.: Strongly disagree\
+  \ 1-2-3-4-5 Strongly agree (integer)\n    I prefer branded clothing to non branded.:\
+  \ Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    I spend a lot of money\
+  \ on partying and socializing.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n\
+  \    I spend a lot of money on my appearance.: Strongly disagree 1-2-3-4-5 Strongly\
+  \ agree (integer)\n    I spend a lot of money on gadgets.: Strongly disagree 1-2-3-4-5\
+  \ Strongly agree (integer)\n    I will hapilly pay more money for good, quality\
+  \ or healthy food.: Strongly disagree 1-2-3-4-5 Strongly agree (integer)\n    DEMOGRAPHICS\n\
+  \    Age: (integer)\n    Height: (integer)\n    Weight: (integer)\n    How many\
+  \ siblings do you have?: (integer)\n    Gender: Female - Male (categorical)\n  \
+  \  I am: Left handed - Right handed (categorical)\n    Highest education achieved:\
+  \ Currently a Primary school pupil - Primary school - Secondary school - College/Bachelor\
+  \ degree (categorical)\n    I am the only child: No - Yes (categorical)\n    I spent\
+  \ most of my childhood in a: City - village (categorical)\n    I lived most of my\
+  \ childhood in a: house/bungalow - block of flats (categorical)\n    "
+target_classes:
+- never
+- tried
+- former
+- current
+- .nan
