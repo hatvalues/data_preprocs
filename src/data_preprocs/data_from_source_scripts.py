@@ -6,7 +6,7 @@
 # from sklearn.impute import SimpleImputer
 # import unicodedata
 # from datetime import datetime
-
+from io import BytesIO
 import zipfile
 import urllib.request
 import numpy as np
@@ -179,212 +179,203 @@ def rebuild_bankmark_from_source():
     pandas_to_file(samp, "bankmark_samp")
 
 
+def rebuild_car_from_source():
+    var_names = [
+        "buying",
+        "maint",
+        "doors",
+        "persons",
+        "lug_boot",
+        "safety",
+        "acceptability",
+    ]
+
+    target_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data"
+
+    car_bytes = urllib.request.urlopen(target_url)
+    car = pd.read_csv(car_bytes, header=None, names=var_names)
+    # recode to a 2 class subproblems
+    car.loc[car.acceptability != "unacc", "acceptability"] = "acc"
+
+    pandas_to_file(car, "car")
+
+
+def rebuild_cardio_from_source():
+    target_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00193/CTG.xls"
+    response = urllib.request.urlopen(target_url)
+    cardio_bytes = BytesIO(response.read())
+    cardio = pd.read_excel(cardio_bytes, sheet_name="Data", header=1)
+
+    var_names_raw = [
+        "LB",
+        "AC.1",
+        "FM.1",
+        "UC.1",
+        "DL.1",
+        "DS.1",
+        "DP.1",
+        "ASTV",
+        "MSTV",
+        "ALTV",
+        "MLTV",
+        "Width",
+        "Min",
+        "Max",
+        "Nmax",
+        "Nzeros",
+        "Mode",
+        "Mean",
+        "Median",
+        "Variance",
+        "Tendency",
+        # , 'CLASS' Exclude as this is an alternative target
+        "NSP",
+    ]
+
+    cardio = cardio.loc[:, var_names_raw]
+
+    var_names = [
+        "LB",
+        "AC",
+        "FM",
+        "UC",
+        "DL",
+        "DS",
+        "DP",
+        "ASTV",
+        "MSTV",
+        "ALTV",
+        "MLTV",
+        "Width",
+        "Min",
+        "Max",
+        "Nmax",
+        "Nzeros",
+        "Mode",
+        "Mean",
+        "Median",
+        "Variance",
+        "Tendency",
+        # , 'CLASS'
+        "NSP",
+    ]
+
+    cardio.columns = var_names
+
+    # remove the last three rows that are aggragates in the raw data file
+    cardio = cardio.loc[~cardio["LB"].isna(), :]
+
+    # re-code NSP and delete class variable
+    NSP = pd.Series(["N"] * cardio.shape[0])
+    NSP.loc[cardio.NSP.values == 2] = "S"
+    NSP.loc[cardio.NSP.values == 3] = "P"
+    cardio.NSP = NSP
+
+    pandas_to_file(cardio, "cardio")
+
+
+def rebuild_credit_from_source():
+    var_names = [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+    ]
+
+    target_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.data"
+
+    credit_bytes = urllib.request.urlopen(target_url)
+    credit = pd.read_csv(
+        credit_bytes,
+        header=None,
+        delimiter=",",
+        index_col=False,
+        names=var_names,
+        na_values="?",
+    )
+
+    # re-code rating class variable
+    A16 = pd.Series(["plus"] * credit.shape[0])
+    A16.loc[credit.A16.values == "-"] = "minus"
+    credit.A16 = A16
+
+    # deal with some missing data
+    credit["A1"] = credit["A1"].fillna("u")
+    credit["A2"] = credit["A2"].fillna(credit["A2"].mean())
+    credit["A4"] = credit["A4"].fillna("u")
+    credit["A5"] = credit["A5"].fillna("u")
+    credit["A6"] = credit["A6"].fillna("u")
+    credit["A7"] = credit["A7"].fillna("u")
+    credit["A8"] = credit["A8"].fillna(credit["A8"].mean())
+    credit["A9"] = credit["A9"].fillna("u")
+    credit["A10"] = credit["A10"].fillna("u")
+    credit["A11"] = credit["A11"].fillna(credit["A11"].mean())
+    credit["A12"] = credit["A12"].fillna("u")
+    credit["A13"] = credit["A13"].fillna("u")
+    credit["A14"] = credit["A14"].fillna(credit["A14"].mean())
+    credit["A15"] = credit["A15"].fillna(credit["A15"].mean())
+
+    pandas_to_file(credit, "credit")
+
+
+def rebuild_german_from_source():
+    var_names = [
+        "chk",
+        "dur",
+        "crhis",
+        "pps",
+        "amt",
+        "svng",
+        "emp",
+        "rate",
+        "pers",
+        "debt",
+        "res",
+        "prop",
+        "age",
+        "plans",
+        "hous",
+        "creds",
+        "job",
+        "deps",
+        "tel",
+        "foreign",
+        "rating",
+    ]
+
+    target_url = "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data"
+
+    german_bytes = urllib.request.urlopen(target_url)
+    german = pd.read_csv(german_bytes, header=None, delimiter=" ", index_col=False, names=var_names)
+
+    # re-code rating class variable
+    rating = pd.Series(["good"] * len(german))
+    rating.loc[german.rating == 2] = "bad"
+    german.rating = rating
+
+    pandas_to_file(german, "german")
+
+
 if __name__ == "__main__":
-    rebuild_adult_from_source()
-    rebuild_bankmark_from_source()
+    # rebuild_adult_from_source()
+    # rebuild_bankmark_from_source()
+    # rebuild_car_from_source()
+    # rebuild_cardio_from_source()
+    # rebuild_credit_from_source()
+    rebuild_german_from_source()
 
-
-# # car form source
-# if True:
-#     """
-
-
-#     var_names = ['buying'
-#                 , 'maint'
-#                 , 'doors'
-#                 , 'persons'
-#                 , 'lug_boot'
-#                 , 'safety'
-#                 , 'acceptability']
-
-#     target_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data'
-
-#     car_bytes = urllib.request.urlopen(target_url)
-#     car = pd.read_csv(car_bytes, header=None, names=var_names)
-#     # recode to a 2 class subproblems
-#     car.acceptability.loc[car.acceptability != 'unacc'] = 'acc'
-
-#     car.to_csv('CHIRPS\\datafiles\\car.csv.gz', index=False, compression='gzip')
-#     '''
-
-# # cardio
-# if True:
-#     '''
-#     target_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00193/CTG.xls'
-#     cardio_bytes = urllib.request.urlopen(target_url)
-#     cardio = pd.read_excel(cardio_bytes,
-#                             sheet_name='Data',
-#                             header=1)
-
-#     var_names_raw = ['LB'
-#                 , 'AC.1'
-#                 , 'FM.1'
-#                 , 'UC.1'
-#                 , 'DL.1'
-#                 , 'DS.1'
-#                 , 'DP.1'
-#                 , 'ASTV'
-#                 , 'MSTV'
-#                 , 'ALTV'
-#                 , 'MLTV'
-#                 , 'Width'
-#                 , 'Min'
-#                 , 'Max'
-#                 , 'Nmax'
-#                 , 'Nzeros'
-#                 , 'Mode'
-#                 , 'Mean'
-#                 , 'Median'
-#                 , 'Variance'
-#                 , 'Tendency'
-#                 #, 'CLASS' Exclude as this is an alternative target
-#                 , 'NSP']
-
-#     cardio = cardio.loc[:, var_names_raw]
-
-#     var_names = ['LB'
-#                 , 'AC'
-#                 , 'FM'
-#                 , 'UC'
-#                 , 'DL'
-#                 , 'DS'
-#                 , 'DP'
-#                 , 'ASTV'
-#                 , 'MSTV'
-#                 , 'ALTV'
-#                 , 'MLTV'
-#                 , 'Width'
-#                 , 'Min'
-#                 , 'Max'
-#                 , 'Nmax'
-#                 , 'Nzeros'
-#                 , 'Mode'
-#                 , 'Mean'
-#                 , 'Median'
-#                 , 'Variance'
-#                 , 'Tendency'
-#                 #, 'CLASS'
-#                 , 'NSP']
-
-#     cardio.columns = var_names
-
-#     # remove the last three rows that are aggragates in the raw data file
-#     cardio = cardio.loc[~cardio['LB'].isna(), :]
-
-#     # re-code NSP and delete class variable
-#     NSP = pd.Series(['N'] * cardio.shape[0])
-#     NSP.loc[cardio.NSP.values == 2] = 'S'
-#     NSP.loc[cardio.NSP.values == 3] = 'P'
-#     cardio.NSP = NSP
-
-#     # save
-#     cardio.to_csv('CHIRPS\\datafiles\\cardio.csv.gz', index=False, compression='gzip')
-#     '''
-
-# # credit from source
-# if True:
-#     '''
-#     var_names = ['A1'
-#                 , 'A2'
-#                 , 'A3'
-#                 , 'A4'
-#                 , 'A5'
-#                 , 'A6'
-#                 , 'A7'
-#                 , 'A8'
-#                 , 'A9'
-#                 , 'A10'
-#                 , 'A11'
-#                 , 'A12'
-#                 , 'A13'
-#                 , 'A14'
-#                 , 'A15'
-#                 , 'A16']
-
-#     vars_types = ['nominal'
-#         , 'continuous'
-#         , 'continuous'
-#         , 'nominal'
-#         , 'nominal'
-#         , 'nominal'
-#         , 'nominal'
-#         , 'continuous'
-#         , 'nominal'
-#         , 'nominal'
-#         , 'continuous'
-#         , 'nominal'
-#         , 'nominal'
-#         , 'continuous'
-#         , 'continuous'
-#         , 'nominal'
-#     ]
-
-#     target_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.data'
-
-#     credit_bytes = urllib.request.urlopen(target_url)
-#     credit = pd.read_csv(credit_bytes,
-#                          header=None,
-#                          delimiter=',',
-#                          index_col=False,
-#                          names=var_names,
-#                          na_values = '?')
-
-#     # re-code rating class variable
-#     A16 = pd.Series(['plus'] * credit.shape[0])
-#     A16.loc[credit.A16.values == '-'] = 'minus'
-#     credit.A16 = A16
-
-#     # deal with some missing data
-#     for v, t in zip(var_names, vars_types):
-#         if t == 'nominal':
-#             credit[v] = credit[v].fillna('u')
-#         else:
-#             credit[v] = credit[v].fillna(credit[v].mean())
-
-#     credit.to_csv('CHIRPS\\datafiles\\credit.csv.gz', index=False, compression='gzip')
-#     '''
-
-# # german from source
-# if True:
-#     '''
-#     var_names = ['chk'
-#                 , 'dur'
-#                 , 'crhis'
-#                 , 'pps'
-#                 , 'amt'
-#                 , 'svng'
-#                 , 'emp'
-#                 , 'rate'
-#                 , 'pers'
-#                 , 'debt'
-#                 , 'res'
-#                 , 'prop'
-#                 , 'age'
-#                 , 'plans'
-#                 , 'hous'
-#                 , 'creds'
-#                 , 'job'
-#                 , 'deps'
-#                 , 'tel'
-#                 , 'foreign'
-#                 , 'rating']
-
-#     target_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data'
-
-#     german_bytes = urllib.request.urlopen(target_url)
-#     german = pd.read_csv(german_bytes,
-#                          header=None,
-#                          delimiter=' ',
-#                          index_col=False,
-#                          names=var_names)
-
-#     # re-code rating class variable
-#     rating = pd.Series(['good'] * german.count()[0])
-#     rating.loc[german.rating == 2] = 'bad'
-#     german.rating = rating
-
-#     german.to_csv('CHIRPS\\datafiles\\german.csv.gz', index=False, compression='gzip')
-#     '''
 
 # # lending from source
 # if True:
