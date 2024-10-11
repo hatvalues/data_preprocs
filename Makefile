@@ -8,7 +8,7 @@ check:
 	poetry run mypy .
 
 format:
-	poetry run ruff .
+	poetry run ruff format .
 
 clean:
 	rm -rf .pytest_cache

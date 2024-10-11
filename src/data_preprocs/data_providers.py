@@ -1687,7 +1687,7 @@ usoc2_pandas_schema = {
     "mh": "object",
 }
 
-usoc2_polars_schema ={
+usoc2_polars_schema = {
     "level_0": pl.Int64,
     "index": pl.Int64,
     "wave": pl.Int64,
