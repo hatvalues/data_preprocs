@@ -25,6 +25,10 @@ typeguard = "^4.3.0"
 importlib-resources = "^6.4.5"
 pydantic = "^2.9.2"
 xlrd = "^2.0.1"
+julian = "^0.14"
+openpyxl = "^3.1.5"
+liac-arff = "^2.5.0"
+scikit-learn = "^1.5.2"
 
 
 [tool.poetry.group.test.dependencies]
