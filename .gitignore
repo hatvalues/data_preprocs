@@ -160,13 +160,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Temporary file for testing
-gpt-ab-test-results/
-manual_scripts/
-data/individual_sellers/
-data/testing_recommends.json
-data/*.csv
-docker_run.txt
-database_setup/
-db/*
+
+
 .DS_Store
+
+src/data_preprocs/data_sources_files/lending-source.csv.gz
