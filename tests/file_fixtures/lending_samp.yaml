@@ -1,4 +1,52 @@
+acc_open_past_24mths:
+  dtype: float64
+  max: 46.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+adj_log_dti:
+  dtype: float64
+  max: 6.90875477931522
+  min: 0.0
+  otype: numeric
+  unique_values: []
+avg_cur_bal:
+  dtype: float64
+  max: 395953.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+bc_open_to_buy:
+  dtype: float64
+  max: 559912.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+bc_util:
+  dtype: float64
+  max: 197.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+block_missingness:
+  dtype: float64
+  max: 1.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+chargeoff_within_12_mths:
+  dtype: float64
+  max: 6.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
 class_col: loan_status
+collections_12_mths_ex_med:
+  dtype: float64
+  max: 6.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
 column_names:
 - loan_amnt
 - term
@@ -75,15 +123,406 @@ column_names:
 - emp
 - block_missingness
 columns: 74
+delinq_2yrs:
+  dtype: float64
+  max: 22.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+delinq_amnt:
+  dtype: float64
+  max: 65000.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+disbursement_method:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Cash
+  - DirectPay
+earliest_cr_line:
+  dtype: float64
+  max: 2457054.5
+  min: 2435108.5
+  otype: numeric
+  unique_values: []
+emp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - E
+  - U
+fico:
+  dtype: float64
+  max: 847.5
+  min: 662.0
+  otype: numeric
+  unique_values: []
 file_name: lending_samp.csv.gz
+home_ownership:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - MORTGAGE
+  - RENT
+  - OWN
+  - OTHER
+initial_list_status:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - f
+  - w
+inq_last_6mths:
+  dtype: float64
+  max: 8.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+installment:
+  dtype: float64
+  max: 1542.98
+  min: 16.25
+  otype: numeric
+  unique_values: []
+int_rate:
+  dtype: float64
+  max: 30.99
+  min: 5.31
+  otype: numeric
+  unique_values: []
+issue_d:
+  dtype: float64
+  max: 2458270.5
+  min: 2454282.5
+  otype: numeric
+  unique_values: []
+last_credit_pull_d:
+  dtype: float64
+  max: 2458331.5
+  min: 2454252.5
+  otype: numeric
+  unique_values: []
+last_fico:
+  dtype: float64
+  max: 847.5
+  min: 0.0
+  otype: numeric
+  unique_values: []
+last_pymnt_amnt:
+  dtype: float64
+  max: 42005.2
+  min: 0.0
+  otype: numeric
+  unique_values: []
+last_pymnt_d:
+  dtype: float64
+  max: 2458331.5
+  min: 2454466.5
+  otype: numeric
+  unique_values: []
+loan_amnt:
+  dtype: float64
+  max: 40000.0
+  min: 500.0
+  otype: numeric
+  unique_values: []
+log_inc:
+  dtype: float64
+  max: 15.926087449742877
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mo_sin_old_il_acct:
+  dtype: float64
+  max: 640.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mo_sin_old_rev_tl_op:
+  dtype: float64
+  max: 747.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mo_sin_rcnt_rev_tl_op:
+  dtype: float64
+  max: 302.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mo_sin_rcnt_tl:
+  dtype: float64
+  max: 174.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mort_acc:
+  dtype: float64
+  max: 29.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mths_since_recent_bc:
+  dtype: float64
+  max: 610.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+mths_since_recent_inq:
+  dtype: float64
+  max: 24.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
 name: lending_samp
+non_funded_inv_score:
+  dtype: float64
+  max: 10.077482875583607
+  min: 0.0
+  otype: numeric
+  unique_values: []
+non_funded_score:
+  dtype: float64
+  max: 9.530683226667511
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_accts_ever_120_pd:
+  dtype: float64
+  max: 33.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_actv_bc_tl:
+  dtype: float64
+  max: 26.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_actv_rev_tl:
+  dtype: float64
+  max: 39.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_bc_sats:
+  dtype: float64
+  max: 63.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_bc_tl:
+  dtype: float64
+  max: 70.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_il_tl:
+  dtype: float64
+  max: 121.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_op_rev_tl:
+  dtype: float64
+  max: 83.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_rev_accts:
+  dtype: float64
+  max: 103.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_rev_tl_bal_gt_0:
+  dtype: float64
+  max: 39.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_sats:
+  dtype: float64
+  max: 90.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_tl_90g_dpd_24m:
+  dtype: float64
+  max: 22.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+num_tl_op_past_12m:
+  dtype: float64
+  max: 25.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+open_acc:
+  dtype: float64
+  max: 90.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+pct_tl_nvr_dlq:
+  dtype: float64
+  max: 100.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+percent_bc_gt_75:
+  dtype: float64
+  max: 100.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
 positive_class: Fully Paid
+pub_rec:
+  dtype: float64
+  max: 63.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+pub_rec_bankruptcies:
+  dtype: float64
+  max: 7.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+revol_bal:
+  dtype: float64
+  max: 777448.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+revol_util:
+  dtype: float64
+  max: 153.7
+  min: 0.0
+  otype: numeric
+  unique_values: []
 rows: 84213
 sample_size: 0.1
 spiel: "Data Set Information:\n    Originates from: https://www.lendingclub.com/info/download-data.action\n\
   \n    See also:\n    https://www.kaggle.com/wordsforthewise/lending-club\n\n   \
   \ Prepared by Nate George:  https://github.com/nateGeorge/preprocess_lending_club_data\n\
   \    "
+sub_grade:
+  dtype: float64
+  max: 34.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
 target_classes:
 - Fully Paid
 - Charged Off
+tax_liens:
+  dtype: float64
+  max: 63.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+term:
+  dtype: float64
+  max: 60.0
+  min: 36.0
+  otype: numeric
+  unique_values: []
+tot_coll_amt:
+  dtype: float64
+  max: 6214661.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+tot_cur_bal:
+  dtype: float64
+  max: 3652389.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+tot_hi_cred_lim:
+  dtype: float64
+  max: 3754640.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_acc:
+  dtype: float64
+  max: 176.0
+  min: 2.0
+  otype: numeric
+  unique_values: []
+total_bal_ex_mort:
+  dtype: float64
+  max: 950168.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_bc_limit:
+  dtype: float64
+  max: 571500.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_il_high_credit_limit:
+  dtype: float64
+  max: 689474.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_pymnt:
+  dtype: float64
+  max: 60760.1747775537
+  min: 16.67
+  otype: numeric
+  unique_values: []
+total_pymnt_inv:
+  dtype: float64
+  max: 60760.17
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_rec_int:
+  dtype: float64
+  max: 25760.17
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_rec_late_fee:
+  dtype: float64
+  max: 240.9200004205
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_rec_prncp:
+  dtype: float64
+  max: 40000.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+total_rev_hi_lim:
+  dtype: float64
+  max: 1119200.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+verification_status:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Verified
+  - Source Verified
+  - Not Verified

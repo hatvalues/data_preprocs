@@ -1,3 +1,129 @@
+AC:
+  dtype: float64
+  max: 0.0192837465564738
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ALTV:
+  dtype: float64
+  max: 91.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ASTV:
+  dtype: float64
+  max: 87.0
+  min: 12.0
+  otype: numeric
+  unique_values: []
+DL:
+  dtype: float64
+  max: 0.0153846153846153
+  min: 0.0
+  otype: numeric
+  unique_values: []
+DP:
+  dtype: float64
+  max: 0.0053475935828877
+  min: 0.0
+  otype: numeric
+  unique_values: []
+DS:
+  dtype: float64
+  max: 0.0013531799729364
+  min: 0.0
+  otype: numeric
+  unique_values: []
+FM:
+  dtype: float64
+  max: 0.4806338028169014
+  min: 0.0
+  otype: numeric
+  unique_values: []
+LB:
+  dtype: float64
+  max: 160.0
+  min: 106.0
+  otype: numeric
+  unique_values: []
+MLTV:
+  dtype: float64
+  max: 50.7
+  min: 0.0
+  otype: numeric
+  unique_values: []
+MSTV:
+  dtype: float64
+  max: 7.0
+  min: 0.2
+  otype: numeric
+  unique_values: []
+Max:
+  dtype: float64
+  max: 238.0
+  min: 122.0
+  otype: numeric
+  unique_values: []
+Mean:
+  dtype: float64
+  max: 182.0
+  min: 73.0
+  otype: numeric
+  unique_values: []
+Median:
+  dtype: float64
+  max: 186.0
+  min: 77.0
+  otype: numeric
+  unique_values: []
+Min:
+  dtype: float64
+  max: 159.0
+  min: 50.0
+  otype: numeric
+  unique_values: []
+Mode:
+  dtype: float64
+  max: 187.0
+  min: 60.0
+  otype: numeric
+  unique_values: []
+Nmax:
+  dtype: float64
+  max: 18.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+Nzeros:
+  dtype: float64
+  max: 10.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+Tendency:
+  dtype: float64
+  max: 1.0
+  min: -1.0
+  otype: numeric
+  unique_values: []
+UC:
+  dtype: float64
+  max: 0.0149253731343283
+  min: 0.0
+  otype: numeric
+  unique_values: []
+Variance:
+  dtype: float64
+  max: 269.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+Width:
+  dtype: float64
+  max: 180.0
+  min: 3.0
+  otype: numeric
+  unique_values: []
 class_col: NSP
 column_names:
 - LB

@@ -1,4 +1,229 @@
+aceinh:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+airtemp:
+  dtype: float16
+  max: 34.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+antic:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+beta:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+bfck2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+bfpc:
+  dtype: float16
+  max: 87.3125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+bfpcok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+bfpcval:
+  dtype: float16
+  max: 65.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+bmiok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '6'
+bmival:
+  dtype: float16
+  max: 163.25
+  min: 14.0
+  otype: numeric
+  unique_values: []
+bmivg5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '30'
+  - '25'
+  - '40'
+  - '18'
+  - '1'
+bnf7_antiep:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bnf7_antifibs:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bnf7_antiinflam:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bnf7_aspirin:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bnf7_conhrt:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bnf7_statins:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+bpconst:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+bpmedc:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+bprespc:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '6'
+  - '2'
+  - '4'
+bsoute:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+bswill:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+calciumb:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+cfib:
+  dtype: float16
+  max: 9.6015625
+  min: -43.0
+  otype: numeric
+  unique_values: []
+chestinf:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+chol:
+  dtype: float16
+  max: 11.796875
+  min: -41.0
+  otype: numeric
+  unique_values: []
 class_col: mh
+clotb:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+cmvavc:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '-9'
+  - '1'
+  - '3'
+  - '2'
 column_names:
 - level_0
 - index
@@ -330,16 +555,2212 @@ column_names:
 - bnf7_antiinflam
 - bnf7_antiep
 columns: 329
+condna:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+confage:
+  dtype: float16
+  max: 98.0
+  min: 16.0
+  otype: numeric
+  unique_values: []
+constorb:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+consubx1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+  - '-8'
+consubx2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+  - '-8'
+consubx3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+  - '-8'
+consubx4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+  - '-8'
+consubx5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+  - '-8'
+cufsize:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '3'
+  - '-8'
+  - '1'
+dateok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+dheas:
+  dtype: float16
+  max: 25.296875
+  min: -41.0
+  otype: numeric
+  unique_values: []
+difbpc1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+  - '-8'
+difbpc2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+difbpc3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+difbpc4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+difbpc5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+difbpc6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+  - '-8'
+difbpc95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '-8'
+  - '1'
+diur:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+ecre:
+  dtype: float16
+  max: 418.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+elig:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '11'
+  - '8'
+  - '9'
+estht:
+  dtype: float16
+  max: 204.625
+  min: 84.1875
+  otype: numeric
+  unique_values: []
+estwt:
+  dtype: float16
+  max: 190.75
+  min: 34.8125
+  otype: numeric
+  unique_values: []
+ewtch:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+feet:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+  - '-8'
+  - '4'
+fev1fvcp:
+  dtype: float16
+  max: 126.0625
+  min: -8.0
+  otype: numeric
+  unique_values: []
+fev1fvcp_sc:
+  dtype: float16
+  max: 313.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+fev1pred:
+  dtype: float16
+  max: 482.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+fev1pred_sc:
+  dtype: float16
+  max: 271.75
+  min: -8.0
+  otype: numeric
+  unique_values: []
 file_name: usoc2.csv.gz
+fit:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+floorc:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '3'
+  - '2'
+  - '1'
+  - '-1'
+  - '-8'
+folic:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+folpreghr:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+full1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+full2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+full3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+fvcpred:
+  dtype: float16
+  max: 544.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+fvcpred_sc:
+  dtype: float16
+  max: 227.125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+ggt:
+  dtype: float16
+  max: 1718.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+haeysurg:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+hastro:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+hasurg:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+hdl:
+  dtype: float16
+  max: 5.19921875
+  min: -41.0
+  otype: numeric
+  unique_values: []
+health:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-1'
+hgb:
+  dtype: float16
+  max: 220.0
+  min: -42.0
+  otype: numeric
+  unique_values: []
+hhorig:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '3'
+  - '5'
+  - '4'
+  - '1'
+hinrel:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+hiqual_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '5'
+  - '9'
+  - '4'
+  - '2'
+  - '3'
+  - '1'
+  - '-9'
+hscrp:
+  dtype: float16
+  max: 228.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+htfev:
+  dtype: float16
+  max: 7.41015625
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfev_sc:
+  dtype: float16
+  max: 9.953125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfevfvc:
+  dtype: float16
+  max: 1.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfevfvc_sc:
+  dtype: float16
+  max: 2.771484375
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfvc:
+  dtype: float16
+  max: 8.3125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfvc2:
+  dtype: float16
+  max: 9.296875
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htfvc_sc:
+  dtype: float16
+  max: 9.296875
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+htpef:
+  dtype: float16
+  max: 18.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htpef_sc:
+  dtype: float16
+  max: 15.3203125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+htval:
+  dtype: float16
+  max: 204.625
+  min: 84.1875
+  otype: numeric
+  unique_values: []
+hyper1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-2'
+  - '1'
+  - '3'
+  - '4'
+hyper2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-2'
+  - '4'
+  - '3'
+hyper2om:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-2'
+  - '4'
+  - '3'
+ieqmoecd_dv:
+  dtype: float16
+  max: 6.69921875
+  min: 1.0
+  otype: numeric
+  unique_values: []
+igfi:
+  dtype: float16
+  max: 78.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+indbdub_xw:
+  dtype: float16
+  max: 5.37890625
+  min: 0.0
+  otype: numeric
+  unique_values: []
+inhaler:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+iron:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+jbnssec3_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '3'
+  - '2'
+  - '-9'
+jbnssec5_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '5'
+  - '4'
+  - '3'
+  - '2'
+  - '-9'
+jbnssec8_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '3'
+  - '8'
+  - '7'
+  - '2'
+  - '6'
+  - '5'
+  - '1'
+  - '4'
+  - '-9'
+jlnssec3_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '3'
+  - '2'
+jlnssec5_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '5'
+  - '3'
+  - '2'
+  - '4'
+jlnssec8_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '3'
+  - '7'
+  - '8'
+  - '2'
+  - '5'
+  - '4'
+  - '1'
+  - '6'
+lfout:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '4'
+  - '3'
+  - '11'
+  - '8'
+  - '5'
+  - '6'
+  - '9'
+  - '7'
+lfresp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+  - '3'
+lfstand:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+lftemp:
+  dtype: float16
+  max: 26.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+lfwill:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+  - '3'
+lipid:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+lungex:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-8'
+lungeye:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-8'
+lunghosp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+  - '1'
+lunghrt:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+  - '1'
+lunginhl:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+  - '1'
+lungsmok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-8'
+lungsurg:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+  - '1'
+lungtest:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '-8'
+  - '3'
+  - '2'
+marstat:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '6'
+  - '5'
+  - '1'
+  - '3'
+  - '4'
+  - '7'
+medcnj:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+medcnjd:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+medtyp1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+medtyp10:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp11:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp12:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp13:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+medtyp4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp8:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+medtyp9:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+mlstat:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+  - '6'
+  - '5'
+  - '4'
+  - '-9'
+mmgsdom:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+mmgsok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+mmgspr:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-8'
+mmgsprb1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+mmgsprb2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+mmgsprb3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+mmgsprb95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+mmgsres:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '-8'
+  - '2'
+  - '3'
+mmgssta:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+  - '-8'
+  - '4'
+mmgstp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '3'
+  - '2'
+  - '4'
+  - '-8'
+mmgswil:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+  - '3'
 name: usoc2
+nattbpd0:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nattbpd1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nattbpd2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nattbpd3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+nattbpd4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nattbpd95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+ncgplf:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+ncguard:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+nlsatlf:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+noattlf:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '6'
+  - '4'
+  - '5'
+  - '3'
+noattlf0:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+noattlf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+  - '-2'
+noattlf2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+  - '-2'
+noattlf3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+  - '-2'
+noattlf4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+  - '-2'
+noattlf5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+  - '-2'
+noattlf95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+  - '-2'
+nobf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nobf2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nobf3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+nobsm1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nobsm2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nobsm3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nobsm95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+nohtbc8:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+noread:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '2'
+  - '1'
+nowtbc1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+nowtbc7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nowtbc8:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nowtbc9:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+nseqno:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '3'
+  - '1'
+  - '5'
+  - '4'
+  - '7'
+  - '6'
+  - '9'
+nsex:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+nulllf0:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+nulllf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nulllf2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nulllf3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nulllf4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nulllf5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nulllf6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+nulllf95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+nurdayw:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '5'
+  - '3'
+  - '1'
+  - '2'
+  - '6'
+  - '4'
+  - '0'
+nurdayy:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2012'
+  - '2011'
+  - '2010'
+nuroutc:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '11'
+obpdrug:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+omdiast:
+  dtype: float16
+  max: 124.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+omdiaval:
+  dtype: float16
+  max: 124.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+ommapval:
+  dtype: float16
+  max: 152.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+ompulval:
+  dtype: float16
+  max: 124.5
+  min: -8.0
+  otype: numeric
+  unique_values: []
+omsyst:
+  dtype: float16
+  max: 216.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
+omsysval:
+  dtype: float16
+  max: 216.0
+  min: -8.0
+  otype: numeric
+  unique_values: []
 positive_class: null
+problf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+problf2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+problf3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+problf4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+problf5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+probwj:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '3'
+  - '2'
+qualab:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-8'
+  - '1'
+  - '-2'
+qualcdf0:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+qualcdf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '0'
+qualcdf7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+qualcdf95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '0'
+  - '1'
+refbsc1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+refbsc95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+region:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+relhite:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+relwaitb:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-8'
+resnwt:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+respbps:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '4'
+  - '3'
+  - '2'
+  - '6'
+  - '5'
+resphts:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+respwts:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '5'
+  - '4'
 rows: 11745
+rtin:
+  dtype: float16
+  max: 9776.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+samdifc1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+samdifc2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+samdifc3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+samdifc4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+samdifc5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+samdifc6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+samdifc95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+samparm:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
 sample_size: 1.0
+sf1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '3'
+  - '2'
+  - '4'
+  - '5'
+  - '1'
+  - '-1'
 spiel: "\n    University of Essex, Institute for Social and Economic Research. (2019).\n\
   \    Understanding Society: Waves 2-3 Nurse Health Assessment, 2010-2012. [data\
   \ collection].\n    3rd Edition. UK Data Service. SN: 7251, http://doi.org/10.5255/UKDA-SN-7251-3\n\
   \    Target: Mental health (mh) - neutral, happy, unhappy (categorical)\n    "
+statina:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+statins:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - '-1'
 target_classes:
 - neutral
 - happy
 - unhappy
+tbmed:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+testo:
+  dtype: float16
+  max: 48.0
+  min: -41.0
+  otype: numeric
+  unique_values: []
+trig:
+  dtype: float16
+  max: 31.90625
+  min: -41.0
+  otype: numeric
+  unique_values: []
+urban_dv:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '-9'
+ure:
+  dtype: float16
+  max: 26.90625
+  min: -41.0
+  otype: numeric
+  unique_values: []
+uscmg:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '-9'
+  - '2'
+  - '-41'
+  - '3'
+  - '-22'
+uscmm:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '-9'
+  - '3'
+  - '-41'
+  - '1'
+  - '-22'
+vpalco:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+vparm:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+vpcheck:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+vphand:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+vppress1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vppress2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+vppress3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vpprob1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vpprob2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vpprob3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vpprob95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '0'
+  - '1'
+vpprob96:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '0'
+vpsam:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '4'
+  - '3'
+vpsens:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '3'
+  - '1'
+vpskin:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+vpsys:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+wave:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '3'
+  - '2'
+whintro:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+whpnabm1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm6:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+whpnabm95:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+wjrel:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '2'
+  - '3'
+wstokb:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '4'
+  - '2'
+wstval:
+  dtype: float16
+  max: 177.25
+  min: 54.25
+  otype: numeric
+  unique_values: []
+wtok:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '1'
+  - '5'
+  - '4'
+wtpc:
+  dtype: float16
+  max: 82.3125
+  min: -8.0
+  otype: numeric
+  unique_values: []
+wtval:
+  dtype: float16
+  max: 190.75
+  min: 34.8125
+  otype: numeric
+  unique_values: []
+ynobp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+  - '2'
+  - '3'
+ynolf:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'
+  - '1'
+ynowh:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '-8'

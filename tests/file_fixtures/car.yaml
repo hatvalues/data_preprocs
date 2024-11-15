@@ -1,3 +1,13 @@
+buying:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - vhigh
+  - high
+  - med
+  - low
 class_col: acceptability
 column_names:
 - buying
@@ -7,10 +17,57 @@ column_names:
 - lug_boot
 - safety
 columns: 6
+doors:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '3'
+  - '4'
+  - 5more
 file_name: car.csv.gz
+lug_boot:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - small
+  - med
+  - big
+maint:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - vhigh
+  - high
+  - med
+  - low
 name: car
+persons:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '4'
+  - more
 positive_class: acc
 rows: 1728
+safety:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - low
+  - med
+  - high
 sample_size: 1.0
 spiel: "\n    M. Bohanec and V. Rajkovic: Knowledge acquisition and explanation for\n\
   \    multi-attribute decision making. In 8th Intl Workshop on Expert\n    Systems\

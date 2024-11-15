@@ -1,3 +1,78 @@
+Ca:
+  dtype: int64
+  max: 3
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 3
+  - 2
+  - 1
+ChestPain:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - typical
+  - asymptomatic
+  - nonanginal
+  - nontypical
+ExAng:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'No'
+  - 'Yes'
+Fbs:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '>120'
+  - <=120
+Oldpeak:
+  dtype: float64
+  max: 6.2
+  min: 0.0
+  otype: numeric
+  unique_values: []
+RestECG:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - abnormal
+  - normal
+Sex:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - M
+  - F
+Slope:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - level
+  - down
+Thal:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - fixed
+  - normal
+  - reversable
 class_col: HDisease
 column_names:
 - Age

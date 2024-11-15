@@ -1,3 +1,30 @@
+anonymity:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 2
+  - 1
+  - 0
+benefits:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 2
+  - 1
+  - 0
+care_options:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+  - 2
 class_col: treatment
 column_names:
 - age
@@ -24,11 +51,147 @@ column_names:
 - obs_consequence
 - region
 columns: 23
+coworkers:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 2
+  - 0
+family_history:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 0
+  - 2
 file_name: mhtech14.csv.gz
+gender:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - female
+  - male
+  - others
+leave:
+  dtype: int64
+  max: 4
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 3
+  - 2
+  - 1
+  - 0
+  - 4
+mental_health_consequence:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+  - 2
+mental_health_interview:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 2
+  - 1
+mental_vs_physical:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 2
+  - 1
+  - 0
 name: mhtech14
+no_employees:
+  dtype: int64
+  max: 1000
+  min: 1
+  otype: count
+  unique_values:
+  - 6
+  - 1000
+  - 26
+  - 100
+  - 1
+  - 500
+obs_consequence:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 0
+  - 2
+phys_health_consequence:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 2
+  - 1
+phys_health_interview:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+  - 2
 positive_class: 'Yes'
+region:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - USCA
+  - EUR
+  - APAC
+  - CSA
+  - MEAF
+remote_work:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 0
+  - 2
 rows: 1259
 sample_size: 1.0
+seek_help:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 2
+  - 1
+  - 0
+self_employed:
+  dtype: int64
+  max: 0
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
 spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey\n\
   \n    This dataset contains the following data:\n\n    Timestamp\n    Age\n    Gender\n\
   \    Country\n    state: If you live in the United States, which state or territory\
@@ -59,6 +222,42 @@ spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-su
   \    obs_consequence: Have you heard of or observed negative consequences for coworkers\
   \ with mental health conditions in your workplace?\n    comments: Any additional\
   \ notes or comments\n    "
+supervisor:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 2
+  - 0
 target_classes:
 - 'Yes'
 - 'No'
+tech_company:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: count
+  unique_values:
+  - 2
+  - 0
+wellness_program:
+  dtype: int64
+  max: 2
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+  - 2
+work_interfere:
+  dtype: int64
+  max: 4
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 3
+  - 4
+  - 1
+  - 2

@@ -31,6 +31,186 @@ column_names:
 - f_29
 - f_30
 columns: 30
+f_1:
+  dtype: float64
+  max: 28.11
+  min: 6.981
+  otype: numeric
+  unique_values: []
+f_10:
+  dtype: float64
+  max: 0.09744
+  min: 0.04996
+  otype: numeric
+  unique_values: []
+f_11:
+  dtype: float64
+  max: 2.873
+  min: 0.1115
+  otype: numeric
+  unique_values: []
+f_12:
+  dtype: float64
+  max: 4.885
+  min: 0.3602
+  otype: numeric
+  unique_values: []
+f_13:
+  dtype: float64
+  max: 21.98
+  min: 0.757
+  otype: numeric
+  unique_values: []
+f_14:
+  dtype: float64
+  max: 542.2
+  min: 6.802
+  otype: numeric
+  unique_values: []
+f_15:
+  dtype: float64
+  max: 0.03113
+  min: 0.001713
+  otype: numeric
+  unique_values: []
+f_16:
+  dtype: float64
+  max: 0.1354
+  min: 0.002252
+  otype: numeric
+  unique_values: []
+f_17:
+  dtype: float64
+  max: 0.396
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_18:
+  dtype: float64
+  max: 0.05279
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_19:
+  dtype: float64
+  max: 0.07895
+  min: 0.007882
+  otype: numeric
+  unique_values: []
+f_2:
+  dtype: float64
+  max: 39.28
+  min: 9.71
+  otype: numeric
+  unique_values: []
+f_20:
+  dtype: float64
+  max: 0.02984
+  min: 0.0008948
+  otype: numeric
+  unique_values: []
+f_21:
+  dtype: float64
+  max: 36.04
+  min: 7.93
+  otype: numeric
+  unique_values: []
+f_22:
+  dtype: float64
+  max: 49.54
+  min: 12.02
+  otype: numeric
+  unique_values: []
+f_23:
+  dtype: float64
+  max: 251.2
+  min: 50.41
+  otype: numeric
+  unique_values: []
+f_24:
+  dtype: float64
+  max: 4254.0
+  min: 185.2
+  otype: numeric
+  unique_values: []
+f_25:
+  dtype: float64
+  max: 0.2226
+  min: 0.07117
+  otype: numeric
+  unique_values: []
+f_26:
+  dtype: float64
+  max: 1.058
+  min: 0.02729
+  otype: numeric
+  unique_values: []
+f_27:
+  dtype: float64
+  max: 1.252
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_28:
+  dtype: float64
+  max: 0.291
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_29:
+  dtype: float64
+  max: 0.6638
+  min: 0.1565
+  otype: numeric
+  unique_values: []
+f_3:
+  dtype: float64
+  max: 188.5
+  min: 43.79
+  otype: numeric
+  unique_values: []
+f_30:
+  dtype: float64
+  max: 0.2075
+  min: 0.05504
+  otype: numeric
+  unique_values: []
+f_4:
+  dtype: float64
+  max: 2501.0
+  min: 143.5
+  otype: numeric
+  unique_values: []
+f_5:
+  dtype: float64
+  max: 0.1634
+  min: 0.05263
+  otype: numeric
+  unique_values: []
+f_6:
+  dtype: float64
+  max: 0.3454
+  min: 0.01938
+  otype: numeric
+  unique_values: []
+f_7:
+  dtype: float64
+  max: 0.4268
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_8:
+  dtype: float64
+  max: 0.2012
+  min: 0.0
+  otype: numeric
+  unique_values: []
+f_9:
+  dtype: float64
+  max: 0.304
+  min: 0.106
+  otype: numeric
+  unique_values: []
 file_name: breast.csv.gz
 name: breast
 positive_class: M

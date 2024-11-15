@@ -1,3 +1,13 @@
+chk:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A11
+  - A12
+  - A14
+  - A13
 class_col: rating
 column_names:
 - chk
@@ -21,9 +31,150 @@ column_names:
 - tel
 - foreign
 columns: 20
+creds:
+  dtype: int64
+  max: 4
+  min: 1
+  otype: ordinal
+  unique_values:
+  - 2
+  - 1
+  - 3
+  - 4
+crhis:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A34
+  - A32
+  - A33
+  - A30
+  - A31
+debt:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A101
+  - A103
+  - A102
+deps:
+  dtype: int64
+  max: 2
+  min: 1
+  otype: ordinal
+  unique_values:
+  - 1
+  - 2
+emp:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A75
+  - A73
+  - A74
+  - A71
+  - A72
 file_name: german.csv.gz
+foreign:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A201
+  - A202
+hous:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A152
+  - A153
+  - A151
+job:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A173
+  - A172
+  - A174
+  - A171
 name: german
+pers:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A93
+  - A92
+  - A91
+  - A94
+plans:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A143
+  - A141
+  - A142
 positive_class: bad
+pps:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A43
+  - A46
+  - A42
+  - A40
+  - A41
+  - A49
+  - A44
+  - A45
+  - A410
+  - A48
+prop:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A121
+  - A122
+  - A124
+  - A123
+rate:
+  dtype: int64
+  max: 4
+  min: 1
+  otype: ordinal
+  unique_values:
+  - 4
+  - 2
+  - 3
+  - 1
+res:
+  dtype: int64
+  max: 4
+  min: 1
+  otype: ordinal
+  unique_values:
+  - 4
+  - 2
+  - 3
+  - 1
 rows: 1000
 sample_size: 1.0
 spiel: "Source:\n    Professor Dr. Hans Hofmann\n    Institut f\"ur Statistik und\
@@ -41,6 +192,25 @@ spiel: "Source:\n    Professor Dr. Hans Hofmann\n    Institut f\"ur Statistik un
   \ classification and the columns the predicted classification.\n    It is worse\
   \ to class a customer as good when they are bad (5), than it is to class a customer\
   \ as bad when they are good (1).\n    "
+svng:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A65
+  - A61
+  - A63
+  - A64
+  - A62
 target_classes:
 - good
 - bad
+tel:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - A192
+  - A191

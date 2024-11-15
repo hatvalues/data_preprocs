@@ -1,3 +1,11 @@
+alchy:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 class_col: recid
 column_names:
 - year
@@ -19,9 +27,65 @@ column_names:
 - follow
 - missingness
 columns: 18
+felon:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 file_name: rcdv_samp.csv.gz
+junky:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+male:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+married:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+missingness:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 name: rcdv_samp
+person:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 positive_class: Y
+propty:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 rows: 1888
 sample_size: 0.1
 spiel: "A random 0.1% sample without replacement of the original rcdv dataset.\n\n\
@@ -101,6 +165,38 @@ spiel: "A random 0.1% sample without replacement of the original rcdv dataset.\n
   \ is a variable indicating to which data sample the individual record belongs. The\
   \ value 1 indicates the analysis sample, 2 the validation sampel and 3 is missing\
   \ data sample.\n    "
+super:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 target_classes:
 - N
 - Y
+white:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+workrel:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+year:
+  dtype: int64
+  max: 1980
+  min: 1978
+  otype: count
+  unique_values:
+  - 1980
+  - 1978

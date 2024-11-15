@@ -1,4 +1,4 @@
-import src.data_preprocs.data_loading as dl
+from src.data_preprocs.data_loading import DataContainer, DataLoader, DataProviderFactory, DataProvider, DataFramework
 import polars as pl
 import pandas as pd
 import pytest
@@ -53,126 +53,129 @@ polars_schema = {
 
 
 def test_validate_schema():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
-    assert polars_loader._validate_schema() == "polars"
-    assert pandas_loader._validate_schema() == "pandas"
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
+    assert polars_loader._validate_schema() == DataFramework.POLARS
+    assert pandas_loader._validate_schema() == DataFramework.PANDAS
 
 
 def test_validate_framework_framework_and_schema():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework="pandas")
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework="polars")
-    assert polars_loader._validate_framework() == "polars"
-    assert pandas_loader._validate_framework() == "pandas"
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework=DataFramework.PANDAS)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework=DataFramework.POLARS)
+    assert polars_loader.data_framework == DataFramework.POLARS
+    assert pandas_loader.data_framework == DataFramework.PANDAS
 
 
 def test_validate_framework_schema_only():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
-    assert pandas_loader._validate_framework() == "pandas"
-    assert polars_loader._validate_framework() == "polars"
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
+    assert pandas_loader.data_framework == DataFramework.PANDAS
+    assert polars_loader.data_framework == DataFramework.POLARS
 
 
 def test_validate_framework_framework_only():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="pandas")
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="polars")
-    assert pandas_loader._validate_framework() == "pandas"
-    assert polars_loader._validate_framework() == "polars"
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.PANDAS)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.POLARS)
+    assert pandas_loader.data_framework == DataFramework.PANDAS
+    assert polars_loader.data_framework == DataFramework.POLARS
 
 
-def test_validate_framework_negative_cases():
-    malformed_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y")
+def test_validate_framework_schema_wrong_type():
     with pytest.raises(ValueError):
-        malformed_loader._validate_framework()
+        malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=[str, pl.Utf8])
 
-    malformed_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None, schema=None)
+def test_validate_framework_schema_mixed_types():
     with pytest.raises(ValueError):
-        malformed_loader._validate_framework()
+        malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema={"age": "int16", "size": pl.Utf8})
 
-    malformed_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="unsupported")
+def test_validate_framework_neither_given():
     with pytest.raises(ValueError):
-        malformed_loader._validate_framework()
+        malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None, schema=None)
+
+def test_validate_framework_unsupported():
+    with pytest.raises(ValueError):
+        malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="unsupported")
 
 
 def test_schema_overrides_framework():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework="polars")
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework="pandas")
-    malformed_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="unsupported", schema=polars_schema)
-    assert pandas_loader._validate_framework() == "pandas"
-    assert polars_loader._validate_framework() == "polars"
-    assert malformed_loader._validate_framework() == "polars"
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework=DataFramework.POLARS)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework=DataFramework.PANDAS)
+    malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="unsupported", schema=polars_schema)
+    assert pandas_loader.data_framework == DataFramework.PANDAS
+    assert polars_loader.data_framework == DataFramework.POLARS
+    assert malformed_loader.data_framework == DataFramework.POLARS
 
 
 def test_file_to_pandas_no_schema():
-    pandas_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="pandas")
-    polars_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="polars")
+    pandas_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.PANDAS)
+    polars_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.POLARS)
     assert isinstance(pandas_loader._file_to_pandas(), pd.DataFrame)
     assert isinstance(polars_loader._file_to_polars(), pl.DataFrame)
 
 
 def test_schema_given_polars():
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
 
 
 def test_schema_given_pandas():
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
 
 
 def test_framework_given_polars():
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="polars")
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.POLARS)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
 
 
 def test_framework_given_pandas():
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework="pandas")
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.PANDAS)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
 
 
 def test_no_schema_or_framework():
     with pytest.raises(ValueError):
-        data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y")
-        data_loader.load()
+        data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y")
+        
 
     with pytest.raises(ValueError):
-        data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=None)
-        data_loader.load()
+        data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=None)
+        
 
     with pytest.raises(ValueError):
-        data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None)
-        data_loader.load()
+        data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None)
+        
 
 
 # schema overrides framework
 def test_both_schema_and_framework():
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework="polars")
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework=DataFramework.POLARS)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
 
-    data_loader = dl.DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework="pandas")
-    data_loader.load()
-    assert isinstance(data_loader.container, dl.DataContainer)
+    data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework=DataFramework.PANDAS)
+    
+    assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
 
 
 def test_create_data_provider_pandas():
-    factory = dl.DataProviderFactory(
+    factory = DataProviderFactory(
         kwargs=dict(
             name="bankmark",
             file_name="bankmark_samp.csv.gz",
@@ -180,18 +183,18 @@ def test_create_data_provider_pandas():
             class_col="y",
             positive_class="Yes",
             spiel="",
-            data_framework="pandas",
+            data_framework=DataFramework.PANDAS,
         )
     )
     bankmark = factory.create_data_provider()
-    assert isinstance(bankmark, dl.DataProvider)
+    assert isinstance(bankmark, DataProvider)
     assert isinstance(bankmark.features, pd.DataFrame)
     assert isinstance(bankmark.target, pd.Series)
     assert bankmark.features.shape[0] == bankmark.target.shape[0]
 
 
 def test_create_data_provider_polars():
-    factory = dl.DataProviderFactory(
+    factory = DataProviderFactory(
         kwargs=dict(
             name="bankmark",
             file_name="bankmark_samp.csv.gz",
@@ -199,11 +202,11 @@ def test_create_data_provider_polars():
             class_col="y",
             positive_class="Yes",
             spiel="",
-            data_framework="polars",
+            data_framework=DataFramework.POLARS,
         )
     )
     bankmark = factory.create_data_provider()
-    assert isinstance(bankmark, dl.DataProvider)
+    assert isinstance(bankmark, DataProvider)
     assert isinstance(bankmark.features, pl.DataFrame)
     assert isinstance(bankmark.target, pl.Series)
     assert bankmark.features.shape[0] == bankmark.target.shape[0]
@@ -211,40 +214,40 @@ def test_create_data_provider_polars():
 
 def factory_init_validations():
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs=dict())
+        _ = DataProviderFactory(kwargs=dict())
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs=dict(data_framework=None, schema=None))
+        _ = DataProviderFactory(kwargs=dict(data_framework=None, schema=None))
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(kwargs=dict(data_framework="unsupported"))
+        _ = DataProviderFactory(kwargs=dict(data_framework="unsupported"))
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(
+        _ = DataProviderFactory(
             kwargs=dict(
                 file_name="bankmark_samp.csv.gz",
                 sample_size=1.0,
                 class_col="y",
                 positive_class="Yes",
                 spiel="",
-                data_framework="pandas",
+                data_framework=DataFramework.PANDAS,
             )
         )
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(
+        _ = DataProviderFactory(
             kwargs=dict(
                 name="bankmark",
                 sample_size=1.0,
                 class_col="y",
                 positive_class="Yes",
                 spiel="",
-                data_framework="pandas",
+                data_framework=DataFramework.PANDAS,
             )
         )
 
     with pytest.raises(ValueError):
-        _ = dl.DataProviderFactory(
+        _ = DataProviderFactory(
             kwargs=dict(
                 name="bankmark",
                 file_name="bankmark_samp.csv.gz",
@@ -252,6 +255,6 @@ def factory_init_validations():
                 class_col="y",
                 positive_class="Yes",
                 spiel="",
-                data_framework="pandas",
+                data_framework=DataFramework.PANDAS,
             )
         )

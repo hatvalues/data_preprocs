@@ -1,3 +1,104 @@
+A1:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - b
+  - a
+  - u
+A10:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - t
+  - f
+A12:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - f
+  - t
+A13:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - g
+  - s
+  - p
+A14:
+  dtype: float64
+  max: 2000.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+A2:
+  dtype: float64
+  max: 80.25
+  min: 13.75
+  otype: numeric
+  unique_values: []
+A3:
+  dtype: float64
+  max: 28.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+A4:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - u
+  - y
+  - l
+A5:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - g
+  - p
+  - u
+  - gg
+A7:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - v
+  - h
+  - bb
+  - ff
+  - j
+  - z
+  - u
+  - o
+  - dd
+  - n
+A8:
+  dtype: float64
+  max: 28.5
+  min: 0.0
+  otype: numeric
+  unique_values: []
+A9:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - t
+  - f
 class_col: A16
 column_names:
 - A1

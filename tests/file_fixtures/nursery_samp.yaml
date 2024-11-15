@@ -1,3 +1,13 @@
+children:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - '2'
+  - '1'
+  - more
+  - '3'
 class_col: decision
 column_names:
 - parents
@@ -10,10 +20,75 @@ column_names:
 - health
 columns: 8
 file_name: nursery_samp.csv.gz
+finance:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - inconv
+  - convenient
+form:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - complete
+  - completed
+  - incomplete
+  - foster
+has_nurs:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - very_crit
+  - less_proper
+  - improper
+  - proper
+  - critical
+health:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - priority
+  - not_recom
+  - recommended
+housing:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - convenient
+  - less_conv
+  - critical
 name: nursery_samp
+parents:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - usual
+  - pretentious
+  - great_pret
 positive_class: null
 rows: 2592
 sample_size: 0.2
+social:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - slightly_prob
+  - nonprob
+  - problematic
 spiel: "Data Description:\n    The target is a multinomial response variable.\n  \
   \  Nursery Database was derived from a hierarchical decision model\n    originally\
   \ developed to rank applications for nursery schools. It\n    was used during several\

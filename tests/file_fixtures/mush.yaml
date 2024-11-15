@@ -1,3 +1,27 @@
+bruises:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - t
+  - f
+ccolor:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - n
+  - y
+  - w
+  - g
+  - e
+  - p
+  - b
+  - u
+  - c
+  - r
 class_col: edible
 column_names:
 - cshape
@@ -23,11 +47,147 @@ column_names:
 - pop
 - hab
 columns: 22
+cshape:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - x
+  - b
+  - s
+  - f
+  - k
+  - c
+csurface:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - s
+  - y
+  - f
+  - g
 file_name: mush.csv.gz
+gattach:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - f
+  - a
+gsize:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - n
+  - b
+gspace:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - c
+  - w
+hab:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - u
+  - g
+  - m
+  - d
+  - p
+  - w
+  - l
 name: mush
+odor:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - p
+  - a
+  - l
+  - n
+  - f
+  - c
+  - y
+  - s
+  - m
+pop:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - s
+  - n
+  - a
+  - v
+  - y
+  - c
 positive_class: e
+rnum:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - o
+  - t
+  - n
 rows: 8124
+rtype:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - p
+  - e
+  - l
+  - f
+  - n
 sample_size: 1.0
+scoloraring:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - w
+  - g
+  - p
+  - n
+  - b
+  - e
+  - o
+  - c
+  - y
+scolorbring:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - w
+  - p
+  - g
+  - b
+  - n
+  - e
+  - y
+  - o
+  - c
 spiel: "Source:\n    This dataset was taken from the UCI Machine Learning Repository.\
   \ The data was donated by Jeff Schlimmer.\n\n    Data Set Information:\n    This\
   \ data set includes descriptions of hypothetical samples corresponding to 23 species\
@@ -60,6 +220,77 @@ spiel: "Source:\n    This dataset was taken from the UCI Machine Learning Reposi
   \ purple=u, white=w, yellow=y\n    21. pop (population): abundant=a, clustered=c,\
   \ numerous=n, scattered=s, several=v, solitary=y\n    22. hab (habitat): grasses=g,\
   \ leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d\n    "
+sporecolor:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - k
+  - n
+  - u
+  - h
+  - w
+  - r
+  - o
+  - y
+  - b
+sroot:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - e
+  - c
+  - b
+  - r
+  - '?'
+sshape:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - e
+  - t
+ssurfaring:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - s
+  - f
+  - k
+  - y
+ssurfbring:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - s
+  - f
+  - y
+  - k
 target_classes:
 - p
 - e
+vcolor:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - w
+  - n
+  - o
+  - y
+vtype:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - p

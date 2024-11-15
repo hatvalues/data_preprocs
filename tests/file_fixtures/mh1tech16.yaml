@@ -1,3 +1,534 @@
+Are you self-employed?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+Did you feel that your previous employers took mental health as seriously as physical health?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - possibly
+  - 'no'
+  - 'yes'
+Did you hear of or observe negative consequences for co-workers with mental health issues in your previous workplaces?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - possibly
+  - not sure
+  - 'yes'
+? Did your previous employers ever formally discuss mental health (as part of a wellness
+  campaign or other official communication)?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - none
+  - some
+  - all
+Did your previous employers provide resources to learn more about mental health issues and how to seek help?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - none
+  - some
+  - not sure
+  - all
+Do you believe your productivity is ever affected by a mental health issue?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - 'yes'
+  - 'no'
+  - not sure
+Do you currently have a mental health disorder?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - possibly
+Do you feel that being identified as a person with a mental health issue would hurt your career?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - 'no'
+  - 'yes'
+Do you feel that your employer takes mental health as seriously as physical health?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+Do you have a family history of mental illness?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - not sure
+Do you have medical coverage (private insurance or state-provided) which includes treatment of  mental health issues?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+Do you have previous employers?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - 'no'
+Do you know local or online resources to seek help for a mental health disorder?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - several
+  - some
+Do you know the options for mental health care available under your employer-provided coverage?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+Do you think that discussing a mental health disorder with previous employers would have negative consequences?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - 'no'
+  - not sure
+  - 'yes'
+Do you think that discussing a mental health disorder with your employer would have negative consequences?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - possibly
+  - not sure
+  - 'yes'
+Do you think that discussing a physical health issue with previous employers would have negative consequences?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - possibly
+  - 'yes'
+  - not sure
+Do you think that discussing a physical health issue with your employer would have negative consequences?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - not sure
+  - possibly
+  - 'yes'
+? Do you think that team members/co-workers would view you more negatively if they
+  knew you suffered from a mental health issue?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - possibly
+  - 'yes'
+Do you work remotely?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - sometimes
+  - never
+  - always
+Does your employer offer resources to learn more about mental health concerns and options for seeking help?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - not sure
+Does your employer provide mental health benefits as part of healthcare coverage?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not eligible
+  - 'no'
+  - not sure
+  - 'yes'
+? Has your employer ever formally discussed mental health (for example - as part of
+  a wellness campaign or other official communication)?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - not sure
+Have you been diagnosed with a mental health condition by a medical professional?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - 'no'
+Have you ever sought treatment for a mental health issue from a mental health professional?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+Have you had a mental health disorder in the past?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - possibly
+  - 'no'
+? Have you heard of or observed negative consequences for co-workers who have been
+  open about mental health issues in your workplace?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - not sure
+  - 'yes'
+? Have you observed or experienced an unsupportive or badly handled response to a
+  mental health issue in your current or previous workplace?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - not sure
+  - 'yes'
+? Have your observations of how another individual who discussed a mental health disorder
+  made you less likely to reveal a mental health issue yourself in your current workplace?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+  - possibly
+Have your previous employers provided mental health benefits?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - none
+  - all
+  - some
+  - not sure
+How many employees does your company or organization have?:
+  dtype: float64
+  max: 1000.0
+  min: 0.0
+  otype: numeric
+  unique_values: []
+How willing would you be to share with friends and family that you have a mental illness?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - some
+  - neutral
+  - not applicable
+  - always
+  - none
+  - less
+'If a mental health issue prompted you to request a medical leave from work - asking for that leave would be:':
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - very easy
+  - easy
+  - neutral
+  - not sure
+  - very difficult
+  - difficult
+? If yes - what percentage of your work time (time performing primary or secondary
+  job functions) is affected by a mental health issue?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - 1-25%
+  - 76-100%
+  - 26-50%
+  - 51-75%
+If you have a mental health issue - do you feel that it interferes with your work when NOT being treated effectively?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - sometimes
+  - often
+  - rarely
+  - never
+If you have a mental health issue - do you feel that it interferes with your work when being treated effectively?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - rarely
+  - sometimes
+  - never
+  - often
+? If you have been diagnosed or treated for a mental health disorder - do you ever
+  reveal this to clients or business contacts?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - sometimes
+  - no need
+  - 'no'
+  - always
+If you have been diagnosed or treated for a mental health disorder - do you ever reveal this to coworkers or employees?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - sometimes
+  - 'no'
+  - always
+  - no need
+? If you have revealed a mental health issue to a client or business contact - do
+  you believe this has impacted you negatively?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - not sure
+  - 'yes'
+  - 'no'
+If you have revealed a mental health issue to a coworker or employee - do you believe this has impacted you negatively?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not applicable
+  - not sure
+  - 'no'
+  - 'yes'
+? Is your anonymity protected if you choose to take advantage of mental health or
+  substance abuse treatment resources provided by your employer?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+Is your employer primarily a tech company/organization?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - not sure
+  - 'no'
+Is your primary role within your company related to tech/IT?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - 'no'
+? Was your anonymity protected if you chose to take advantage of mental health or
+  substance abuse treatment resources with previous employers?
+: dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - not sure
+  - 'yes'
+  - sometimes
+  - 'no'
+  - not applicable
+Were you aware of the options for mental health care provided by your previous employers?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - none
+  - some
+  - all
+  - not sure
+What is your gender?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - male
+  - female
+  - others
+What region do you live in?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - EUR
+  - USCA
+  - APAC
+  - CSA
+  - MEAF
+What region do you work in?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - EUR
+  - USCA
+  - APAC
+  - CSA
+  - MEAF
+Would you be willing to bring up a physical health issue with a potential employer in an interview?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - 'yes'
+  - 'no'
+Would you bring up a mental health issue with a potential employer in an interview?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - 'no'
+  - 'yes'
+Would you feel comfortable discussing a mental health disorder with your coworkers?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - not sure
+  - 'yes'
+  - 'no'
+Would you feel comfortable discussing a mental health disorder with your direct supervisor(s)?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - possibly
+  - not sure
+  - 'no'
+Would you have been willing to discuss a mental health issue with your direct supervisor(s)?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - not sure
+  - 'no'
+  - 'yes'
+Would you have been willing to discuss a mental health issue with your previous co-workers?:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - possibly
+  - 'no'
+  - 'yes'
+  - not sure
 class_col: mh1
 column_names:
 - Are you self-employed?
@@ -71,6 +602,23 @@ column_names:
 - What region do you work in?
 columns: 46
 file_name: mhtech16.csv.gz
+mh2:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - 'no'
+mh3:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - possibly
 name: mh1tech16
 positive_class: 'yes'
 rows: 1433

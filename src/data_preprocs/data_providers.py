@@ -1,4 +1,4 @@
-from .data_loading import DataProvider, DataProviderFactory
+from .data_loading import DataFramework, DataProvider, DataProviderFactory
 import polars as pl
 import pandas as pd
 
@@ -32,22 +32,22 @@ full_set = {"name": "adult", "file_name": "adult.csv.gz", "sample_size": 1.0}
 samp_set = {"name": "adult_samp", "file_name": "adult_samp.csv.gz", "sample_size": 0.25}
 small_samp_set = {"name": "adult_small_samp", "file_name": "adult_small_samp.csv.gz", "sample_size": 0.025}
 
-factory = DataProviderFactory(kwargs=adult_common_args | full_set | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=adult_common_args | full_set | {"data_framework": DataFramework.PANDAS})
 adult_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=adult_common_args | full_set | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=adult_common_args | full_set | {"data_framework": DataFramework.POLARS})
 adult_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=adult_common_args | samp_set | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=adult_common_args | samp_set | {"data_framework": DataFramework.PANDAS})
 adult_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=adult_common_args | samp_set | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=adult_common_args | samp_set | {"data_framework": DataFramework.POLARS})
 adult_samp_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=adult_common_args | small_samp_set | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=adult_common_args | small_samp_set | {"data_framework": DataFramework.PANDAS})
 adult_small_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=adult_common_args | small_samp_set | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=adult_common_args | small_samp_set | {"data_framework": DataFramework.POLARS})
 adult_small_samp_pl = factory.create_data_provider()
 
 
@@ -150,16 +150,16 @@ bankmark_polars_schema = {
     "y": pl.Utf8,
 }
 
-factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": DataFramework.PANDAS})
 bankmark_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": "polars"})
+factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark", "file_name": "bankmark.csv.gz", "sample_size": 1.0, "data_framework": DataFramework.POLARS})
 bankmark_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": DataFramework.PANDAS})
 bankmark_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": "polars"})
+factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": DataFramework.POLARS})
 bankmark_samp_pl = factory.create_data_provider()
 
 
@@ -204,10 +204,10 @@ breast_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=breast_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=breast_common_args | {"data_framework": DataFramework.PANDAS})
 breast_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=breast_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=breast_common_args | {"data_framework": DataFramework.POLARS})
 breast_pl = factory.create_data_provider()
 
 
@@ -233,10 +233,10 @@ car_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=car_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=car_common_args | {"data_framework": DataFramework.PANDAS})
 car_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=car_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=car_common_args | {"data_framework": DataFramework.POLARS})
 car_pl = factory.create_data_provider()
 
 
@@ -278,10 +278,10 @@ cardio_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=cardio_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cardio_common_args | {"data_framework": DataFramework.PANDAS})
 cardio_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=cardio_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cardio_common_args | {"data_framework": DataFramework.POLARS})
 cardio_pl = factory.create_data_provider()
 
 
@@ -344,12 +344,12 @@ h_common_args = {
     "name": "cervicalh",
     "class_col": "Hinselmann",
 }
-factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": DataFramework.PANDAS})
 cervicalh_pd = factory.create_data_provider()
 cervicalh_pd.features.drop(columns=["Schiller", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicalh_pd.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pd.spiel
 
-factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": DataFramework.POLARS})
 cervicalh_pl = factory.create_data_provider()
 cervicalh_pl.features = cervicalh_pl.features.drop(["Schiller", "Citology", "Biopsy"])
 cervicalh_pl.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pl.spiel
@@ -358,12 +358,12 @@ s_common_args = {
     "name": "cervicals",
     "class_col": "Schiller",
 }
-factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": DataFramework.PANDAS})
 cervicals_pd = factory.create_data_provider()
 cervicals_pd.features.drop(columns=["Hinselmann", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicals_pd.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pd.spiel
 
-factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": DataFramework.POLARS})
 cervicals_pl = factory.create_data_provider()
 cervicals_pl.features = cervicals_pl.features.drop(["Hinselmann", "Citology", "Biopsy"])
 cervicals_pl.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pl.spiel
@@ -372,12 +372,12 @@ c_common_args = {
     "name": "cervicalc",
     "class_col": "Citology",
 }
-factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": DataFramework.PANDAS})
 cervicalc_pd = factory.create_data_provider()
 cervicalc_pd.features.drop(columns=["Hinselmann", "Schiller", "Biopsy"], axis=1, inplace=True)  # type: ignore
 cervicalc_pd.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pd.spiel
 
-factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": DataFramework.POLARS})
 cervicalc_pl = factory.create_data_provider()
 cervicalc_pl.features = cervicalc_pl.features.drop(["Hinselmann", "Schiller", "Biopsy"])
 cervicalc_pl.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pl.spiel
@@ -386,12 +386,12 @@ b_common_args = {
     "name": "cervicalb",
     "class_col": "Biopsy",
 }
-factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": DataFramework.PANDAS})
 cervicalb_pd = factory.create_data_provider()
 cervicalb_pd.features.drop(columns=["Hinselmann", "Schiller", "Citology"], axis=1, inplace=True)  # type: ignore
 cervicalb_pd.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pd.spiel
 
-factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": DataFramework.POLARS})
 cervicalb_pl = factory.create_data_provider()
 cervicalb_pl.features = cervicalb_pl.features.drop(["Hinselmann", "Schiller", "Citology"])
 cervicalb_pl.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pl.spiel
@@ -428,10 +428,10 @@ cervicalr_common_args = {
     "schema": None,
 }
 
-factory = DataProviderFactory(kwargs=cervicalr_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=cervicalr_common_args | {"data_framework": DataFramework.PANDAS})
 cervicalr_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=cervicalr_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=cervicalr_common_args | {"data_framework": DataFramework.POLARS})
 cervicalr_pl = factory.create_data_provider()
 
 
@@ -470,10 +470,10 @@ credit_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=credit_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=credit_common_args | {"data_framework": DataFramework.PANDAS})
 credit_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=credit_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=credit_common_args | {"data_framework": DataFramework.POLARS})
 credit_pl = factory.create_data_provider()
 
 
@@ -516,10 +516,10 @@ diaretino_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=diaretino_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=diaretino_common_args | {"data_framework": DataFramework.PANDAS})
 diaretino_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=diaretino_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=diaretino_common_args | {"data_framework": DataFramework.POLARS})
 diaretino_pl = factory.create_data_provider()
 
 
@@ -555,10 +555,10 @@ german_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=german_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=german_common_args | {"data_framework": DataFramework.PANDAS})
 german_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=german_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=german_common_args | {"data_framework": DataFramework.POLARS})
 german_pl = factory.create_data_provider()
 
 
@@ -605,10 +605,10 @@ heart_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=heart_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=heart_common_args | {"data_framework": DataFramework.PANDAS})
 heart_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=heart_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=heart_common_args | {"data_framework": DataFramework.POLARS})
 heart_pl = factory.create_data_provider()
 
 
@@ -632,10 +632,10 @@ samp_common_args = {
     "sample_size": 0.1,
 }
 
-factory = DataProviderFactory(kwargs=lending_common_args | samp_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=lending_common_args | samp_common_args | {"data_framework": DataFramework.PANDAS})
 lending_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=lending_common_args | samp_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=lending_common_args | samp_common_args | {"data_framework": DataFramework.POLARS})
 lending_samp_pl = factory.create_data_provider()
 
 
@@ -645,10 +645,10 @@ small_samp_common_args = {
     "sample_size": 0.01,
 }
 
-factory = DataProviderFactory(kwargs=lending_common_args | small_samp_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=lending_common_args | small_samp_common_args | {"data_framework": DataFramework.PANDAS})
 lending_small_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=lending_common_args | small_samp_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=lending_common_args | small_samp_common_args | {"data_framework": DataFramework.POLARS})
 lending_small_samp_pl = factory.create_data_provider()
 
 
@@ -658,10 +658,10 @@ tiny_samp_common_args = {
     "sample_size": 0.0025,
 }
 
-factory = DataProviderFactory(kwargs=lending_common_args | tiny_samp_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=lending_common_args | tiny_samp_common_args | {"data_framework": DataFramework.PANDAS})
 lending_tiny_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=lending_common_args | tiny_samp_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=lending_common_args | tiny_samp_common_args | {"data_framework": DataFramework.POLARS})
 lending_tiny_samp_pl = factory.create_data_provider()
 
 
@@ -707,11 +707,11 @@ mhtech14_common_args = {
     "schema": None,
 }
 
-factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": DataFramework.PANDAS})
 mhtech14_pd = factory.create_data_provider()
 mhtech14_pd.features.drop(columns=["comments"], axis=1, inplace=True)  # type: ignore
 
-factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": DataFramework.POLARS})
 mhtech14_pl = factory.create_data_provider()
 mhtech14_pl.features = mhtech14_pl.features.drop(["comments"])
 
@@ -767,6 +767,15 @@ def preproc_extra(data_container: DataProvider) -> DataProvider:
             if corrupted_col in c:
                 data_container.features = data_container.features.drop(c)
     data_container.spiel = f"This dataset uses '{data_container.class_col}' as the class column, removing the other two options\n" + data_container.spiel
+    replacement_dict = {"'yes'": "yes", "'no'": "no"}
+    if isinstance(data_container.features, pd.DataFrame):
+        data_container.features.replace(replacement_dict, inplace=True)
+    elif isinstance(data_container.features, pl.DataFrame):
+        text_columns = [col for col, dtype in zip(data_container.features.columns, data_container.features.dtypes) if dtype == pl.Utf8]
+        data_container.features = data_container.features.with_columns([
+            pl.col(col).replace(replacement_dict).alias(col) if col in text_columns else pl.col(col)
+            for col in data_container.features.columns
+        ])
     return data_container
 
 
@@ -774,11 +783,11 @@ mh1_common_args = {
     "name": "mh1tech16",
     "class_col": "mh1",
 }
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.PANDAS})
 mh1tech16_pd = factory.create_data_provider()
 mh1tech16_pd = preproc_extra(mh1tech16_pd)
 
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.POLARS})
 mh1tech16_pl = factory.create_data_provider()
 mh1tech16_pl = preproc_extra(mh1tech16_pl)
 
@@ -786,11 +795,11 @@ mh2_common_args = {
     "name": "mh2tech16",
     "class_col": "mh2",
 }
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.PANDAS})
 mh2tech16_pd = factory.create_data_provider()
 mh2tech16_pd = preproc_extra(mh2tech16_pd)
 
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.POLARS})
 mh2tech16_pl = factory.create_data_provider()
 mh2tech16_pl = preproc_extra(mh2tech16_pl)
 
@@ -798,11 +807,11 @@ mh3_common_args = {
     "name": "mh3tech16",
     "class_col": "mh3",
 }
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.PANDAS})
 mh3tech16_pd = factory.create_data_provider()
 mh3tech16_pd = preproc_extra(mh3tech16_pd)
 
-factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.POLARS})
 mh3tech16_pl = factory.create_data_provider()
 mh3tech16_pl = preproc_extra(mh3tech16_pl)
 
@@ -845,10 +854,10 @@ mush_common_args = {
     """,
 }
 
-factory = DataProviderFactory(kwargs=mush_common_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=mush_common_args | {"data_framework": DataFramework.PANDAS})
 mush_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=mush_common_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=mush_common_args | {"data_framework": DataFramework.POLARS})
 mush_pl = factory.create_data_provider()
 
 
@@ -866,26 +875,26 @@ noshow_common_args = {
 
 noshow_full_args = {"name": "noshow", "sample_size": 1.0, "file_name": "noshow.csv.gz"}
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": DataFramework.PANDAS})
 noshow_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_full_args | {"data_framework": DataFramework.POLARS})
 noshow_pl = factory.create_data_provider()
 
 noshow_samp_args = {"name": "noshow_samp", "sample_size": 0.2, "file_name": "noshow_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": DataFramework.PANDAS})
 noshow_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_samp_args | {"data_framework": DataFramework.POLARS})
 noshow_samp_pl = factory.create_data_provider()
 
 noshow_small_samp_args = {"name": "noshow_small_samp", "sample_size": 0.02, "file_name": "noshow_small_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": DataFramework.PANDAS})
 noshow_small_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=noshow_common_args | noshow_small_samp_args | {"data_framework": DataFramework.POLARS})
 noshow_small_samp_pl = factory.create_data_provider()
 
 
@@ -926,16 +935,16 @@ nursery_common_args = {
 full_nursery_args = {"name": "nursery", "sample_size": 1.0, "file_name": "nursery.csv.gz"}
 samp_nursery_args = {"name": "nursery_samp", "sample_size": 0.2, "file_name": "nursery_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=nursery_common_args | full_nursery_args | {"data_framework": "pandas", "schema": None})
+factory = DataProviderFactory(kwargs=nursery_common_args | full_nursery_args | {"data_framework": DataFramework.PANDAS, "schema": None})
 nursery_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=nursery_common_args | full_nursery_args | {"data_framework": "polars", "schema": nursery_polars_schema})
+factory = DataProviderFactory(kwargs=nursery_common_args | full_nursery_args | {"data_framework": DataFramework.POLARS, "schema": nursery_polars_schema})
 nursery_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=nursery_common_args | samp_nursery_args | {"data_framework": "pandas", "schema": None})
+factory = DataProviderFactory(kwargs=nursery_common_args | samp_nursery_args | {"data_framework": DataFramework.PANDAS, "schema": None})
 nursery_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=nursery_common_args | samp_nursery_args | {"data_framework": "polars", "schema": nursery_polars_schema})
+factory = DataProviderFactory(kwargs=nursery_common_args | samp_nursery_args | {"data_framework": DataFramework.POLARS, "schema": nursery_polars_schema})
 nursery_samp_pl = factory.create_data_provider()
 
 rcdv_common_args = {
@@ -989,17 +998,17 @@ rcdv_common_args = {
 rcdv_full_args = {"name": "rcdv", "sample_size": 1.0, "file_name": "rcdv.csv.gz"}
 rcdv_samp_args = {"name": "rcdv_samp", "sample_size": 0.1, "file_name": "rcdv_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_full_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_full_args | {"data_framework": DataFramework.PANDAS})
 rcdv_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_full_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_full_args | {"data_framework": DataFramework.POLARS})
 rcdv_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_samp_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_samp_args | {"data_framework": DataFramework.PANDAS})
 rcdv_samp_pd = factory.create_data_provider()
 rcdv_samp_pd.spiel = "A random 0.1% sample without replacement of the original rcdv dataset.\n" + rcdv_samp_pd.spiel
 
-factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_samp_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_samp_args | {"data_framework": DataFramework.POLARS})
 rcdv_samp_pl = factory.create_data_provider()
 rcdv_samp_pl.spiel = "A random 0.1% sample without replacement of the original rcdv dataset.\n" + rcdv_samp_pl.spiel
 
@@ -1016,16 +1025,16 @@ readmit_common_args = {
 readmit_full_args = {"name": "readmit", "sample_size": 1.0, "file_name": "readmit.csv.gz"}
 readmit_samp_args = {"name": "readmit_samp", "sample_size": 0.1, "file_name": "readmit_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=readmit_common_args | readmit_full_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=readmit_common_args | readmit_full_args | {"data_framework": DataFramework.PANDAS})
 readmit_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=readmit_common_args | readmit_full_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=readmit_common_args | readmit_full_args | {"data_framework": DataFramework.POLARS})
 readmit_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=readmit_common_args | readmit_samp_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=readmit_common_args | readmit_samp_args | {"data_framework": DataFramework.PANDAS})
 readmit_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=readmit_common_args | readmit_samp_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=readmit_common_args | readmit_samp_args | {"data_framework": DataFramework.POLARS})
 readmit_samp_pl = factory.create_data_provider()
 
 
@@ -1128,16 +1137,16 @@ thyroid_common_args = {
 thyroid_full_args = {"name": "thyroid", "sample_size": 1.0, "file_name": "thyroid.csv.gz"}
 thyroid_samp_args = {"name": "thyroid_samp", "sample_size": 0.1, "file_name": "thyroid_samp.csv.gz"}
 
-factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_full_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_full_args | {"data_framework": DataFramework.PANDAS})
 thyroid_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_full_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_full_args | {"data_framework": DataFramework.POLARS})
 thyroid_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_samp_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_samp_args | {"data_framework": DataFramework.PANDAS})
 thyroid_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_samp_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=thyroid_common_args | thyroid_samp_args | {"data_framework": DataFramework.POLARS})
 thyroid_samp_pl = factory.create_data_provider()
 
 
@@ -1329,16 +1338,16 @@ yps_common_args = {
 yps_smoking_args = {"name": "ypssmk", "class_col": "Smoking", "positive_class": None}
 yps_alcohol_args = {"name": "ypsalc", "class_col": "Alcohol", "positive_class": None}
 
-factory = DataProviderFactory(kwargs=yps_common_args | yps_smoking_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=yps_common_args | yps_smoking_args | {"data_framework": DataFramework.PANDAS})
 ypssmk_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=yps_common_args | yps_smoking_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=yps_common_args | yps_smoking_args | {"data_framework": DataFramework.POLARS})
 ypssmk_pl = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=yps_common_args | yps_alcohol_args | {"data_framework": "pandas"})
+factory = DataProviderFactory(kwargs=yps_common_args | yps_alcohol_args | {"data_framework": DataFramework.PANDAS})
 ypsalc_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=yps_common_args | yps_alcohol_args | {"data_framework": "polars"})
+factory = DataProviderFactory(kwargs=yps_common_args | yps_alcohol_args | {"data_framework": DataFramework.POLARS})
 ypsalc_pl = factory.create_data_provider()
 
 
@@ -2035,16 +2044,16 @@ usoc2_common_args = {
 usoc2_full_args = {"name": "usoc2", "file_name": "usoc2.csv.gz", "sample_size": 1.0}
 usoc2_samp_args = {"name": "usoc2_samp", "file_name": "usoc2_samp.csv.gz", "sample_size": 0.1}
 
-factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_full_args | {"data_framework": "pandas", "schema": usoc2_pandas_schema})
+factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_full_args | {"data_framework": DataFramework.PANDAS, "schema": usoc2_pandas_schema})
 usoc2_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_full_args | {"data_framework": "polars", "schema": usoc2_polars_schema})
+factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_full_args | {"data_framework": DataFramework.POLARS, "schema": usoc2_polars_schema})
 usoc2_pl = factory.create_data_provider()
 usoc2_pl.features = usoc2_pl.features.drop(["level_0", "index"])
 
-factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_samp_args | {"data_framework": "pandas", "schema": usoc2_pandas_schema})
+factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_samp_args | {"data_framework": DataFramework.PANDAS, "schema": usoc2_pandas_schema})
 usoc2_samp_pd = factory.create_data_provider()
 
-factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_samp_args | {"data_framework": "polars", "schema": usoc2_polars_schema})
+factory = DataProviderFactory(kwargs=usoc2_common_args | usoc2_samp_args | {"data_framework": DataFramework.POLARS, "schema": usoc2_polars_schema})
 usoc2_samp_pl = factory.create_data_provider()
 usoc2_samp_pl.features = usoc2_samp_pl.features.drop(["level_0", "index"])

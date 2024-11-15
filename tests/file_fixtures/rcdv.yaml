@@ -1,3 +1,11 @@
+alchy:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 class_col: recid
 column_names:
 - year
@@ -19,9 +27,65 @@ column_names:
 - follow
 - missingness
 columns: 18
+felon:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 file_name: rcdv.csv.gz
+junky:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+male:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+married:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+missingness:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 name: rcdv
+person:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 positive_class: Y
+propty:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 rows: 18876
 sample_size: 1.0
 spiel: "\n    Data Set Information:\n    This is a description of the data on the\
@@ -100,6 +164,38 @@ spiel: "\n    Data Set Information:\n    This is a description of the data on th
   \ those individuals for whom RECID equals zero.\n    FILE is a variable indicating\
   \ to which data sample the individual record belongs. The value 1 indicates the\
   \ analysis sample, 2 the validation sampel and 3 is missing data sample.\n    "
+super:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 target_classes:
 - N
 - Y
+white:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+workrel:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+year:
+  dtype: int64
+  max: 1980
+  min: 1978
+  otype: count
+  unique_values:
+  - 1978
+  - 1980

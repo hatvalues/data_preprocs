@@ -21,9 +21,143 @@ column_names:
 - euribor3m
 - nr.employed
 columns: 20
+cons.conf.idx:
+  dtype: float64
+  max: -26.9
+  min: -50.8
+  otype: numeric
+  unique_values: []
+cons.price.idx:
+  dtype: float64
+  max: 94.75
+  min: 92.2
+  otype: numeric
+  unique_values: []
+contact:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - cellular
+  - telephone
+day_of_week:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - fri
+  - mon
+  - tue
+  - wed
+  - thu
+default:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - unknown
+education:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - university.degree
+  - high.school
+  - unknown
+  - professional.course
+  - basic.9y
+  - basic.4y
+  - basic.6y
+emp.var.rate:
+  dtype: float64
+  max: 1.4
+  min: -3.4
+  otype: numeric
+  unique_values: []
+euribor3m:
+  dtype: float64
+  max: 4.97
+  min: 0.634
+  otype: numeric
+  unique_values: []
 file_name: bankmark_samp.csv.gz
+housing:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'no'
+  - 'yes'
+  - unknown
+loan:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - 'yes'
+  - 'no'
+  - unknown
+marital:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - married
+  - single
+  - divorced
+  - unknown
+month:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - jun
+  - may
+  - nov
+  - aug
+  - jul
+  - apr
+  - oct
+  - mar
+  - sep
+  - dec
 name: bankmark_samp
+nr.employed:
+  dtype: float64
+  max: 5228.0
+  min: 4964.0
+  otype: numeric
+  unique_values: []
 positive_class: 'Yes'
+poutcome:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - failure
+  - nonexistent
+  - success
+previous:
+  dtype: int64
+  max: 4
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+  - 2
+  - 3
+  - 4
 rows: 2265
 sample_size: 0.05
 spiel: "\n    Data Set Information:\n    The data is related with direct marketing\

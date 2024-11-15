@@ -1,3 +1,11 @@
+amfm:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 class_col: dr
 column_names:
 - qa
@@ -20,9 +28,85 @@ column_names:
 - diaopt
 - amfm
 columns: 19
+diaopt:
+  dtype: float64
+  max: 0.2191989999999999
+  min: 0.0579059999999999
+  otype: numeric
+  unique_values: []
+eucmac:
+  dtype: float64
+  max: 0.592217
+  min: 0.367762
+  otype: numeric
+  unique_values: []
+ex0.5:
+  dtype: float64
+  max: 403.939108
+  min: 0.349274
+  otype: numeric
+  unique_values: []
+ex0.6:
+  dtype: float64
+  max: 167.131427
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ex0.7:
+  dtype: float64
+  max: 106.070092
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ex0.8:
+  dtype: float64
+  max: 59.766121
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ex0.9:
+  dtype: float64
+  max: 51.423208
+  min: 0.0
+  otype: numeric
+  unique_values: []
+ex1.0:
+  dtype: float64
+  max: 20.098605
+  min: 0.0
+  otype: numeric
+  unique_values: []
+exm1:
+  dtype: float64
+  max: 5.937799
+  min: 0.0
+  otype: numeric
+  unique_values: []
+exm2:
+  dtype: float64
+  max: 3.086753
+  min: 0.0
+  otype: numeric
+  unique_values: []
 file_name: diaretino.csv.gz
 name: diaretino
 positive_class: 'yes'
+ps:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+qa:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
 rows: 1151
 sample_size: 1.0
 spiel: "Source:\n    1. Dr. Balint Antal, Department of Computer Graphics and Image\

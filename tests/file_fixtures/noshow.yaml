@@ -1,3 +1,115 @@
+Alcoholism:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+ApptDay:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Friday
+  - Tuesday
+  - Monday
+  - Wednesday
+  - Thursday
+  - Saturday
+ApptMonth:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - April
+  - May
+  - June
+Diabetes:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+Gender:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - F
+  - M
+Handcap:
+  dtype: int64
+  max: 4
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+Hipertension:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 1
+  - 0
+LagDays:
+  dtype: float64
+  max: 178.5548726851852
+  min: 0.0
+  otype: numeric
+  unique_values: []
+SMS_received:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
+SchedDay:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Friday
+  - Wednesday
+  - Tuesday
+  - Thursday
+  - Monday
+  - Saturday
+SchedMonth:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - April
+  - March
+  - February
+  - January
+  - May
+  - November
+  - December
+  - June
+Scholarship:
+  dtype: int64
+  max: 1
+  min: 0
+  otype: ordinal
+  unique_values:
+  - 0
+  - 1
 class_col: no_show
 column_names:
 - Gender

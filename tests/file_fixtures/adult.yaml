@@ -16,10 +16,72 @@ column_names:
 - nativecountry
 columns: 14
 file_name: adult_samp.csv.gz
+lcapitalgain:
+  dtype: float64
+  max: 11.512925464970229
+  min: 0.0
+  otype: numeric
+  unique_values: []
+lcapitalloss:
+  dtype: float64
+  max: 8.268988209506656
+  min: 0.0
+  otype: numeric
+  unique_values: []
+lfnlwgt:
+  dtype: float64
+  max: 14.02970942459366
+  min: 10.1093221647277
+  otype: numeric
+  unique_values: []
+maritalstatus:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Divorced
+  - Married-civ-spouse
+  - Never-married
+  - Separated
+  - Married-spouse-absent
+  - Widowed
+  - Married-AF-spouse
 name: adult_samp
 positive_class: '>50K'
+race:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Black
+  - White
+  - Asian-Pac-Islander
+  - Amer-Indian-Eskimo
+  - Other
+relationship:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Not-in-family
+  - Husband
+  - Unmarried
+  - Own-child
+  - Other-relative
+  - Wife
 rows: 24421
 sample_size: 0.25
+sex:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Female
+  - Male
 spiel: "\n    Data Description:\n    This data was extracted from the adult bureau\
   \ database found at\n    http://www.adult.gov/ftp/pub/DES/www/welcome.html\n   \
   \ Donor: Ronny Kohavi and Barry Becker,\n        Data Mining and Visualization\n\
@@ -36,3 +98,18 @@ spiel: "\n    Data Description:\n    This data was extracted from the adult bure
 target_classes:
 - <=50K
 - '>50K'
+workclass:
+  dtype: object
+  max: null
+  min: null
+  otype: categorical
+  unique_values:
+  - Federal-gov
+  - Private
+  - Self-emp-not-inc
+  - Local-gov
+  - State-gov
+  - Unknown
+  - Self-emp-inc
+  - Without-pay
+  - Never-worked
