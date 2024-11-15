@@ -5,23 +5,17 @@ from tests.fixture_helper import assert_dict_matches_fixture, load_yaml_fixture_
 from dataclasses import asdict
 from pytest_unordered import unordered
 
+
 def get_test_columns_descriptors(data_provider: DataProvider) -> dict[str, any]:
     return {k: v for k, v in data_provider.column_descriptors.items() if len(v["unique_values"]) <= 10}
+
 
 def get_test_dict(data_provider: DataProvider) -> dict[str, any]:
     shape = data_provider.features.shape
     column_names = data_provider.features.columns.to_list()
     target_classes = data_provider.target.unique().tolist()
-    return {
-        k: v for k, v in asdict(data_provider).items() \
-        if k not in ("features", "target", "column_descriptors")} \
-        | {
-            "rows": shape[0],
-            "columns": shape[1],
-            "column_names": column_names,
-            "target_classes": target_classes
-        } \
-        | get_test_columns_descriptors(data_provider)
+    return {k: v for k, v in asdict(data_provider).items() if k not in ("features", "target", "column_descriptors")} | {"rows": shape[0], "columns": shape[1], "column_names": column_names, "target_classes": target_classes} | get_test_columns_descriptors(data_provider)
+
 
 def test_adult_samp():
     assert_dict_matches_fixture(get_test_dict(dp.adult_samp_pd), "adult")

@@ -772,10 +772,7 @@ def preproc_extra(data_container: DataProvider) -> DataProvider:
         data_container.features.replace(replacement_dict, inplace=True)
     elif isinstance(data_container.features, pl.DataFrame):
         text_columns = [col for col, dtype in zip(data_container.features.columns, data_container.features.dtypes) if dtype == pl.Utf8]
-        data_container.features = data_container.features.with_columns([
-            pl.col(col).replace(replacement_dict).alias(col) if col in text_columns else pl.col(col)
-            for col in data_container.features.columns
-        ])
+        data_container.features = data_container.features.with_columns([pl.col(col).replace(replacement_dict).alias(col) if col in text_columns else pl.col(col) for col in data_container.features.columns])
     return data_container
 
 

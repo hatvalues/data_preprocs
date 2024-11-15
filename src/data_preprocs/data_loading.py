@@ -15,6 +15,7 @@ polars_float_types = {pl.Float32, pl.Float64}
 polars_categorical_types = {pl.Utf8, pl.Boolean, pl.Categorical}
 pandas_categorical_types = {"object", "str", "string", "bool", "boolean"}
 
+
 class DataFramework(Enum):
     POLARS = "polars"
     PANDAS = "pandas"
@@ -142,7 +143,6 @@ class DataLoader:
             min_val, max_val = self._extract_min_max(series)
             descriptor.update({"min": min_val, "max": max_val})
 
-
     def _create_column_descriptors(self) -> None:
         column_descriptors = defaultdict(self._column_descriptor)
 
@@ -163,6 +163,7 @@ class DataLoader:
                 column_descriptors[col]["otype"] = "unknown"
 
         self.column_descriptors = dict(column_descriptors)
+
 
 @dataclass
 class DataProvider:

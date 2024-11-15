@@ -84,13 +84,16 @@ def test_validate_framework_schema_wrong_type():
     with pytest.raises(ValueError):
         malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=[str, pl.Utf8])
 
+
 def test_validate_framework_schema_mixed_types():
     with pytest.raises(ValueError):
         malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema={"age": "int16", "size": pl.Utf8})
 
+
 def test_validate_framework_neither_given():
     with pytest.raises(ValueError):
         malformed_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None, schema=None)
+
 
 def test_validate_framework_unsupported():
     with pytest.raises(ValueError):
@@ -115,7 +118,7 @@ def test_file_to_pandas_no_schema():
 
 def test_schema_given_polars():
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
@@ -123,7 +126,7 @@ def test_schema_given_polars():
 
 def test_schema_given_pandas():
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
@@ -131,7 +134,7 @@ def test_schema_given_pandas():
 
 def test_framework_given_polars():
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.POLARS)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)
@@ -139,7 +142,7 @@ def test_framework_given_polars():
 
 def test_framework_given_pandas():
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=DataFramework.PANDAS)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
@@ -148,27 +151,24 @@ def test_framework_given_pandas():
 def test_no_schema_or_framework():
     with pytest.raises(ValueError):
         data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y")
-        
 
     with pytest.raises(ValueError):
         data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=None)
-        
 
     with pytest.raises(ValueError):
         data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", data_framework=None)
-        
 
 
 # schema overrides framework
 def test_both_schema_and_framework():
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=pandas_schema, data_framework=DataFramework.POLARS)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pd.DataFrame)
     assert isinstance(data_loader.container.target, pd.Series)
 
     data_loader = DataLoader(file_name="bankmark_samp.csv.gz", class_col="y", schema=polars_schema, data_framework=DataFramework.PANDAS)
-    
+
     assert isinstance(data_loader.container, DataContainer)
     assert isinstance(data_loader.container.features, pl.DataFrame)
     assert isinstance(data_loader.container.target, pl.Series)

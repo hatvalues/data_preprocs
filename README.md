@@ -4,7 +4,14 @@ A library containing a set of preprocessed datasets, with some clean up and smal
 
 The chosen datasets represent a variety of cases suitable for classification problems.
 
+## TODO
+
+It looks like some nulls are in the target variable for YPS. Just need to open up the csv file and drip these rows and save.
+
 ## Usage
+
+At the moment, the best way is to clone the repo and e.g. if using Poetry, add `
+data-preprocs = {path = "../data_preprocs"}` to the dependences in pyproject.toml
 
 Just import the desired object from the data_providers module.
 Each data provider contains a features data frame and a targets series, plus some meta data items, including:
@@ -38,4 +45,21 @@ It should have column headers but not row ids.
 * lending_small_samp (0.01 sample)
 * lending_tiny_samp (0.0025 sample)
 * mhtech14 (2014 Mental Heath in Tech Jobs survey)
-* mhtech16 (2016 Mental Heath in Tech Jobs survey, completely different set of questions)
+* mh1tech16 (2016 Mental Heath in Tech Jobs survey, completely different set of questions). Three questions flag whether the respondent had professional treatment for a mental health issue, and are isolated for three different versions of this data set.
+* mh2tech16
+* mh3tech16
+* mush (mushroom toxicity indentification)
+* noshow (medical appointment non-attendance)
+* noshow_samp (0.2 sample)
+* noshow_small_samp (0.02 sample)
+* nursery (multinomial response for nursery place offer)
+* nursery_samp (0.2 sample)
+* rcdv criminal recidivism
+* rcdv_samp (0.1)
+* readmit (hospital readmission)
+* thyroid (thyroid abnormality)
+* thyroid_samp (0.1 sample)
+* usoc (understanding society, mental health issues)
+* usoc_samp (0.1)
+* ypsalc (young people survey, frequency of alcohol consumption)
+* ypssmk (frequency of smoking)
