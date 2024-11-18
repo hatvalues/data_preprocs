@@ -41,13 +41,14 @@ class DataLoader:
         class_col: str,
         data_framework: Optional[DataFramework] = None,
         schema: Optional[Union[PandasSchema, PolarSchema]] = None,
+        drop_cols: list = [],
     ) -> None:
         self.file_name = file_name
         self.class_col = class_col
         self.data_framework = data_framework
         self.schema = schema
         self._validate_framework()
-        self._load()
+        self._load(drop_cols)
         self._create_column_descriptors()
 
     def _validate_framework(self):
@@ -67,13 +68,13 @@ class DataLoader:
             return DataFramework.PANDAS
         raise ValueError("Invalid schema. Probably a mix of framework types in the schema.")
 
-    def _load(self) -> None:
+    def _load(self, drop_cols: list) -> None:
         if self.data_framework == DataFramework.PANDAS:
             data = self._file_to_pandas()  # type: ignore
-            self.container = DataContainer(target=pd.Series(data[self.class_col]), features=data.drop(columns=self.class_col, axis=1))
+            self.container = DataContainer(target=pd.Series(data[self.class_col]), features=data.drop(columns=[self.class_col] + drop_cols, axis=1, errors="ignore"))
         else:
             data = self._file_to_polars()
-            self.container = DataContainer(target=data[self.class_col], features=data.drop(self.class_col))
+            self.container = DataContainer(target=data[self.class_col], features=data.drop([self.class_col] + drop_cols, strict=False))
 
     def _file_to_pandas(self) -> pd.DataFrame:
         source = files(data_sources).joinpath(self.file_name)
@@ -216,11 +217,7 @@ class DataProviderFactory(BaseModel):
         data_framework = self.kwargs.get("data_framework", DataFramework.PANDAS)
         schema = self.kwargs.get("schema", None)
 
-        data_loader = DataLoader(file_name, class_col, data_framework, schema)
-        if data_framework == DataFramework.PANDAS:
-            features = data_loader.container.features.drop(columns=drop_cols, axis=1, errors="ignore")
-        else:
-            features = data_loader.container.features.drop(drop_cols, strict=False)
+        data_loader = DataLoader(file_name, class_col, data_framework, schema, drop_cols)
 
         return DataProvider(
             name=name,
@@ -229,7 +226,7 @@ class DataProviderFactory(BaseModel):
             positive_class=positive_class,
             spiel=spiel,
             sample_size=sample_size,
-            features=features,
+            features=data_loader.container.features,
             target=data_loader.container.target,
             column_descriptors=data_loader.column_descriptors,
         )

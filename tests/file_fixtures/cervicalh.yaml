@@ -4,22 +4,6 @@ Age:
   min: 13.0
   otype: numeric
   unique_values: []
-Biopsy:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - F
-  - T
-Citology:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - F
-  - T
 Dx:
   dtype: int64
   max: 1
@@ -212,14 +196,6 @@ STDs:vulvo-perineal condylomatosis:
   unique_values:
   - 0
   - 1
-Schiller:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - F
-  - T
 Smokes:
   dtype: int64
   max: 1

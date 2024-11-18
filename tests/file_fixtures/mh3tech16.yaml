@@ -47,25 +47,6 @@ Did your previous employers provide resources to learn more about mental health 
   - some
   - not sure
   - all
-Do you believe your productivity is ever affected by a mental health issue?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - 'yes'
-  - 'no'
-  - not sure
-Do you currently have a mental health disorder?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - 'no'
-  - 'yes'
-  - possibly
 Do you feel that being identified as a person with a mental health issue would hurt your career?:
   dtype: object
   max: null
@@ -216,22 +197,6 @@ Does your employer provide mental health benefits as part of healthcare coverage
   - 'no'
   - 'yes'
   - not sure
-Have you been diagnosed with a mental health condition by a medical professional?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - 'yes'
-  - 'no'
-Have you ever sought treatment for a mental health issue from a mental health professional?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - 'no'
-  - 'yes'
 Have you had a mental health disorder in the past?:
   dtype: object
   max: null
@@ -288,18 +253,6 @@ How many employees does your company or organization have?:
   min: 0.0
   otype: numeric
   unique_values: []
-How willing would you be to share with friends and family that you have a mental illness?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - some
-  - neutral
-  - not applicable
-  - always
-  - none
-  - less
 'If a mental health issue prompted you to request a medical leave from work - asking for that leave would be:':
   dtype: object
   max: null
@@ -312,40 +265,6 @@ How willing would you be to share with friends and family that you have a mental
   - not sure
   - very difficult
   - difficult
-? If yes - what percentage of your work time (time performing primary or secondary
-  job functions) is affected by a mental health issue?
-: dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - 1-25%
-  - 76-100%
-  - 26-50%
-  - 51-75%
-If you have a mental health issue - do you feel that it interferes with your work when NOT being treated effectively?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - sometimes
-  - often
-  - rarely
-  - never
-If you have a mental health issue - do you feel that it interferes with your work when being treated effectively?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - rarely
-  - sometimes
-  - never
-  - often
 ? If you have been diagnosed or treated for a mental health disorder - do you ever
   reveal this to clients or business contacts?
 : dtype: object
@@ -358,38 +277,6 @@ If you have a mental health issue - do you feel that it interferes with your wor
   - no need
   - 'no'
   - always
-If you have been diagnosed or treated for a mental health disorder - do you ever reveal this to coworkers or employees?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - sometimes
-  - 'no'
-  - always
-  - no need
-? If you have revealed a mental health issue to a client or business contact - do
-  you believe this has impacted you negatively?
-: dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - not sure
-  - 'yes'
-  - 'no'
-If you have revealed a mental health issue to a coworker or employee - do you believe this has impacted you negatively?:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not applicable
-  - not sure
-  - 'no'
-  - 'yes'
 ? Is your anonymity protected if you choose to take advantage of mental health or
   substance abuse treatment resources provided by your employer?
 : dtype: object
@@ -418,18 +305,6 @@ Is your primary role within your company related to tech/IT?:
   - not sure
   - 'yes'
   - 'no'
-? Was your anonymity protected if you chose to take advantage of mental health or
-  substance abuse treatment resources with previous employers?
-: dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - not sure
-  - 'yes'
-  - sometimes
-  - 'no'
-  - not applicable
 Were you aware of the options for mental health care provided by your previous employers?:
   dtype: object
   max: null
@@ -602,22 +477,6 @@ column_names:
 - What region do you work in?
 columns: 46
 file_name: mhtech16.csv.gz
-mh1:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - 'no'
-  - 'yes'
-mh2:
-  dtype: object
-  max: null
-  min: null
-  otype: categorical
-  unique_values:
-  - 'yes'
-  - 'no'
 name: mh3tech16
 positive_class: 'yes'
 rows: 1433
