@@ -1,6 +1,7 @@
 from .data_loading import DataFramework, DataProvider, DataProviderFactory
 import polars as pl
 import pandas as pd
+from copy import deepcopy
 
 
 adult_common_args = {
@@ -345,13 +346,11 @@ h_common_args = {
     "class_col": "Hinselmann",
 }
 factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": DataFramework.PANDAS})
-cervicalh_pd = factory.create_data_provider()
-cervicalh_pd.features.drop(columns=["Schiller", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
+cervicalh_pd = factory.create_data_provider(drop_cols=["Schiller", "Citology", "Biopsy"])
 cervicalh_pd.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pd.spiel
 
 factory = DataProviderFactory(kwargs=cervical_common_args | h_common_args | {"data_framework": DataFramework.POLARS})
-cervicalh_pl = factory.create_data_provider()
-cervicalh_pl.features = cervicalh_pl.features.drop(["Schiller", "Citology", "Biopsy"])
+cervicalh_pl = factory.create_data_provider(drop_cols=["Schiller", "Citology", "Biopsy"])
 cervicalh_pl.spiel = f"This dataset uses `{h_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalh_pl.spiel
 
 s_common_args = {
@@ -359,13 +358,11 @@ s_common_args = {
     "class_col": "Schiller",
 }
 factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": DataFramework.PANDAS})
-cervicals_pd = factory.create_data_provider()
-cervicals_pd.features.drop(columns=["Hinselmann", "Citology", "Biopsy"], axis=1, inplace=True)  # type: ignore
+cervicals_pd = factory.create_data_provider(drop_cols=["Hinselmann", "Citology", "Biopsy"])
 cervicals_pd.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pd.spiel
 
 factory = DataProviderFactory(kwargs=cervical_common_args | s_common_args | {"data_framework": DataFramework.POLARS})
-cervicals_pl = factory.create_data_provider()
-cervicals_pl.features = cervicals_pl.features.drop(["Hinselmann", "Citology", "Biopsy"])
+cervicals_pl = factory.create_data_provider(drop_cols=["Hinselmann", "Citology", "Biopsy"])
 cervicals_pl.spiel = f"This dataset uses `{s_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicals_pl.spiel
 
 c_common_args = {
@@ -373,13 +370,11 @@ c_common_args = {
     "class_col": "Citology",
 }
 factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": DataFramework.PANDAS})
-cervicalc_pd = factory.create_data_provider()
-cervicalc_pd.features.drop(columns=["Hinselmann", "Schiller", "Biopsy"], axis=1, inplace=True)  # type: ignore
+cervicalc_pd = factory.create_data_provider(drop_cols=["Hinselmann", "Schiller", "Biopsy"])
 cervicalc_pd.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pd.spiel
 
 factory = DataProviderFactory(kwargs=cervical_common_args | c_common_args | {"data_framework": DataFramework.POLARS})
-cervicalc_pl = factory.create_data_provider()
-cervicalc_pl.features = cervicalc_pl.features.drop(["Hinselmann", "Schiller", "Biopsy"])
+cervicalc_pl = factory.create_data_provider(drop_cols=["Hinselmann", "Schiller", "Biopsy"])
 cervicalc_pl.spiel = f"This dataset uses `{c_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalc_pl.spiel
 
 b_common_args = {
@@ -387,13 +382,11 @@ b_common_args = {
     "class_col": "Biopsy",
 }
 factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": DataFramework.PANDAS})
-cervicalb_pd = factory.create_data_provider()
-cervicalb_pd.features.drop(columns=["Hinselmann", "Schiller", "Citology"], axis=1, inplace=True)  # type: ignore
+cervicalb_pd = factory.create_data_provider(drop_cols=["Hinselmann", "Schiller", "Citology"])
 cervicalb_pd.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pd.spiel
 
 factory = DataProviderFactory(kwargs=cervical_common_args | b_common_args | {"data_framework": DataFramework.POLARS})
-cervicalb_pl = factory.create_data_provider()
-cervicalb_pl.features = cervicalb_pl.features.drop(["Hinselmann", "Schiller", "Citology"])
+cervicalb_pl = factory.create_data_provider(drop_cols=["Hinselmann", "Schiller", "Citology"])
 cervicalb_pl.spiel = f"This dataset uses `{b_common_args["class_col"]}` as the class column, removing the other three options\n" + cervicalb_pl.spiel
 
 
@@ -708,12 +701,10 @@ mhtech14_common_args = {
 }
 
 factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": DataFramework.PANDAS})
-mhtech14_pd = factory.create_data_provider()
-mhtech14_pd.features.drop(columns=["comments"], axis=1, inplace=True)  # type: ignore
+mhtech14_pd = factory.create_data_provider(drop_cols=["comments"])
 
 factory = DataProviderFactory(kwargs=mhtech14_common_args | {"data_framework": DataFramework.POLARS})
-mhtech14_pl = factory.create_data_provider()
-mhtech14_pl.features = mhtech14_pl.features.drop(["comments"])
+mhtech14_pl = factory.create_data_provider(drop_cols=["comments"])
 
 
 mhtech16_common_args = {
@@ -733,39 +724,29 @@ mhtech16_common_args = {
     "schema": None,
 }
 
+treatment_columns = ["mh1", "mh2", "mh3"]
+drop_columns = [
+    "Have you ever sought treatment for a mental health issue from a mental health professional?",
+    "Have you been diagnosed with a mental health condition by a medical professional?",
+    "Do you currently have a mental health disorder?",
+    "If you have revealed a mental health issue to a client or business contact - do you believe this has impacted you negatively?",
+    "Was your anonymity protected if you chose to take advantage of mental health or substance abuse treatment resources with previous employers?",
+    "If you have been diagnosed or treated for a mental health disorder - do you ever reveal this to coworkers or employees?",
+    "If you have revealed a mental health issue to a coworker or employee - do you believe this has impacted you negatively?",
+    "Do you believe your productivity is ever affected by a mental health issue?",
+    "If yes - what percentage of your work time (time performing primary or secondary job functions) is affected by a mental health issue?",
+    "If you have a mental health issue - do you feel that it interferes with your work when being treated effectively?",
+    "If you have a mental health issue - do you feel that it interferes with your work when NOT being treated effectively?",
+    "How willing would you be to share with friends and family that you have a mental illness?",
+    "If yes - what condition(s) have you been diagnosed with?",
+    "If maybe - what condition(s) do you believe you have?",
+    "If so - what condition(s) were you diagnosed with?",
+]
+corrupted_cols = ["Why or why not?", "Why or why not?.1"]
 
-def preproc_extra(data_container: DataProvider) -> DataProvider:
-    treatment_columns = ["mh1", "mh2", "mh3"]
+def preproc_extra(data_container: DataProvider, treatment_columns: list) -> DataProvider:
+    treatment_columns = deepcopy(treatment_columns)
     treatment_columns.remove(data_container.class_col)
-
-    drop_columns = [
-        "Have you ever sought treatment for a mental health issue from a mental health professional?",
-        "Have you been diagnosed with a mental health condition by a medical professional?",
-        "Do you currently have a mental health disorder?",
-        "If you have revealed a mental health issue to a client or business contact - do you believe this has impacted you negatively?",
-        "Was your anonymity protected if you chose to take advantage of mental health or substance abuse treatment resources with previous employers?",
-        "If you have been diagnosed or treated for a mental health disorder - do you ever reveal this to coworkers or employees?",
-        "If you have revealed a mental health issue to a coworker or employee - do you believe this has impacted you negatively?",
-        "Do you believe your productivity is ever affected by a mental health issue?",
-        "If yes - what percentage of your work time (time performing primary or secondary job functions) is affected by a mental health issue?",
-        "If you have a mental health issue - do you feel that it interferes with your work when being treated effectively?",
-        "If you have a mental health issue - do you feel that it interferes with your work when NOT being treated effectively?",
-        "How willing would you be to share with friends and family that you have a mental illness?",
-        "If yes - what condition(s) have you been diagnosed with?",
-        "If maybe - what condition(s) do you believe you have?",
-        "If so - what condition(s) were you diagnosed with?",
-    ]
-    corrupted_col = "Why or why not?"
-    if isinstance(data_container.features, pd.DataFrame):
-        data_container.features.drop(columns=drop_columns + treatment_columns, axis=1, inplace=True)
-        for c in data_container.features.columns:
-            if corrupted_col in c:
-                data_container.features.drop(columns=c, axis=1, inplace=True)
-    elif isinstance(data_container.features, pl.DataFrame):
-        data_container.features = data_container.features.drop(drop_columns + treatment_columns)
-        for c in data_container.features.columns:
-            if corrupted_col in c:
-                data_container.features = data_container.features.drop(c)
     data_container.spiel = f"This dataset uses '{data_container.class_col}' as the class column, removing the other two options\n" + data_container.spiel
     replacement_dict = {"'yes'": "yes", "'no'": "no"}
     if isinstance(data_container.features, pd.DataFrame):
@@ -781,36 +762,36 @@ mh1_common_args = {
     "class_col": "mh1",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.PANDAS})
-mh1tech16_pd = factory.create_data_provider()
-mh1tech16_pd = preproc_extra(mh1tech16_pd)
+mh1tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh1tech16_pd = preproc_extra(mh1tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.POLARS})
-mh1tech16_pl = factory.create_data_provider()
-mh1tech16_pl = preproc_extra(mh1tech16_pl)
+mh1tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh1tech16_pl = preproc_extra(mh1tech16_pl, treatment_columns)
 
 mh2_common_args = {
     "name": "mh2tech16",
     "class_col": "mh2",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.PANDAS})
-mh2tech16_pd = factory.create_data_provider()
-mh2tech16_pd = preproc_extra(mh2tech16_pd)
+mh2tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh2tech16_pd = preproc_extra(mh2tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.POLARS})
-mh2tech16_pl = factory.create_data_provider()
-mh2tech16_pl = preproc_extra(mh2tech16_pl)
+mh2tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh2tech16_pl = preproc_extra(mh2tech16_pl, treatment_columns)
 
 mh3_common_args = {
     "name": "mh3tech16",
     "class_col": "mh3",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.PANDAS})
-mh3tech16_pd = factory.create_data_provider()
-mh3tech16_pd = preproc_extra(mh3tech16_pd)
+mh3tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh3tech16_pd = preproc_extra(mh3tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.POLARS})
-mh3tech16_pl = factory.create_data_provider()
-mh3tech16_pl = preproc_extra(mh3tech16_pl)
+mh3tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh3tech16_pl = preproc_extra(mh3tech16_pl, treatment_columns)
 
 mush_common_args = {
     "name": "mush",

@@ -206,7 +206,7 @@ class DataProviderFactory(BaseModel):
                 raise ValueError(f"Invalid keyword argument {k}")
         return kwargs
 
-    def create_data_provider(self) -> DataProvider:
+    def create_data_provider(self, drop_cols: list = []) -> DataProvider:
         file_name = self.kwargs["file_name"]
         name = self.kwargs["name"]
         class_col = self.kwargs["class_col"]
@@ -217,6 +217,11 @@ class DataProviderFactory(BaseModel):
         schema = self.kwargs.get("schema", None)
 
         data_loader = DataLoader(file_name, class_col, data_framework, schema)
+        if data_framework == DataFramework.PANDAS:
+            features = data_loader.container.features.drop(columns=drop_cols, axis=1, errors="ignore")
+        else:
+            features = data_loader.container.features.drop(drop_cols, strict=False)
+
         return DataProvider(
             name=name,
             file_name=file_name,
@@ -224,7 +229,7 @@ class DataProviderFactory(BaseModel):
             positive_class=positive_class,
             spiel=spiel,
             sample_size=sample_size,
-            features=data_loader.container.features,
+            features=features,
             target=data_loader.container.target,
             column_descriptors=data_loader.column_descriptors,
         )
