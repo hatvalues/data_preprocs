@@ -8,7 +8,7 @@ ignore_missing_imports = true  # Ignore errors on missing imports (common for th
 
 [tool.poetry]
 name = "data-preprocs"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["hatvalues <julian@hatvalues.org>"]
 readme = "README.md"
