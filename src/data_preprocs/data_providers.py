@@ -744,6 +744,7 @@ drop_columns = [
 ]
 corrupted_cols = ["Why or why not?", "Why or why not?.1"]
 
+
 def preproc_extra(data_container: DataProvider, treatment_columns: list) -> DataProvider:
     treatment_columns = deepcopy(treatment_columns)
     treatment_columns.remove(data_container.class_col)
@@ -762,11 +763,11 @@ mh1_common_args = {
     "class_col": "mh1",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.PANDAS})
-mh1tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh1tech16_pd = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh1tech16_pd = preproc_extra(mh1tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh1_common_args | {"data_framework": DataFramework.POLARS})
-mh1tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh1tech16_pl = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh1tech16_pl = preproc_extra(mh1tech16_pl, treatment_columns)
 
 mh2_common_args = {
@@ -774,11 +775,11 @@ mh2_common_args = {
     "class_col": "mh2",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.PANDAS})
-mh2tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh2tech16_pd = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh2tech16_pd = preproc_extra(mh2tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh2_common_args | {"data_framework": DataFramework.POLARS})
-mh2tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh2tech16_pl = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh2tech16_pl = preproc_extra(mh2tech16_pl, treatment_columns)
 
 mh3_common_args = {
@@ -786,11 +787,11 @@ mh3_common_args = {
     "class_col": "mh3",
 }
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.PANDAS})
-mh3tech16_pd = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh3tech16_pd = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh3tech16_pd = preproc_extra(mh3tech16_pd, treatment_columns)
 
 factory = DataProviderFactory(kwargs=mhtech16_common_args | mh3_common_args | {"data_framework": DataFramework.POLARS})
-mh3tech16_pl = factory.create_data_provider(drop_cols = drop_columns + treatment_columns + corrupted_cols)
+mh3tech16_pl = factory.create_data_provider(drop_cols=drop_columns + treatment_columns + corrupted_cols)
 mh3tech16_pl = preproc_extra(mh3tech16_pl, treatment_columns)
 
 mush_common_args = {
