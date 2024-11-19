@@ -7,7 +7,7 @@ from pytest_unordered import unordered
 
 
 def get_test_columns_descriptors(data_provider: DataProvider) -> dict[str, any]:
-    return {k: v for k, v in data_provider.column_descriptors.items() if len(v["unique_values"]) <= 10}
+    return {k: asdict(v) for k, v in data_provider.column_descriptors.items() if len(v.unique_values) <= 10}
 
 
 def get_test_dict(data_provider: DataProvider) -> dict[str, any]:

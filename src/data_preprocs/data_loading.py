@@ -32,6 +32,15 @@ class DataContainer:
     target: Union[pd.Series, pl.Series]
 
 
+@dataclass
+class ColumnDescriptor:
+    dtype: Optional[str] = None
+    otype: Optional[str] = None
+    unique_values: list = field(default_factory=list)
+    min: Optional[Union[float, int]] = None
+    max: Optional[Union[float, int]] = None
+
+
 class DataLoader:
     """Base class for data containers."""
 
@@ -86,16 +95,6 @@ class DataLoader:
         with as_file(source) as data_file:
             return pl.read_csv(data_file, schema=self.schema)  # type: ignore # type checking was done in _validate_schema
 
-    @staticmethod
-    def _column_descriptor() -> dict[str, Any]:
-        return {
-            "dtype": None,
-            "otype": None,
-            "unique_values": [],
-            "min": None,
-            "max": None,
-        }
-
     def _is_numeric_dtype(self, dtype):
         if self.data_framework == DataFramework.PANDAS:
             return np.issubdtype(dtype, np.floating)
@@ -136,21 +135,22 @@ class DataLoader:
         n_unique = series.n_unique() if isinstance(series, pl.Series) else series.nunique()
         return n_unique == series.max() - series.min() + 1
 
-    def _update_descriptor(self, descriptor, series, otype, min_max=False):
-        descriptor["otype"] = otype
+    def _update_descriptor(self, descriptor: ColumnDescriptor, series: Union[pd.Series, pl.Series], otype: str, min_max: bool = False):
+        descriptor.otype = otype
         if otype == "categorical":
-            descriptor["unique_values"] = self._extract_unique_values(series)
+            descriptor.unique_values = self._extract_unique_values(series)
         elif min_max:
             min_val, max_val = self._extract_min_max(series)
-            descriptor.update({"min": min_val, "max": max_val})
+            descriptor.min = min_val
+            descriptor.max = max_val
 
     def _create_column_descriptors(self) -> None:
-        column_descriptors = defaultdict(self._column_descriptor)
+        column_descriptors = defaultdict(ColumnDescriptor)
 
         for col in self.container.features.columns:
             series = self.container.features[col]
             dtype = series.dtype
-            column_descriptors[col]["dtype"] = self._get_dtype_name(dtype)
+            column_descriptors[col].dtype = self._get_dtype_name(dtype)
 
             if self._is_categorical_dtype(dtype):
                 self._update_descriptor(column_descriptors[col], series, "categorical")
@@ -159,9 +159,9 @@ class DataLoader:
             elif self._is_integer_dtype(dtype):
                 otype = "ordinal" if self._no_gaps_integer_series(series) else "count"
                 self._update_descriptor(column_descriptors[col], series, otype, min_max=True)
-                column_descriptors[col]["unique_values"] = self._extract_unique_values(series)
+                column_descriptors[col].unique_values = self._extract_unique_values(series)
             else:
-                column_descriptors[col]["otype"] = "unknown"
+                column_descriptors[col].otype = "unknown"
 
         self.column_descriptors = dict(column_descriptors)
 
