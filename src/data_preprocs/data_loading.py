@@ -178,7 +178,7 @@ class DataProvider:
     sample_size: float
     features: Union[pd.DataFrame, pl.DataFrame]
     target: Union[pd.Series, pl.Series]
-    column_descriptors: dict[str, Any] = field(default_factory=dict)
+    column_descriptors: dict[str, ColumnDescriptor] = field(default_factory=dict)
 
 
 class DataProviderFactory(BaseModel):
