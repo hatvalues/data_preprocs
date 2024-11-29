@@ -1,4 +1,4 @@
-from src.data_preprocs.data_loading import DataFramework, DataProviderFactory
+from data_preprocs.data_loading import DataFramework, DataProviderFactory
 
 readmit_common_args = {
     "class_col": "readmitted",

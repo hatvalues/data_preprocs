@@ -1,4 +1,4 @@
-from src.data_preprocs.data_loading import DataFramework, DataProviderFactory, DataProvider
+from data_preprocs.data_loading import DataFramework, DataProviderFactory, DataProvider
 import polars as pl
 import pandas as pd
 from copy import deepcopy

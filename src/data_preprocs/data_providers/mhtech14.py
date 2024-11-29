@@ -1,4 +1,4 @@
-from src.data_preprocs.data_loading import DataFramework, DataProviderFactory
+from data_preprocs.data_loading import DataFramework, DataProviderFactory
 
 mhtech14_common_args = {
     "name": "mhtech14",

@@ -1,4 +1,4 @@
-from src.data_preprocs.data_loading import DataFramework, DataProviderFactory
+from data_preprocs.data_loading import DataFramework, DataProviderFactory
 
 lending_common_args = {
     "class_col": "loan_status",

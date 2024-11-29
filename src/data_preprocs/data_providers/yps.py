@@ -1,4 +1,4 @@
-from src.data_preprocs.data_loading import DataFramework, DataProviderFactory
+from data_preprocs.data_loading import DataFramework, DataProviderFactory
 
 yps_common_args = {
     "file_name": "yps.csv.gz",
