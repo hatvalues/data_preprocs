@@ -49,4 +49,3 @@ heart_pd = factory.create_data_provider()
 
 factory = DataProviderFactory(kwargs=heart_common_args | {"data_framework": DataFramework.POLARS})
 heart_pl = factory.create_data_provider()
-

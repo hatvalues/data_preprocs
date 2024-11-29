@@ -47,4 +47,3 @@ breast_pd = factory.create_data_provider()
 
 factory = DataProviderFactory(kwargs=breast_common_args | {"data_framework": DataFramework.POLARS})
 breast_pl = factory.create_data_provider()
-

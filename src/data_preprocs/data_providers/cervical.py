@@ -139,4 +139,3 @@ cervicalr_pd = factory.create_data_provider()
 
 factory = DataProviderFactory(kwargs=cervicalr_common_args | {"data_framework": DataFramework.POLARS})
 cervicalr_pl = factory.create_data_provider()
-

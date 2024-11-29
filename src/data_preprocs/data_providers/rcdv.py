@@ -66,4 +66,3 @@ rcdv_samp_pd.spiel = "A random 0.1% sample without replacement of the original r
 factory = DataProviderFactory(kwargs=rcdv_common_args | rcdv_samp_args | {"data_framework": DataFramework.POLARS})
 rcdv_samp_pl = factory.create_data_provider()
 rcdv_samp_pl.spiel = "A random 0.1% sample without replacement of the original rcdv dataset.\n" + rcdv_samp_pl.spiel
-

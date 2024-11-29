@@ -112,4 +112,3 @@ bankmark_samp_pd = factory.create_data_provider()
 
 factory = DataProviderFactory(kwargs=bankmark_common_args | {"name": "bankmark_samp", "file_name": "bankmark_samp.csv.gz", "sample_size": 0.05, "data_framework": DataFramework.POLARS})
 bankmark_samp_pl = factory.create_data_provider()
-
