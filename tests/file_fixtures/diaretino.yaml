@@ -1,7 +1,7 @@
 amfm:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -129,16 +129,16 @@ name: diaretino
 positive_class: 'yes'
 ps:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 qa:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1

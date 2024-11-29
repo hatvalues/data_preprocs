@@ -6,8 +6,8 @@ Age:
   unique_values: []
 Alcoholism:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -35,8 +35,8 @@ ApptMonth:
   - April
 Diabetes:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -57,8 +57,8 @@ Handcap:
   unique_values: []
 Hipertension:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -71,8 +71,8 @@ LagDays:
   unique_values: []
 SMS_received:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -105,8 +105,8 @@ SchedMonth:
   - November
 Scholarship:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0

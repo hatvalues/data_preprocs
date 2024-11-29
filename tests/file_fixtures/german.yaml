@@ -71,8 +71,8 @@ debt:
   - A102
 deps:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 1
   otype: bool
   unique_values:
   - 1

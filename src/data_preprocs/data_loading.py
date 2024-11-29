@@ -139,7 +139,7 @@ class DataLoader:
         descriptor.otype = otype
         if otype in ("categorical", "bool", "constant"):
             descriptor.unique_values = self._extract_unique_values(series)
-        elif min_max:
+        if min_max:
             min_val, max_val = self._extract_min_max(series)
             descriptor.min = min_val
             descriptor.max = max_val

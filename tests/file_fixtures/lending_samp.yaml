@@ -30,8 +30,8 @@ bc_util:
   unique_values: []
 block_missingness:
   dtype: float64
-  max: null
-  min: null
+  max: 1.0
+  min: 0.0
   otype: bool
   unique_values:
   - 0.0
@@ -437,8 +437,8 @@ tax_liens:
   unique_values: []
 term:
   dtype: float64
-  max: null
-  min: null
+  max: 60.0
+  min: 36.0
   otype: bool
   unique_values:
   - 60.0

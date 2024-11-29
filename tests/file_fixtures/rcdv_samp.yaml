@@ -6,8 +6,8 @@ age:
   unique_values: []
 alchy:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -35,8 +35,8 @@ column_names:
 columns: 18
 felon:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -50,32 +50,32 @@ follow:
   unique_values: []
 junky:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 male:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 married:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 missingness:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -83,8 +83,8 @@ missingness:
 name: rcdv_samp
 person:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -98,8 +98,8 @@ priors:
   unique_values: []
 propty:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -197,8 +197,8 @@ spiel: "A random 0.1% sample without replacement of the original rcdv dataset.\n
   \ data sample.\n    "
 super:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -214,24 +214,24 @@ tservd:
   unique_values: []
 white:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 workrel:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 year:
   dtype: int64
-  max: null
-  min: null
+  max: 1980
+  min: 1978
   otype: bool
   unique_values:
   - 1980

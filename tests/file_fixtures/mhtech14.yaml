@@ -50,16 +50,16 @@ column_names:
 columns: 23
 coworkers:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 2
   - 0
 family_history:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -107,8 +107,8 @@ no_employees:
   unique_values: []
 obs_consequence:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -139,8 +139,8 @@ region:
   - MEAF
 remote_work:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -155,8 +155,8 @@ seek_help:
   unique_values: []
 self_employed:
   dtype: int64
-  max: null
-  min: null
+  max: 0
+  min: 0
   otype: constant
   unique_values:
   - 0
@@ -192,8 +192,8 @@ spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-su
   \ notes or comments\n    "
 supervisor:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 2
@@ -203,8 +203,8 @@ target_classes:
 - 'No'
 tech_company:
   dtype: int64
-  max: null
-  min: null
+  max: 2
+  min: 0
   otype: bool
   unique_values:
   - 2

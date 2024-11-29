@@ -1,86 +1,86 @@
 A1Cresult_None:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 acarbose_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 acetohexamide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 1
   otype: constant
   unique_values:
   - 1
 age_[40-50):
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 age_[50-60):
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 age_[60-70):
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 age_[70-80):
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 age_[80-90):
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 change_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 chlorpropamide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 citoglipton_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 1
   otype: constant
   unique_values:
   - 1
@@ -153,246 +153,246 @@ column_names:
 columns: 64
 diabetesMed_Yes:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 diag_1_414:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_1_428:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_1_786:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_2_250:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_2_276:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_2_427:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_2_428:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_3_250:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_3_276:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 diag_3_401:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 diag_3_428:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 examide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 1
   otype: constant
   unique_values:
   - 1
 file_name: readmit.csv.gz
 gender_Female:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 glimepiride-pioglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 glimepiride_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 glipizide-metformin_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 glipizide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 glyburide-metformin_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 glyburide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 insulin_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 max_glu_serum_None:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 medical_specialty_?:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 medical_specialty_Cardiology:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 medical_specialty_Emergency/Trauma:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 medical_specialty_Family/GeneralPractice:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 medical_specialty_InternalMedicine:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 metformin-pioglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 1
   otype: constant
   unique_values:
   - 1
 metformin-rosiglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 1
   otype: constant
   unique_values:
   - 1
 metformin_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 miglitol_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -400,8 +400,8 @@ miglitol_No:
 name: readmit
 nateglinide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -450,48 +450,48 @@ number_outpatient:
   unique_values: []
 payer_code_?:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 payer_code_BC:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 payer_code_HM:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 payer_code_MC:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 payer_code_SP:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 pioglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -499,32 +499,32 @@ pioglitazone_No:
 positive_class: T
 race_AfricanAmerican:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 race_Caucasian:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 repaglinide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 rosiglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -544,24 +544,24 @@ time_in_hospital:
   unique_values: []
 tolazamide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 tolbutamide_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 troglitazone_No:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1

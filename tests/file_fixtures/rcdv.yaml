@@ -6,8 +6,8 @@ age:
   unique_values: []
 alchy:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -35,8 +35,8 @@ column_names:
 columns: 18
 felon:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -50,32 +50,32 @@ follow:
   unique_values: []
 junky:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 male:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 married:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 missingness:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -83,8 +83,8 @@ missingness:
 name: rcdv
 person:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -98,8 +98,8 @@ priors:
   unique_values: []
 propty:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -196,8 +196,8 @@ spiel: "\n    Data Set Information:\n    This is a description of the data on th
   \ analysis sample, 2 the validation sampel and 3 is missing data sample.\n    "
 super:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
@@ -213,24 +213,24 @@ tservd:
   unique_values: []
 white:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 1
   - 0
 workrel:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
   - 1
 year:
   dtype: int64
-  max: null
-  min: null
+  max: 1980
+  min: 1978
   otype: bool
   unique_values:
   - 1978

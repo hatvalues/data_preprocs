@@ -12,8 +12,8 @@ First.sexual.intercourse:
   unique_values: []
 Hormonal.Contraceptives:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -26,8 +26,8 @@ Hormonal.Contraceptives..years.:
   unique_values: []
 IUD:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -52,8 +52,8 @@ Number.of.sexual.partners:
   unique_values: []
 STDs:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
@@ -84,8 +84,8 @@ STDs..number.:
   unique_values: []
 Smokes:
   dtype: int64
-  max: null
-  min: null
+  max: 1
+  min: 0
   otype: bool
   unique_values:
   - 0
