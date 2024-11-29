@@ -111,7 +111,7 @@ class DataLoader:
         if self.data_framework == DataFramework.PANDAS:
             return dtype.name in pandas_categorical_types
         else:  # Polars
-            return dtype in polars_categorical_types
+            return dtype.base_type() in polars_categorical_types
 
     @staticmethod
     def _get_dtype_name(dtype):
@@ -154,14 +154,21 @@ class DataLoader:
 
             if self._is_categorical_dtype(dtype):
                 self._update_descriptor(column_descriptors[col], series, "categorical")
-            elif self._is_numeric_dtype(dtype):
-                self._update_descriptor(column_descriptors[col], series, "numeric", min_max=True)
-            elif self._is_integer_dtype(dtype):
-                otype = "ordinal" if self._no_gaps_integer_series(series) else "count"
-                self._update_descriptor(column_descriptors[col], series, otype, min_max=True)
-                column_descriptors[col].unique_values = self._extract_unique_values(series)
             else:
-                column_descriptors[col].otype = "unknown"
+                unique_values = self._extract_unique_values(series)
+                if len(unique_values) == 1:
+                    self._update_descriptor(column_descriptors[col], series, "constant", min_max=True)
+                elif len(unique_values) == 2:
+                    self._update_descriptor(column_descriptors[col], series, "bool", min_max=True)
+                else:
+                    truncated_values = [uv if uv is None or np.isnan(uv) or np.isinf(uv) else int(uv) for uv in unique_values]
+                    if self._is_integer_dtype(dtype) or unique_values == truncated_values:
+                        otype = "ordinal" if self._no_gaps_integer_series(series) else "count"
+                        self._update_descriptor(column_descriptors[col], series, otype, min_max=True)
+                    elif self._is_numeric_dtype(dtype):
+                        self._update_descriptor(column_descriptors[col], series, "numeric", min_max=True)
+                    else:
+                        column_descriptors[col].otype = "unknown"
 
         self.column_descriptors = dict(column_descriptors)
 

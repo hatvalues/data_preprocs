@@ -8,13 +8,13 @@ ALTV:
   dtype: float64
   max: 91.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 ASTV:
   dtype: float64
   max: 87.0
   min: 12.0
-  otype: numeric
+  otype: count
   unique_values: []
 DL:
   dtype: float64
@@ -44,7 +44,7 @@ LB:
   dtype: float64
   max: 160.0
   min: 106.0
-  otype: numeric
+  otype: count
   unique_values: []
 MLTV:
   dtype: float64
@@ -62,49 +62,49 @@ Max:
   dtype: float64
   max: 238.0
   min: 122.0
-  otype: numeric
+  otype: count
   unique_values: []
 Mean:
   dtype: float64
   max: 182.0
   min: 73.0
-  otype: numeric
+  otype: count
   unique_values: []
 Median:
   dtype: float64
   max: 186.0
   min: 77.0
-  otype: numeric
+  otype: count
   unique_values: []
 Min:
   dtype: float64
   max: 159.0
   min: 50.0
-  otype: numeric
+  otype: count
   unique_values: []
 Mode:
   dtype: float64
   max: 187.0
   min: 60.0
-  otype: numeric
+  otype: count
   unique_values: []
 Nmax:
   dtype: float64
   max: 18.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 Nzeros:
   dtype: float64
   max: 10.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 Tendency:
   dtype: float64
   max: 1.0
   min: -1.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 UC:
   dtype: float64
@@ -116,13 +116,13 @@ Variance:
   dtype: float64
   max: 269.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 Width:
   dtype: float64
   max: 180.0
   min: 3.0
-  otype: numeric
+  otype: count
   unique_values: []
 class_col: NSP
 column_names:

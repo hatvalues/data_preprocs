@@ -251,7 +251,7 @@ How many employees does your company or organization have?:
   dtype: float64
   max: 1000.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 'If a mental health issue prompted you to request a medical leave from work - asking for that leave would be:':
   dtype: object
@@ -315,6 +315,12 @@ Were you aware of the options for mental health care provided by your previous e
   - some
   - all
   - not sure
+What is your age?:
+  dtype: int64
+  max: 323
+  min: 3
+  otype: count
+  unique_values: []
 What is your gender?:
   dtype: object
   max: null

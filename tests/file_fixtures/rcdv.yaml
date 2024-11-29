@@ -1,11 +1,15 @@
+age:
+  dtype: int64
+  max: 945
+  min: 177
+  otype: count
+  unique_values: []
 alchy:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 class_col: recid
 column_names:
 - year
@@ -31,63 +35,73 @@ felon:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 file_name: rcdv.csv.gz
+follow:
+  dtype: int64
+  max: 81
+  min: 46
+  otype: count
+  unique_values: []
 junky:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 male:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 married:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 missingness:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 name: rcdv
 person:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 positive_class: Y
+priors:
+  dtype: int64
+  max: 90
+  min: 0
+  otype: count
+  unique_values: []
 propty:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 rows: 18876
+rule:
+  dtype: int64
+  max: 77
+  min: 0
+  otype: count
+  unique_values: []
 sample_size: 1.0
+school:
+  dtype: int64
+  max: 19
+  min: 0
+  otype: ordinal
+  unique_values: []
 spiel: "\n    Data Set Information:\n    This is a description of the data on the\
   \ file, DATA1978.\n    The description was prepared by Peter Schmidt, Department\
   \ of Economics, Michigan State University, East Lansing, Michigan 48824.\n    The\
@@ -168,34 +182,32 @@ super:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 target_classes:
 - N
 - Y
+tservd:
+  dtype: int64
+  max: 354
+  min: 0
+  otype: count
+  unique_values: []
 white:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 workrel:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 year:
   dtype: int64
   max: 1980
   min: 1978
-  otype: count
-  unique_values:
-  - 1978
-  - 1980
+  otype: bool
+  unique_values: []

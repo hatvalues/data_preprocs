@@ -12,6 +12,24 @@ airtemp:
   min: -8.0
   otype: numeric
   unique_values: []
+alb:
+  dtype: int16
+  max: 59
+  min: -41
+  otype: count
+  unique_values: []
+alkp:
+  dtype: int16
+  max: 315
+  min: -41
+  otype: count
+  unique_values: []
+alt:
+  dtype: int16
+  max: 1385
+  min: -41
+  otype: count
+  unique_values: []
 antic:
   dtype: object
   max: null
@@ -20,6 +38,12 @@ antic:
   unique_values:
   - '-8'
   - '2'
+ast:
+  dtype: int16
+  max: 293
+  min: -41
+  otype: count
+  unique_values: []
 beta:
   dtype: object
   max: null
@@ -566,7 +590,7 @@ confage:
   dtype: float16
   max: 97.0
   min: 16.0
-  otype: numeric
+  otype: count
   unique_values: []
 constorb:
   dtype: object
@@ -644,6 +668,24 @@ dheas:
   min: -41.0
   otype: numeric
   unique_values: []
+dias1:
+  dtype: int16
+  max: 118
+  min: -9
+  otype: count
+  unique_values: []
+dias2:
+  dtype: int16
+  max: 117
+  min: -9
+  otype: count
+  unique_values: []
+dias3:
+  dtype: int16
+  max: 116
+  min: -9
+  otype: count
+  unique_values: []
 difbpc1:
   dtype: object
   max: null
@@ -719,7 +761,7 @@ ecre:
   dtype: float16
   max: 363.0
   min: -41.0
-  otype: numeric
+  otype: count
   unique_values: []
 elig:
   dtype: object
@@ -863,7 +905,7 @@ ggt:
   dtype: float16
   max: 1445.0
   min: -41.0
-  otype: numeric
+  otype: count
   unique_values: []
 haeysurg:
   dtype: object
@@ -889,6 +931,12 @@ hasurg:
   unique_values:
   - '-8'
   - '2'
+hba1c:
+  dtype: int16
+  max: 133
+  min: -42
+  otype: count
+  unique_values: []
 hdl:
   dtype: float16
   max: 4.3984375
@@ -908,7 +956,7 @@ hgb:
   dtype: float16
   max: 181.0
   min: -42.0
-  otype: numeric
+  otype: count
   unique_values: []
 hhorig:
   dtype: object
@@ -925,16 +973,7 @@ hhsize:
   max: 9
   min: 1
   otype: ordinal
-  unique_values:
-  - 2
-  - 1
-  - 5
-  - 3
-  - 4
-  - 6
-  - 8
-  - 9
-  - 7
+  unique_values: []
 hinrel:
   dtype: object
   max: null
@@ -1014,7 +1053,7 @@ htpef:
   dtype: float16
   max: 16.0
   min: -8.0
-  otype: numeric
+  otype: count
   unique_values: []
 htpef_sc:
   dtype: float16
@@ -1071,13 +1110,19 @@ igfi:
   dtype: float16
   max: 63.0
   min: -41.0
-  otype: numeric
+  otype: count
   unique_values: []
 indbdub_xw:
   dtype: float16
   max: 5.37890625
   min: 0.0
   otype: numeric
+  unique_values: []
+index:
+  dtype: int64
+  max: 13231
+  min: 10
+  otype: count
   unique_values: []
 inhaler:
   dtype: object
@@ -1093,14 +1138,7 @@ inhalhrs:
   max: 18
   min: -8
   otype: count
-  unique_values:
-  - -8
-  - 1
-  - 6
-  - 12
-  - 4
-  - 18
-  - 9
+  unique_values: []
 iron:
   dtype: object
   max: null
@@ -1194,6 +1232,12 @@ jlnssec8_dv:
   - '7'
   - '8'
   - '4'
+level_0:
+  dtype: int64
+  max: 13220
+  min: 10
+  otype: count
+  unique_values: []
 lfout:
   dtype: object
   max: null
@@ -1294,6 +1338,18 @@ lunginhl:
   - '2'
   - '-8'
   - '1'
+lunginhr:
+  dtype: int16
+  max: 22
+  min: -8
+  otype: count
+  unique_values: []
+lungsmhr:
+  dtype: int16
+  max: 24
+  min: -8
+  otype: count
+  unique_values: []
 lungsmok:
   dtype: object
   max: null
@@ -1322,6 +1378,24 @@ lungtest:
   - '-8'
   - '3'
   - '2'
+map1:
+  dtype: int16
+  max: 142
+  min: -8
+  otype: count
+  unique_values: []
+map2:
+  dtype: int16
+  max: 137
+  min: -8
+  otype: count
+  unique_values: []
+map3:
+  dtype: int16
+  max: 138
+  min: -8
+  otype: count
+  unique_values: []
 marstat:
   dtype: object
   max: null
@@ -1465,6 +1539,24 @@ mlstat:
   - '2'
   - '5'
   - '4'
+mmgsd1:
+  dtype: int16
+  max: 65
+  min: -8
+  otype: count
+  unique_values: []
+mmgsd2:
+  dtype: int16
+  max: 66
+  min: -8
+  otype: count
+  unique_values: []
+mmgsd3:
+  dtype: int16
+  max: 67
+  min: -8
+  otype: count
+  unique_values: []
 mmgsdom:
   dtype: object
   max: null
@@ -1474,6 +1566,36 @@ mmgsdom:
   - '1'
   - '2'
   - '-8'
+mmgsdval:
+  dtype: int16
+  max: 67
+  min: -8
+  otype: count
+  unique_values: []
+mmgsn1:
+  dtype: int16
+  max: 63
+  min: -8
+  otype: count
+  unique_values: []
+mmgsn2:
+  dtype: int16
+  max: 63
+  min: -8
+  otype: count
+  unique_values: []
+mmgsn3:
+  dtype: int16
+  max: 63
+  min: -8
+  otype: count
+  unique_values: []
+mmgsnval:
+  dtype: int16
+  max: 63
+  min: -8
+  otype: count
+  unique_values: []
 mmgsok:
   dtype: object
   max: null
@@ -1985,6 +2107,24 @@ nulllf95:
   - '-8'
   - '0'
   - '1'
+numed2:
+  dtype: int16
+  max: 18
+  min: 0
+  otype: count
+  unique_values: []
+nurdayd:
+  dtype: int16
+  max: 31
+  min: 1
+  otype: ordinal
+  unique_values: []
+nurdaym:
+  dtype: int16
+  max: 12
+  min: 1
+  otype: ordinal
+  unique_values: []
 nurdayw:
   dtype: object
   max: null
@@ -2045,6 +2185,12 @@ ompulval:
   max: 104.0
   min: -8.0
   otype: numeric
+  unique_values: []
+omronno:
+  dtype: int16
+  max: 982
+  min: -8
+  otype: count
   unique_values: []
 omsyst:
   dtype: float16
@@ -2112,6 +2258,24 @@ probwj:
   - '1'
   - '3'
   - '2'
+pulse1:
+  dtype: int16
+  max: 122
+  min: -9
+  otype: count
+  unique_values: []
+pulse2:
+  dtype: int16
+  max: 105
+  min: -9
+  otype: count
+  unique_values: []
+pulse3:
+  dtype: int16
+  max: 106
+  min: -9
+  otype: count
+  unique_values: []
 qualab:
   dtype: object
   max: null
@@ -2324,7 +2488,7 @@ rtin:
   dtype: float16
   max: 1419.0
   min: -41.0
-  otype: numeric
+  otype: count
   unique_values: []
 samdifc1:
   dtype: object
@@ -2407,6 +2571,12 @@ spiel: "\n    University of Essex, Institute for Social and Economic Research. (
   \    Understanding Society: Waves 2-3 Nurse Health Assessment, 2010-2012. [data\
   \ collection].\n    3rd Edition. UK Data Service. SN: 7251, http://doi.org/10.5255/UKDA-SN-7251-3\n\
   \    Target: Mental health (mh) - neutral, happy, unhappy (categorical)\n    "
+spirno:
+  dtype: int16
+  max: 174
+  min: -8
+  otype: count
+  unique_values: []
 statina:
   dtype: object
   max: null
@@ -2423,6 +2593,24 @@ statins:
   unique_values:
   - '2'
   - '1'
+sys1:
+  dtype: int16
+  max: 195
+  min: -9
+  otype: count
+  unique_values: []
+sys2:
+  dtype: int16
+  max: 190
+  min: -9
+  otype: count
+  unique_values: []
+sys3:
+  dtype: int16
+  max: 186
+  min: -9
+  otype: count
+  unique_values: []
 target_classes:
 - neutral
 - unhappy

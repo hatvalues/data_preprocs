@@ -1,13 +1,15 @@
+Age:
+  dtype: int64
+  max: 77
+  min: 29
+  otype: count
+  unique_values: []
 Ca:
   dtype: int64
   max: 3
   min: 0
   otype: ordinal
-  unique_values:
-  - 0
-  - 3
-  - 2
-  - 1
+  unique_values: []
 ChestPain:
   dtype: object
   max: null
@@ -18,6 +20,12 @@ ChestPain:
   - asymptomatic
   - nonanginal
   - nontypical
+Chol:
+  dtype: int64
+  max: 417
+  min: 126
+  otype: count
+  unique_values: []
 ExAng:
   dtype: object
   max: null
@@ -34,11 +42,23 @@ Fbs:
   unique_values:
   - '>120'
   - <=120
+MaxHR:
+  dtype: int64
+  max: 202
+  min: 71
+  otype: count
+  unique_values: []
 Oldpeak:
   dtype: float64
   max: 6.2
   min: 0.0
   otype: numeric
+  unique_values: []
+RestBP:
+  dtype: int64
+  max: 200
+  min: 94
+  otype: count
   unique_values: []
 RestECG:
   dtype: object

@@ -8,18 +8,14 @@ FTI measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 I131 treatment:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 T3:
   dtype: float64
   max: 9.5
@@ -30,10 +26,8 @@ T3 measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 T4U:
   dtype: float64
   max: 2.150390625
@@ -44,10 +38,8 @@ T4U measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 TBG:
   dtype: float64
   max: 190.0
@@ -58,10 +50,8 @@ TBG measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 TSH:
   dtype: float64
   max: 494.0
@@ -72,10 +62,8 @@ TSH measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 TT4:
   dtype: float64
   max: 600.0
@@ -86,15 +74,13 @@ TT4 measured:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 age:
   dtype: float64
   max: 97.0
   min: 1.0
-  otype: numeric
+  otype: count
   unique_values: []
 class_col: diagnosis
 column_names:
@@ -133,83 +119,64 @@ goitre:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 hypopituitary:
   dtype: int64
   max: 0
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
+  otype: constant
+  unique_values: []
 lithium:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 name: thyroid_samp
 on antithyroid medication:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 on thyroxine:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 positive_class: Abnormal
 pregnant:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 psych:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 query hyperthyroid:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 query hypothyroid:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 query on thyroxine:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 referral source:
   dtype: object
   max: null
@@ -236,10 +203,8 @@ sick:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 spiel: "Note: diagnosis has been rendered to a two-class column with possible values\
   \ normal or abnormal.\n\n    Thyroid disease records supplied by the Garavan Institute\
   \ and J. Ross\n    Quinlan, New South Wales Institute, Syndney, Australia. 1987.\n\
@@ -285,15 +250,11 @@ thyroid surgery:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 tumor:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []

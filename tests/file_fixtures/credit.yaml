@@ -15,6 +15,12 @@ A10:
   unique_values:
   - t
   - f
+A11:
+  dtype: int64
+  max: 67
+  min: 0
+  otype: count
+  unique_values: []
 A12:
   dtype: object
   max: null
@@ -37,6 +43,12 @@ A14:
   max: 2000.0
   min: 0.0
   otype: numeric
+  unique_values: []
+A15:
+  dtype: int64
+  max: 100000
+  min: 0
+  otype: count
   unique_values: []
 A2:
   dtype: float64

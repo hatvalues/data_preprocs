@@ -1,11 +1,21 @@
+Age:
+  dtype: int64
+  max: 84
+  min: 13
+  otype: count
+  unique_values: []
+First.sexual.intercourse:
+  dtype: int64
+  max: 32
+  min: 10
+  otype: count
+  unique_values: []
 Hormonal.Contraceptives:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 Hormonal.Contraceptives..years.:
   dtype: float64
   max: 30.0
@@ -16,58 +26,73 @@ IUD:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 IUD..years.:
   dtype: float64
   max: 19.0
   min: 0.0
   otype: numeric
   unique_values: []
+Num.of.pregnancies:
+  dtype: int64
+  max: 11
+  min: 0
+  otype: count
+  unique_values: []
+Number.of.sexual.partners:
+  dtype: int64
+  max: 28
+  min: 1
+  otype: count
+  unique_values: []
 STDs:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 STDs..Number.of.diagnosis:
   dtype: int64
   max: 3
   min: 0
   otype: ordinal
-  unique_values:
-  - 0
-  - 1
-  - 3
-  - 2
+  unique_values: []
+STDs..Time.since.first.diagnosis:
+  dtype: int64
+  max: 22
+  min: 1
+  otype: count
+  unique_values: []
+STDs..Time.since.last.diagnosis:
+  dtype: int64
+  max: 22
+  min: 1
+  otype: count
+  unique_values: []
 STDs..number.:
   dtype: int64
   max: 4
   min: 0
   otype: ordinal
-  unique_values:
-  - 0
-  - 2
-  - 1
-  - 3
-  - 4
+  unique_values: []
 Smokes:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 Smokes..years.:
   dtype: float64
   max: 37.0
   min: 0.0
   otype: numeric
+  unique_values: []
+'Unnamed: 0':
+  dtype: int64
+  max: 858
+  min: 1
+  otype: ordinal
   unique_values: []
 class_col: Biopsy
 column_names:

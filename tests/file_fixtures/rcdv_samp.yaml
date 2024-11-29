@@ -1,11 +1,15 @@
+age:
+  dtype: int64
+  max: 921
+  min: 177
+  otype: count
+  unique_values: []
 alchy:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 class_col: recid
 column_names:
 - year
@@ -31,63 +35,73 @@ felon:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 file_name: rcdv_samp.csv.gz
+follow:
+  dtype: int64
+  max: 81
+  min: 46
+  otype: count
+  unique_values: []
 junky:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 male:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 married:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 missingness:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 name: rcdv_samp
 person:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 positive_class: Y
+priors:
+  dtype: int64
+  max: 28
+  min: 0
+  otype: count
+  unique_values: []
 propty:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 rows: 1888
+rule:
+  dtype: int64
+  max: 74
+  min: 0
+  otype: count
+  unique_values: []
 sample_size: 0.1
+school:
+  dtype: int64
+  max: 18
+  min: 0
+  otype: ordinal
+  unique_values: []
 spiel: "A random 0.1% sample without replacement of the original rcdv dataset.\n\n\
   \    Data Set Information:\n    This is a description of the data on the file, DATA1978.\n\
   \    The description was prepared by Peter Schmidt, Department of Economics, Michigan\
@@ -169,34 +183,32 @@ super:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 target_classes:
 - N
 - Y
+tservd:
+  dtype: int64
+  max: 274
+  min: 0
+  otype: count
+  unique_values: []
 white:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 workrel:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 year:
   dtype: int64
   max: 1980
   min: 1978
-  otype: count
-  unique_values:
-  - 1980
-  - 1978
+  otype: bool
+  unique_values: []

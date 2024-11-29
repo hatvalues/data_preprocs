@@ -1,3 +1,9 @@
+age:
+  dtype: int64
+  max: 90
+  min: 17
+  otype: count
+  unique_values: []
 class_col: income
 column_names:
 - age
@@ -15,7 +21,19 @@ column_names:
 - hoursperweek
 - nativecountry
 columns: 14
+educationnum:
+  dtype: int64
+  max: 16
+  min: 1
+  otype: ordinal
+  unique_values: []
 file_name: adult_samp.csv.gz
+hoursperweek:
+  dtype: int64
+  max: 99
+  min: 1
+  otype: count
+  unique_values: []
 lcapitalgain:
   dtype: float64
   max: 11.512925464970229

@@ -2,7 +2,7 @@ acc_open_past_24mths:
   dtype: float64
   max: 46.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 adj_log_dti:
   dtype: float64
@@ -14,13 +14,13 @@ avg_cur_bal:
   dtype: float64
   max: 395953.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 bc_open_to_buy:
   dtype: float64
   max: 559912.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 bc_util:
   dtype: float64
@@ -32,20 +32,20 @@ block_missingness:
   dtype: float64
   max: 1.0
   min: 0.0
-  otype: numeric
+  otype: bool
   unique_values: []
 chargeoff_within_12_mths:
   dtype: float64
   max: 6.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 class_col: loan_status
 collections_12_mths_ex_med:
   dtype: float64
   max: 6.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 column_names:
 - loan_amnt
@@ -127,13 +127,13 @@ delinq_2yrs:
   dtype: float64
   max: 22.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 delinq_amnt:
   dtype: float64
   max: 65000.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 disbursement_method:
   dtype: object
@@ -186,7 +186,7 @@ inq_last_6mths:
   dtype: float64
   max: 8.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 installment:
   dtype: float64
@@ -234,7 +234,7 @@ loan_amnt:
   dtype: float64
   max: 40000.0
   min: 500.0
-  otype: numeric
+  otype: count
   unique_values: []
 log_inc:
   dtype: float64
@@ -246,43 +246,43 @@ mo_sin_old_il_acct:
   dtype: float64
   max: 640.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mo_sin_old_rev_tl_op:
   dtype: float64
   max: 747.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mo_sin_rcnt_rev_tl_op:
   dtype: float64
   max: 302.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mo_sin_rcnt_tl:
   dtype: float64
   max: 174.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mort_acc:
   dtype: float64
   max: 29.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mths_since_recent_bc:
   dtype: float64
   max: 610.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 mths_since_recent_inq:
   dtype: float64
   max: 24.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 name: lending_samp
 non_funded_inv_score:
@@ -301,79 +301,79 @@ num_accts_ever_120_pd:
   dtype: float64
   max: 33.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_actv_bc_tl:
   dtype: float64
   max: 26.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_actv_rev_tl:
   dtype: float64
   max: 39.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_bc_sats:
   dtype: float64
   max: 63.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_bc_tl:
   dtype: float64
   max: 70.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_il_tl:
   dtype: float64
   max: 121.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_op_rev_tl:
   dtype: float64
   max: 83.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_rev_accts:
   dtype: float64
   max: 103.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_rev_tl_bal_gt_0:
   dtype: float64
   max: 39.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_sats:
   dtype: float64
   max: 90.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_tl_90g_dpd_24m:
   dtype: float64
   max: 22.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 num_tl_op_past_12m:
   dtype: float64
   max: 25.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 open_acc:
   dtype: float64
   max: 90.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 pct_tl_nvr_dlq:
   dtype: float64
@@ -392,19 +392,19 @@ pub_rec:
   dtype: float64
   max: 63.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 pub_rec_bankruptcies:
   dtype: float64
   max: 7.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 revol_bal:
   dtype: float64
   max: 777448.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 revol_util:
   dtype: float64
@@ -422,7 +422,7 @@ sub_grade:
   dtype: float64
   max: 34.0
   min: 0.0
-  otype: numeric
+  otype: ordinal
   unique_values: []
 target_classes:
 - Fully Paid
@@ -431,55 +431,55 @@ tax_liens:
   dtype: float64
   max: 63.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 term:
   dtype: float64
   max: 60.0
   min: 36.0
-  otype: numeric
+  otype: bool
   unique_values: []
 tot_coll_amt:
   dtype: float64
   max: 6214661.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 tot_cur_bal:
   dtype: float64
   max: 3652389.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 tot_hi_cred_lim:
   dtype: float64
   max: 3754640.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 total_acc:
   dtype: float64
   max: 176.0
   min: 2.0
-  otype: numeric
+  otype: count
   unique_values: []
 total_bal_ex_mort:
   dtype: float64
   max: 950168.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 total_bc_limit:
   dtype: float64
   max: 571500.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 total_il_high_credit_limit:
   dtype: float64
   max: 689474.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 total_pymnt:
   dtype: float64
@@ -515,7 +515,7 @@ total_rev_hi_lim:
   dtype: float64
   max: 1119200.0
   min: 0.0
-  otype: numeric
+  otype: count
   unique_values: []
 verification_status:
   dtype: object

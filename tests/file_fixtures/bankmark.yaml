@@ -1,3 +1,15 @@
+age:
+  dtype: int64
+  max: 92
+  min: 17
+  otype: count
+  unique_values: []
+campaign:
+  dtype: int64
+  max: 42
+  min: 1
+  otype: count
+  unique_values: []
 class_col: y
 column_names:
 - age
@@ -60,6 +72,12 @@ default:
   unique_values:
   - 'no'
   - unknown
+duration:
+  dtype: int64
+  max: 2035
+  min: 5
+  otype: count
+  unique_values: []
 education:
   dtype: object
   max: null
@@ -135,7 +153,13 @@ nr.employed:
   dtype: float64
   max: 5228.0
   min: 4964.0
-  otype: numeric
+  otype: count
+  unique_values: []
+pdays:
+  dtype: int64
+  max: 231
+  min: 1
+  otype: count
   unique_values: []
 positive_class: 'Yes'
 poutcome:
@@ -152,12 +176,7 @@ previous:
   max: 4
   min: 0
   otype: ordinal
-  unique_values:
-  - 1
-  - 0
-  - 2
-  - 3
-  - 4
+  unique_values: []
 rows: 2265
 sample_size: 0.05
 spiel: "\n    Data Set Information:\n    The data is related with direct marketing\

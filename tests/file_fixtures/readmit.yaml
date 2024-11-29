@@ -2,88 +2,68 @@ A1Cresult_None:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 acarbose_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 acetohexamide_No:
   dtype: int64
   max: 1
   min: 1
-  otype: ordinal
-  unique_values:
-  - 1
+  otype: constant
+  unique_values: []
 age_[40-50):
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 age_[50-60):
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 age_[60-70):
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 age_[70-80):
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 age_[80-90):
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 change_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 chlorpropamide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 citoglipton_No:
   dtype: int64
   max: 1
   min: 1
-  otype: ordinal
-  unique_values:
-  - 1
+  otype: constant
+  unique_values: []
 class_col: readmitted
 column_names:
 - time_in_hospital
@@ -155,351 +135,299 @@ diabetesMed_Yes:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 diag_1_414:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_1_428:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_1_786:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_2_250:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_2_276:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_2_427:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_2_428:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_3_250:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_3_276:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 diag_3_401:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 diag_3_428:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 examide_No:
   dtype: int64
   max: 1
   min: 1
-  otype: ordinal
-  unique_values:
-  - 1
+  otype: constant
+  unique_values: []
 file_name: readmit.csv.gz
 gender_Female:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 glimepiride-pioglitazone_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 glimepiride_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 glipizide-metformin_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 glipizide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 glyburide-metformin_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 glyburide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 insulin_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 max_glu_serum_None:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 medical_specialty_?:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 medical_specialty_Cardiology:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 medical_specialty_Emergency/Trauma:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 medical_specialty_Family/GeneralPractice:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 medical_specialty_InternalMedicine:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 metformin-pioglitazone_No:
   dtype: int64
   max: 1
   min: 1
-  otype: ordinal
-  unique_values:
-  - 1
+  otype: constant
+  unique_values: []
 metformin-rosiglitazone_No:
   dtype: int64
   max: 1
   min: 1
-  otype: ordinal
-  unique_values:
-  - 1
+  otype: constant
+  unique_values: []
 metformin_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 miglitol_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 name: readmit
 nateglinide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
+num_lab_procedures:
+  dtype: int64
+  max: 126
+  min: 1
+  otype: count
+  unique_values: []
+num_medications:
+  dtype: int64
+  max: 81
+  min: 1
+  otype: count
+  unique_values: []
 num_procedures:
   dtype: int64
   max: 6
   min: 0
   otype: ordinal
-  unique_values:
-  - 0
-  - 2
-  - 1
-  - 3
-  - 6
-  - 4
-  - 5
+  unique_values: []
+number_diagnoses:
+  dtype: int64
+  max: 16
+  min: 1
+  otype: ordinal
+  unique_values: []
+number_emergency:
+  dtype: int64
+  max: 64
+  min: 0
+  otype: count
+  unique_values: []
+number_inpatient:
+  dtype: int64
+  max: 21
+  min: 0
+  otype: count
+  unique_values: []
+number_outpatient:
+  dtype: int64
+  max: 36
+  min: 0
+  otype: count
+  unique_values: []
 payer_code_?:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 payer_code_BC:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 payer_code_HM:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 payer_code_MC:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 payer_code_SP:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 pioglitazone_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 positive_class: T
 race_AfricanAmerican:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 0
-  - 1
+  otype: bool
+  unique_values: []
 race_Caucasian:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 repaglinide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 rosiglitazone_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 rows: 25000
 sample_size: 1.0
 spiel: "\n    From Kaggle - https://www.kaggle.com/dansbecker/hospital-readmissions\n\
@@ -507,27 +435,27 @@ spiel: "\n    From Kaggle - https://www.kaggle.com/dansbecker/hospital-readmissi
 target_classes:
 - F
 - T
+time_in_hospital:
+  dtype: int64
+  max: 14
+  min: 1
+  otype: ordinal
+  unique_values: []
 tolazamide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 tolbutamide_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
 troglitazone_No:
   dtype: int64
   max: 1
   min: 0
-  otype: ordinal
-  unique_values:
-  - 1
-  - 0
+  otype: bool
+  unique_values: []
