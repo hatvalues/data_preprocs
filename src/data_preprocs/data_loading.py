@@ -135,7 +135,7 @@ class DataLoader:
         n_unique = series.n_unique() if isinstance(series, pl.Series) else series.nunique()
         return n_unique == series.max() - series.min() + 1
 
-    def _update_descriptor(self, descriptor: ColumnDescriptor, series: Union[pd.Series, pl.Series], otype: str, min_max: bool = False):
+    def _update_descriptor(self, descriptor: ColumnDescriptor, series: Union[pd.Series, pl.Series], otype: str, min_max: bool = True):
         descriptor.otype = otype
         if otype in ("categorical", "bool", "constant"):
             descriptor.unique_values = self._extract_unique_values(series)
@@ -153,7 +153,7 @@ class DataLoader:
             column_descriptors[col].dtype = self._get_dtype_name(dtype)
 
             if self._is_categorical_dtype(dtype):
-                self._update_descriptor(column_descriptors[col], series, "categorical")
+                self._update_descriptor(column_descriptors[col], series, "categorical", min_max=False)
             else:
                 unique_values = self._extract_unique_values(series)
                 if len(unique_values) == 1:
@@ -164,9 +164,9 @@ class DataLoader:
                     truncated_values = [uv if uv is None or np.isnan(uv) or np.isinf(uv) else int(uv) for uv in unique_values]
                     if self._is_integer_dtype(dtype) or unique_values == truncated_values:
                         otype = "ordinal" if self._no_gaps_integer_series(series) else "count"
-                        self._update_descriptor(column_descriptors[col], series, otype, min_max=True)
+                        self._update_descriptor(column_descriptors[col], series, otype)
                     elif self._is_numeric_dtype(dtype):
-                        self._update_descriptor(column_descriptors[col], series, "numeric", min_max=True)
+                        self._update_descriptor(column_descriptors[col], series, "numeric")
                     else:
                         column_descriptors[col].otype = "unknown"
 
