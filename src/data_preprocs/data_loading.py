@@ -137,7 +137,7 @@ class DataLoader:
 
     def _update_descriptor(self, descriptor: ColumnDescriptor, series: Union[pd.Series, pl.Series], otype: str, min_max: bool = False):
         descriptor.otype = otype
-        if otype == "categorical":
+        if otype in ("categorical", "bool", "constant"):
             descriptor.unique_values = self._extract_unique_values(series)
         elif min_max:
             min_val, max_val = self._extract_min_max(series)
@@ -157,9 +157,9 @@ class DataLoader:
             else:
                 unique_values = self._extract_unique_values(series)
                 if len(unique_values) == 1:
-                    self._update_descriptor(column_descriptors[col], series, "constant", min_max=True)
+                    self._update_descriptor(column_descriptors[col], series, "constant")
                 elif len(unique_values) == 2:
-                    self._update_descriptor(column_descriptors[col], series, "bool", min_max=True)
+                    self._update_descriptor(column_descriptors[col], series, "bool")
                 else:
                     truncated_values = [uv if uv is None or np.isnan(uv) or np.isinf(uv) else int(uv) for uv in unique_values]
                     if self._is_integer_dtype(dtype) or unique_values == truncated_values:

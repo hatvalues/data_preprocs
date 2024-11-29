@@ -6,28 +6,36 @@ Age:
   unique_values: []
 Dx:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Dx:CIN:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Dx:Cancer:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Dx:HPV:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 First sexual intercourse:
   dtype: float64
   max: 32.0
@@ -36,10 +44,12 @@ First sexual intercourse:
   unique_values: []
 Hormonal Contraceptives:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Hormonal Contraceptives (years):
   dtype: float64
   max: 30.0
@@ -48,10 +58,12 @@ Hormonal Contraceptives (years):
   unique_values: []
 IUD:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 IUD (years):
   dtype: float64
   max: 19.0
@@ -72,10 +84,12 @@ Number of sexual partners:
   unique_values: []
 STDs:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs (number):
   dtype: float64
   max: 4.0
@@ -90,82 +104,106 @@ STDs (number):
   unique_values: []
 STDs:AIDS:
   dtype: int64
-  max: 0
-  min: 0
+  max: null
+  min: null
   otype: constant
-  unique_values: []
+  unique_values:
+  - 0
 STDs:HIV:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:HPV:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:Hepatitis B:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:cervical condylomatosis:
   dtype: int64
-  max: 0
-  min: 0
+  max: null
+  min: null
   otype: constant
-  unique_values: []
+  unique_values:
+  - 0
 STDs:condylomatosis:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:genital herpes:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:molluscum contagiosum:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:pelvic inflammatory disease:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:syphilis:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:vaginal condylomatosis:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs:vulvo-perineal condylomatosis:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Smokes:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Smokes (packs/year):
   dtype: float64
   max: 37.0

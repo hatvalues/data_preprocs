@@ -12,10 +12,12 @@ First.sexual.intercourse:
   unique_values: []
 Hormonal.Contraceptives:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Hormonal.Contraceptives..years.:
   dtype: float64
   max: 30.0
@@ -24,10 +26,12 @@ Hormonal.Contraceptives..years.:
   unique_values: []
 IUD:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 IUD..years.:
   dtype: float64
   max: 19.0
@@ -48,10 +52,12 @@ Number.of.sexual.partners:
   unique_values: []
 STDs:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 STDs..Number.of.diagnosis:
   dtype: int64
   max: 3
@@ -78,10 +84,12 @@ STDs..number.:
   unique_values: []
 Smokes:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Smokes..years.:
   dtype: float64
   max: 37.0

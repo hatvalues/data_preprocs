@@ -30,10 +30,12 @@ bc_util:
   unique_values: []
 block_missingness:
   dtype: float64
-  max: 1.0
-  min: 0.0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0.0
+  - 1.0
 chargeoff_within_12_mths:
   dtype: float64
   max: 6.0
@@ -435,10 +437,12 @@ tax_liens:
   unique_values: []
 term:
   dtype: float64
-  max: 60.0
-  min: 36.0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 60.0
+  - 36.0
 tot_coll_amt:
   dtype: float64
   max: 6214661.0

@@ -6,10 +6,12 @@ age:
   unique_values: []
 alchy:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 class_col: recid
 column_names:
 - year
@@ -33,10 +35,12 @@ column_names:
 columns: 18
 felon:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 file_name: rcdv.csv.gz
 follow:
   dtype: int64
@@ -46,35 +50,45 @@ follow:
   unique_values: []
 junky:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 male:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 married:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 missingness:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 name: rcdv
 person:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 positive_class: Y
 priors:
   dtype: int64
@@ -84,10 +98,12 @@ priors:
   unique_values: []
 propty:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 rows: 18876
 rule:
   dtype: int64
@@ -180,10 +196,12 @@ spiel: "\n    Data Set Information:\n    This is a description of the data on th
   \ analysis sample, 2 the validation sampel and 3 is missing data sample.\n    "
 super:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 target_classes:
 - N
 - Y
@@ -195,19 +213,25 @@ tservd:
   unique_values: []
 white:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 workrel:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 year:
   dtype: int64
-  max: 1980
-  min: 1978
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1978
+  - 1980

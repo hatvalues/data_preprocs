@@ -6,10 +6,12 @@ Age:
   unique_values: []
 Alcoholism:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 ApptDay:
   dtype: object
   max: null
@@ -33,10 +35,12 @@ ApptMonth:
   - June
 Diabetes:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 Gender:
   dtype: object
   max: null
@@ -53,10 +57,12 @@ Handcap:
   unique_values: []
 Hipertension:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 LagDays:
   dtype: float64
   max: 178.5548726851852
@@ -65,10 +71,12 @@ LagDays:
   unique_values: []
 SMS_received:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 SchedDay:
   dtype: object
   max: null
@@ -97,10 +105,12 @@ SchedMonth:
   - June
 Scholarship:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 1
 class_col: no_show
 column_names:
 - Gender

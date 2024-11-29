@@ -50,16 +50,20 @@ column_names:
 columns: 23
 coworkers:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 2
+  - 0
 family_history:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 2
 file_name: mhtech14.csv.gz
 gender:
   dtype: object
@@ -103,10 +107,12 @@ no_employees:
   unique_values: []
 obs_consequence:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 2
 phys_health_consequence:
   dtype: int64
   max: 2
@@ -133,10 +139,12 @@ region:
   - MEAF
 remote_work:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 0
+  - 2
 rows: 1259
 sample_size: 1.0
 seek_help:
@@ -147,10 +155,11 @@ seek_help:
   unique_values: []
 self_employed:
   dtype: int64
-  max: 0
-  min: 0
+  max: null
+  min: null
   otype: constant
-  unique_values: []
+  unique_values:
+  - 0
 spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-survey\n\
   \n    This dataset contains the following data:\n\n    Timestamp\n    Age\n    Gender\n\
   \    Country\n    state: If you live in the United States, which state or territory\
@@ -183,19 +192,23 @@ spiel: "\n    From Kaggle - https://www.kaggle.com/osmi/mental-health-in-tech-su
   \ notes or comments\n    "
 supervisor:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 2
+  - 0
 target_classes:
 - 'Yes'
 - 'No'
 tech_company:
   dtype: int64
-  max: 2
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 2
+  - 0
 wellness_program:
   dtype: int64
   max: 2

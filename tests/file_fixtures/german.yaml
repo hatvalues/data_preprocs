@@ -71,10 +71,12 @@ debt:
   - A102
 deps:
   dtype: int64
-  max: 2
-  min: 1
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 2
 dur:
   dtype: int64
   max: 72

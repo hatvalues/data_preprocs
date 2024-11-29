@@ -1,9 +1,11 @@
 amfm:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 class_col: dr
 column_names:
 - qa
@@ -127,16 +129,20 @@ name: diaretino
 positive_class: 'yes'
 ps:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 qa:
   dtype: int64
-  max: 1
-  min: 0
+  max: null
+  min: null
   otype: bool
-  unique_values: []
+  unique_values:
+  - 1
+  - 0
 rows: 1151
 sample_size: 1.0
 spiel: "Source:\n    1. Dr. Balint Antal, Department of Computer Graphics and Image\
